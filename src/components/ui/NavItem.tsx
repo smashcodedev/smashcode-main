@@ -9,6 +9,7 @@ type NavItemProps = {
   label: string;
   href: string;
 };
+
 const NavItem: React.FC<NavItemProps> = ({ label, href }) => {
   const pathname = usePathname();
 
@@ -17,8 +18,8 @@ const NavItem: React.FC<NavItemProps> = ({ label, href }) => {
       <Link href={href}>
         <li
           className={cn(
-            "hover:text-primary-green transition-colors",
-            pathname === href ? "text-primary-green" : "",
+            "hover:text-primary-green transition-colors underline-effect leading-loose tracking-wide",
+            pathname === href ? "text-primary-green underline-active" : "",
           )}
         >
           {label}
