@@ -2,7 +2,7 @@ import { HeroSection } from "@/components";
 
 export default function Home() {
   return (
-    <main>
+    <main className="m-20">
       <HeroSection />
     </main>
   );

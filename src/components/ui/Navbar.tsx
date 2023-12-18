@@ -13,7 +13,6 @@ const Navbar: React.FC = () => {
       <NavItems />
       <Button
         variant="secondary"
-        className="border border-primary-green px-4 text-lg py-[1px] rounded-full shadow shadow-primary-green hover:shadow-primary-green"
       >
         Contact
       </Button>

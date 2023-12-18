@@ -5,8 +5,10 @@ import { cn } from "../../../utils/helpers";
 const buttonVariants = cva("text-xl", {
   variants: {
     variant: {
-      primary: "bg-primary-green text-white",
-      secondary: "bg-secondary-gray text-primary-green",
+      primary:
+        "outline-none bg-transparent rounded-full px-6 py-2 text-white text-base border border-white transition-all duration-700 relative",
+      secondary:
+        "border border-pri  mary-green px-4 text-lg py-[1px] rounded-full shadow shadow-primary-green hover:shadow-primary-green",
     },
   },
   defaultVariants: {
@@ -27,7 +29,10 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <button className={cn(buttonVariants({ className, variant, ...props }))}>
+    <button
+      aria-label={`${children} button`}
+      className={cn(buttonVariants({ className, variant, ...props }))}
+    >
       {children}
     </button>
   );
