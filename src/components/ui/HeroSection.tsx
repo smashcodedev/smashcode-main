@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="lg:max-w-7xl mx-auto">
       <div className="flex">
         <div className="flex-col">
-          <h1 className="text-6xl capitalize leading-30">
+          <h1 className="text-6xl capitalize leading-tight">
             What you can think <br /> we can develop it <br /> for you!
           </h1>
           <p>
