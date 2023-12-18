@@ -7,10 +7,10 @@ const Logo = () => {
       <Image
         src="/logo.png"
         alt="smash code logo"
-        width={100}
-        height={100}
+        width={554}
+        height={437}
         quality={100}
-        className="cursor-pointer object-contain"
+        className="object-contain w-20 cursor-pointer"
       />
     </Link>
   );

@@ -16,7 +16,7 @@ const links: LinksType[] = [
 
 const NavItems: React.FC = () => {
   return (
-    <div className="flex items-center justify-center text-xl uppercase gap-4 font-light">
+    <div className="flex items-center justify-center gap-4 text-xl font-light uppercase">
       {links.map(({ href, label }) => (
         <NavItem label={label} href={href} key={label} />
       ))}

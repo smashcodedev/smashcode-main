@@ -8,7 +8,7 @@ const buttonVariants = cva("text-xl", {
       primary:
         "outline-none bg-transparent rounded-full px-6 py-2 text-white text-base border border-white transition-all duration-700 relative",
       secondary:
-        "border border-pri  mary-green px-4 text-lg py-[1px] rounded-full shadow shadow-primary-green hover:shadow-primary-green",
+        "border text-primary-green border-primary-green px-4 text-xl py-[1px] rounded-full shadow shadow-primary-green hover:shadow-primary-green",
     },
   },
   defaultVariants: {

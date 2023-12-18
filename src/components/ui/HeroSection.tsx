@@ -1,19 +1,21 @@
 import { Button } from "@/components";
 import Image from "next/image";
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   return (
-    <section className="lg:max-w-7xl mx-auto">
-      <div className="flex">
-        <div className="flex-col">
-          <h1 className="text-6xl capitalize leading-tight">
+    <section className="mx-auto lg:max-w-7xl">
+      <div className="flex flex-col xl:flex-row">
+        <div className="space-y-6">
+          <h1 className="text-6xl leading-tight capitalize">
             What you can think <br /> we can develop it <br /> for you!
           </h1>
-          <p>
+          <p className="text-xl">
             We create future-ready websites & web apps via innovative digital
             solutions so that you can focus on your core business.
           </p>
-          <Button variant="primary">Let&apos;s talk</Button>
+          <Button className="inline" variant="primary">
+            Let&apos;s talk
+          </Button>
         </div>
 
         <div>
