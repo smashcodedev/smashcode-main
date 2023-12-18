@@ -3,17 +3,17 @@ import Image from "next/image";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="mx-auto lg:max-w-7xl">
-      <div className="flex flex-col xl:flex-row">
+    <section className="mx-auto m-10 xl:mt-32 w-full lg:max-w-7xl text-center xl:text-left">
+      <div className="flex flex-col items-center justify-center xl:flex-row">
         <div className="space-y-6">
-          <h1 className="text-6xl leading-tight capitalize">
+          <h1 className="text-center text-2xl capitalize xl:leading-tight xl:text-6xl xl:text-left">
             What you can think <br /> we can develop it <br /> for you!
           </h1>
-          <p className="text-xl">
+          <p className="text-base lg:text-xl">
             We create future-ready websites & web apps via innovative digital
             solutions so that you can focus on your core business.
           </p>
-          <Button className="inline" variant="primary">
+          <Button variant="primary">
             Let&apos;s talk
           </Button>
         </div>
@@ -24,6 +24,7 @@ const HeroSection: React.FC = () => {
             alt="smash code logo"
             width={554}
             height={454}
+            className="object-contain w-[50rem]"
           />
         </div>
       </div>

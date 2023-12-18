@@ -6,7 +6,7 @@ const buttonVariants = cva("text-xl", {
   variants: {
     variant: {
       primary:
-        "outline-none bg-transparent rounded-full px-6 py-2 text-white text-base border border-white transition-all duration-700 relative",
+        "outline-none bg-transparent rounded-full px-6 py-1 lg:py-2 text-white xl:text-2xl text-base border border-white transition-all duration-700 relative hover:text-primary-green hover:border-primary-green",
       secondary:
         "border text-primary-green border-primary-green px-4 text-xl py-[1px] rounded-full shadow shadow-primary-green hover:shadow-primary-green",
     },

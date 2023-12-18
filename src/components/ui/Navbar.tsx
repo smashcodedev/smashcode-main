@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between px-4 m-2 text-white border-2 shadow-lg py lg:py-1 lg:px-12 lg:my-4 lg:mx-36 rounded-2xl bg-secondary-gray border-primary-green shadow-secondary-gray">
+    <nav className="flex items-center justify-between px-4 m-2 text-white border-2 shadow-lg py-1 lg:py-3 lg:px-12 lg:my- xl:mx-32 rounded-2xl bg-secondary-gray border-primary-green shadow-secondary-gray">
       <Logo />
 
       <div className="hidden lg:block">
