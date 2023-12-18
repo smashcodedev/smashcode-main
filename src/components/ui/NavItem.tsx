@@ -17,7 +17,7 @@ const NavItem: React.FC<NavItemProps> = ({ label, href }) => {
       <Link href={href}>
         <li
           className={cn(
-            "underline-effect",
+            "hover:text-primary-green transition-colors",
             pathname === href ? "text-primary-green" : "",
           )}
         >
