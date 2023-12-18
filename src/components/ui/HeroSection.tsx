@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="lg:max-w-7xl">
+    <section className="lg:max-w-7xl mx-auto">
       <div className="flex">
         <div className="flex-col">
-          <h1 className="text-4xl capitalize">
-            What you can think we can develop it for you!
+          <h1 className="text-6xl capitalize leading-30">
+            What you can think <br /> we can develop it <br /> for you!
           </h1>
           <p>
             We create future-ready websites & web apps via innovative digital
