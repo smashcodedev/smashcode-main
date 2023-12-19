@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="mx-auto m-10 xl:mt-32 w-full lg:max-w-7xl text-center xl:text-left">
+    <section className="xl:mt-32 text-center xl:text-left">
       <div className="flex flex-col items-center justify-center xl:flex-row">
         <div className="space-y-6">
           <h1 className="text-center text-2xl capitalize xl:leading-tight xl:text-6xl xl:text-left">

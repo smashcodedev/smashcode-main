@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --project-bg: #1aaca2;
+}
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(180deg, var(--project-bg) 0%, #121212 100%);
+  }
+
+  .project-box-item {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(var(--project-bg)),
+      to(#121212)
+    );
+    background: -o-linear-gradient(top, var(--project-bg) 0%, #121212 100%);
+    background: linear-gradient(180deg, var(--project-bg) 0%, #121212 100%);
+    min-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .fade-in-bottom {
+    -webkit-animation: fade-in-bottom 1s cubic-bezier(0.39, 0.575, 0.565, 1)
+      both;
+    animation: fade-in-bottom 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+}
+
+@layer components {
+  .section-heading h2 {
+    @apply relative w-max py-3 text-6xl;
+  }
+
+  .special-paragraph {
+    @apply p-4 px-1;
+  }
+
+  .box-item.with-icon {
+    @apply mt-14 overflow-visible;
+  }
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
 .underline-effect {
   @apply relative overflow-hidden;
 }
@@ -13,9 +64,9 @@
   height: 1px;
   bottom: 2px;
   left: 50%;
-  background-color: #1aaca2;
+  background-color: var(--project-bg);
   transition: all 0.3s linear;
-  @apply transform -translate-x-1/2;
+  @apply -translate-x-1/2 transform;
 }
 
 .underline-effect:hover::after {
@@ -30,5 +81,5 @@
   bottom: 2px;
   left: 50%;
   background-color: #1aaca2;
-  @apply transform -translate-x-1/2;
+  @apply -translate-x-1/2 transform;
 }
