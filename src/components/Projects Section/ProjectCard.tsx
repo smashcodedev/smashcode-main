@@ -61,7 +61,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {projectUrl || videoUrl ? (
           <Link
             className="mx-auto flex items-center justify-center rounded-full px-4 py-1.5 text-center text-xl font-semibold text-primary-green"
-            href={projectUrl || videoUrl}
+            href={projectUrl || videoUrl || "#"}
             target="_blank"
           >
             View more
