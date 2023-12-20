@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import logoImg from "../../../public/logo.png";
 import placeHolderImg from "../../../public/images/expedo2.png";
 import Link from "next/link";
@@ -49,7 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               src={imageUrl || placeHolderImg}
               width={1280}
               height={800}
-              className="pt-10 lg:pt-0"
+              className="pt-10 transition-transform duration-200 hover:scale-105 lg:pt-0"
             />
           ))}
       </div>

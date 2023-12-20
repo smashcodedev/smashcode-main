@@ -8,14 +8,14 @@ type ServicesProps = {
 
 const Services: React.FC<ServicesProps> = ({ services }) => {
   return (
-    <section className="m-7 pb-10 pt-4 xl:mt-6 2xl:ml-0">
+    <section className="m-7 mt-4 2xl:ml-0">
       <ServiceHeader
         subHeading="Services we"
         heading="Offered"
         description="Responsive Websites & Web Apps, and Full Stack Web Apps Development."
       />
 
-      <ServicesList services={services}/>
+      <ServicesList services={services} />
     </section>
   );
 };
