@@ -2,17 +2,13 @@ import { VariantProps, cva } from "class-variance-authority";
 import React, { ButtonHTMLAttributes, FC } from "react";
 import { cn } from "../../utils/helpers";
 
-const buttonVariants = cva("text-xl", {
+const buttonVariants = cva("button",{
   variants: {
     variant: {
-      primary:
-        "outline-none bg-transparent rounded-full px-6 py-1 lg:py-2 text-white xl:text-2xl text-base border border-white transition-all duration-700 relative hover:text-primary-green hover:border-primary-green",
+      primary: "primary-btn btn",
       secondary:
         "header-contact-btn border border-primary-green text-primary-green",
     },
-  },
-  defaultVariants: {
-    variant: "primary",
   },
 });
 

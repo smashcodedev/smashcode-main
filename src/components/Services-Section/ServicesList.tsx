@@ -22,7 +22,7 @@ const ServicesList: React.FC<{ services: ServiceType[] }> = ({ services }) => {
       </div>
       <div className="my-8 text-center">
         <Link href="/services">
-          <Button variant="primary">View More!</Button>
+          <Button className="primary-btn">View More!</Button>
         </Link>
       </div>
     </>
