@@ -4,12 +4,15 @@ import NavItems from "./ui/NavItems";
 import NavItem from "./ui/NavItem";
 import Button from "./ui/Button";
 import HeroSection from "./ui/HeroSection";
-import Projects from "./Projects Section/Projects";
-import ProjectsHeader from "./Projects Section/ProjectsHeader";
+import Projects from "./Projects-Section/Projects";
+import ProjectsHeader from "./Projects-Section/ProjectsHeader";
 import SectionHeading from "./ui/SectionHeading";
-import ProjectsList from "./Projects Section/ProjectsList";
-import ProjectCard from "./Projects Section/ProjectCard";
-import Services from "./Services Section/Services";
+import ProjectsList from "./Projects-Section/ProjectsList";
+import ProjectCard from "./Projects-Section/ProjectCard";
+import Services from "./Services-Section/Services";
+import ServiceHeader from "./Services-Section/ServiceHeader";
+import ServicesList from "./Services-Section/ServicesList";
+import ServiceCard from "./Services-Section/ServiceCard";
 
 export {
   Navbar,
@@ -24,4 +27,7 @@ export {
   ProjectCard,
   SectionHeading,
   Services,
+  ServiceHeader,
+  ServicesList,
+  ServiceCard,
 };

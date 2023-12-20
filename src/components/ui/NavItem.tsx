@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { cn } from "../../../utils/helpers";
+import { cn } from "../../utils/helpers";
 
 type NavItemProps = {
   label: string;

@@ -1,8 +1,7 @@
-import ctImage from "../public/images/projects/contentWriting.jpg";
-import videoPoster from "../public/images/projects/videoPoster.jpg";
-import graphProj from "../public/images/projects/graphProj.png";
+import ctImage from "../../public/images/projects/contentWriting.jpg";
+import videoPoster from "../../public/images/projects/videoPoster.jpg";
+import graphProj from "../../public/images/projects/graphProj.png";
 import { StaticImageData } from "next/image";
-
 
 type ProjectNames = "rarare" | "journeyBlog" | "trippyFrens" | "phenomAcademy";
 

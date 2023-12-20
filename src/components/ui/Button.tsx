@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 import React, { ButtonHTMLAttributes, FC } from "react";
-import { cn } from "../../../utils/helpers";
+import { cn } from "../../utils/helpers";
 
 const buttonVariants = cva("text-xl", {
   variants: {

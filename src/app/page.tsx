@@ -1,12 +1,20 @@
 import { HeroSection, Projects } from "@/components";
-import Services from "@/components/Services Section/Services";
-import projectsData, { ProjectType } from "@/../data/projects";
+import Services from "@/components/Services-Section/Services";
+import projectsData, { ProjectType } from "@/data/projects";
+import servicesData, { ServiceType } from "@/data/services";
 
 const projects: ProjectType[] = [
   projectsData.rarare,
   projectsData.journeyBlog,
   projectsData.trippyFrens,
   projectsData.phenomAcademy,
+];
+
+const services: ServiceType[] = [
+  servicesData.customWebDevelopment,
+  servicesData.blockchainWebApps,
+  servicesData.graphicsDesigning,
+  servicesData.contentWriting,
 ];
 
 export default function Home() {
@@ -16,7 +24,7 @@ export default function Home() {
 
       <Projects projects={projects} />
 
-      <Services />
+      <Services services={services} />
     </main>
   );
 }

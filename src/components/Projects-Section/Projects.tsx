@@ -1,6 +1,6 @@
 import React from "react";
 import { ProjectsHeader, ProjectsList } from "@/components";
-import { ProjectType } from "@/../data/projects";
+import { ProjectType } from "@/data/projects";
 
 type ProjectsProps = {
   projects: ProjectType[];

@@ -2,15 +2,11 @@ import Image, { StaticImageData } from "next/image";
 import logoImg from "../../../public/logo.png";
 import placeHolderImg from "../../../public/images/expedo2.png";
 import Link from "next/link";
+import { ProjectType } from "@/data/projects";
 
-type ProjectCardProps = {
+interface ProjectCardProps extends ProjectType {
   bgColor: string;
-  title: string;
-  description: string;
-  imageUrl?: StaticImageData | string;
-  projectUrl?: string;
-  videoUrl?: string;
-};
+}
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   bgColor,

@@ -1,13 +1,8 @@
 import React from "react";
 import { SectionHeading } from "@/components";
+import { HeadingProps } from "@/types";
 
-type ProjectsHeaderProps = {
-  subHeading: string;
-  heading: string;
-  description?: string;
-};
-
-const ProjectsHeader: React.FC<ProjectsHeaderProps> = ({
+const ProjectsHeader: React.FC<HeadingProps> = ({
   heading,
   subHeading,
   description,

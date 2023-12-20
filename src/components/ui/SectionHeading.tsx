@@ -1,11 +1,7 @@
+import { HeadingProps } from "@/types";
 import React from "react";
 
-type SectionHeadingProps = {
-  heading: string;
-  subHeading: string;
-  description?: string;
-};
-const SectionHeading: React.FC<SectionHeadingProps> = ({
+const SectionHeading: React.FC<HeadingProps> = ({
   heading,
   subHeading,
   description,

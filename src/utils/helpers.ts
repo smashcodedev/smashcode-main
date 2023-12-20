@@ -8,7 +8,7 @@ function cn(...inputs: ClassValue[]) {
 
 const colors = ["#255FBC", "#50B2BE", "#7E478B", "#FFA5A1", "#FFCA28"];
 
-const getDividedData = (data: ProjectType[] , type: string) => {
+const getDividedData = (data: ProjectType[], type: string) => {
   let totalLength = data.length;
   let dividedWouldBe = totalLength / 2;
   let firstHalf = data.slice(0, dividedWouldBe);

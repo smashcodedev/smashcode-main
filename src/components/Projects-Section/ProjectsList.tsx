@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ProjectCard } from "@/components";
-import { ProjectType } from "../../../data/projects";
-import { colors, getDividedData } from "../../../utils/helpers";
+import { ProjectType } from "../../data/projects";
+import { colors, getDividedData } from "../../utils/helpers";
 import Link from "next/link";
 
 const ProjectsList: React.FC<{ projects: ProjectType[] }> = ({ projects }) => {
@@ -33,7 +33,7 @@ const ProjectsList: React.FC<{ projects: ProjectType[] }> = ({ projects }) => {
           )}
         </div>
       </div>
-      <div className="w-full md:w-1/2 p-0">
+      <div className="w-full p-0 md:w-1/2">
         <div className="m-0 flex flex-wrap">
           {getDividedData(projects, "").map(
             ({
