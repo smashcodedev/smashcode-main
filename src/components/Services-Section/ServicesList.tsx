@@ -7,13 +7,17 @@ const ServicesList: React.FC<{ services: ServiceType[] }> = ({ services }) => {
     <div className="row service-row">
       {services.length > 0 ? (
         <>
-          {services.slice(0, 4).map((data, key) => {
+          {services.slice(0, 4).map(({ title, description }, key) => {
             return (
               <div
                 key={key}
                 className="col-12 col-md-6 service-col fade-in-bottom"
               >
-                <ServiceCard key={key} data={data} />
+                <ServiceCard
+                  key={key}
+                  title={title}
+                  description={description}
+                />
               </div>
             );
           })}
