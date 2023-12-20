@@ -8,15 +8,20 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between px-4 m-2 text-white border-2 shadow
-    -lg py-1 lg:py-3 lg:px-12 lg:my- 2xl:mx-32 rounded-2xl bg-secondary-gray border-primary-green shadow-secondary-gray">
+    <nav
+      className="m-2 flex items-center justify-between rounded-2xl border-2
+    border-primary-green bg-secondary-gray px-4 py-1 text-white shadow shadow-secondary-gray lg:px-12 lg:py-3 xl:mx-32"
+    >
       <Logo />
 
       <div className="hidden lg:block">
         <NavItems />
       </div>
 
-      <Button className="hidden lg:block" variant="secondary">
+      <Button
+        variant="secondary"
+        className="header-contact-btn hidden lg:block"
+      >
         Contact
       </Button>
 
