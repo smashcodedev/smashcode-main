@@ -1,19 +1,25 @@
 import React from "react";
-import { ProjectsHeading } from "./ProjectsHeading";
+import { SectionHeading } from "@/components";
 
 type ProjectsHeaderProps = {
-  title: string;
+  subHeading: string;
+  heading: string;
   description?: string;
 };
 
 const ProjectsHeader: React.FC<ProjectsHeaderProps> = ({
-  title,
+  heading,
+  subHeading,
   description,
 }) => {
   return (
     <>
       <div className="section-heading">
-        <ProjectsHeading title={title} description={description} />
+        <SectionHeading
+          heading={heading}
+          subHeading={subHeading}
+          description={description}
+        />
 
         <ul className="list-disc px-3">
           <li>Custom Web Development</li>
