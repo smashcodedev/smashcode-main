@@ -9,7 +9,6 @@ const ProjectsHeader: React.FC<HeadingProps> = ({
 }) => {
   return (
     <>
-      <div className="section-heading">
         <SectionHeading
           heading={heading}
           subHeading={subHeading}
@@ -22,7 +21,7 @@ const ProjectsHeader: React.FC<HeadingProps> = ({
           <li>Blockchain Web Apps</li>
           <li>Graphic Designing</li>
         </ul>
-      </div>
+   
     </>
   );
 };

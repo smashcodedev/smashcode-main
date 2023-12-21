@@ -39,8 +39,8 @@
     animation: fade-in-bottom 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
 
-  .section-heading h2 {
-    @apply relative w-max py-3 text-6xl;
+  .section-heading {
+    @apply relative inline-block w-max before:absolute before:bottom-0 before:top-full before:h-[0.7px] before:w-5/6 before:bg-primary-green before:content-[''];
   }
 
   .special-paragraph {

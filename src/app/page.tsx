@@ -26,7 +26,7 @@ export default function Home() {
 
       <Services services={services} />
 
-      < Feedback/>
+      <Feedback/>
     </main>
   );
 }

@@ -5,6 +5,7 @@ import defaultImg from "@/../public/images/noDatafound.png";
 import Loader from "@/components/ui/Loader";
 import Image from "next/image";
 import { SectionHeading } from "..";
+import Link from "next/link";
 
 type FeedbackType = {
   clientName: string;
@@ -166,9 +167,8 @@ const Feedback = () => {
 
   return (
     <section>
-      <div className="section-heading">
-        <SectionHeading subHeading="Clients" heading="Feedback" />
-      </div>
+      <SectionHeading subHeading="Clients" heading="Feedback" />
+
       <div className="feed-back-short-row style-right-border flex flex-wrap">
         {!loading && featuredReviews.length > 0 ? (
           <>
@@ -216,7 +216,7 @@ const Feedback = () => {
                         <blockquote className="blockquote">
                           <p className="mb-0">“{clientFeedback}”</p>
                           <footer className="blockquote-footer mt-2">
-                            <a
+                            <Link
                               href={
                                 url || "https://www.fiverr.com/ismail_muhammad"
                               }
@@ -229,7 +229,7 @@ const Feedback = () => {
                                 {platform || "Fiverr"} &nbsp; ---{">"} &nbsp;
                                 view
                               </span>
-                            </a>
+                            </Link>
                           </footer>
                         </blockquote>
                       </div>

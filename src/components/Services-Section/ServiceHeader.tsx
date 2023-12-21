@@ -9,7 +9,7 @@ const ServicesHeader: React.FC<HeadingProps> = ({
 }) => {
   return (
     <>
-      <div className="section-heading mb-5">
+      <div className="mb-5">
         <SectionHeading
           heading={heading}
           subHeading={subHeading}

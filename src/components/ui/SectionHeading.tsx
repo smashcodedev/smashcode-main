@@ -7,13 +7,15 @@ const SectionHeading: React.FC<HeadingProps> = ({
   description,
 }) => {
   return (
-    <>
+    <div>
       <h3 className="text-2xl">{subHeading}</h3>
-      <h2 className="special-heading">{heading}</h2>
+      <h2 className={`section-heading pb-5 text-6xl`}>{heading}</h2>
+      <span></span>
       <p className="special-paragraph w-full text-lg md:w-8/12">
         {description}
       </p>
-    </>
+    </div>
   );
 };
+
 export default SectionHeading;
