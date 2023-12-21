@@ -13,6 +13,11 @@ import Services from "./Services-Section/Services";
 import ServiceHeader from "./Services-Section/ServiceHeader";
 import ServicesList from "./Services-Section/ServicesList";
 import ServiceCard from "./Services-Section/ServiceCard";
+import Footer from "./Footer/Footer";
+import SocialLinks from "./Footer/SocialLinks";
+import QuickLinks from "./Footer/QuickLinks";
+import Copywrite from "./Footer/Copywrite";
+import ContactInfo from "./Footer/ContactInfo";
 
 export {
   Navbar,
@@ -30,4 +35,9 @@ export {
   ServiceHeader,
   ServicesList,
   ServiceCard,
+  Footer,
+  SocialLinks,
+  QuickLinks,
+  Copywrite,
+  ContactInfo,
 };

@@ -1,4 +1,4 @@
-import { HeroSection, Projects } from "@/components";
+import { Footer, HeroSection, Projects } from "@/components";
 import Services from "@/components/Services-Section/Services";
 import projectsData, { ProjectType } from "@/data/projects";
 import servicesData, { ServiceType } from "@/data/services";

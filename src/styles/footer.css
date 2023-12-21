@@ -1,0 +1,82 @@
+.subscribe-form {
+    position: relative;
+    overflow: hidden;
+}
+
+.subscribe-form input:valid {
+    border-bottom: 1px solid #54d40a;
+}
+
+.subscribe-form input {
+    width: 100%;
+    padding: 0 28px;
+    background: #2e2e2e;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    color: #fff;
+    outline: none;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    height: 50px;
+}
+
+.is-invalid {
+    border-bottom: 1px solid var(--primary) !important;
+}
+
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: var(--primary);
+    padding: 0 20px;
+    border: 1px solid var(--primary);
+    top: 0;
+    height: 50px;
+}
+
+.subscribe-form button i {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.copyright-area {
+    background: #202020;
+    padding: 12px 0;
+}
+
+.copyright-text p {
+    margin: 0;
+    font-size: .9rem;
+}
+
+.copyright-text p a {
+    color: var(--primary);
+}
+
+.registered-img {
+    max-width: 240px;
+    object-fit: contain;
+    width: auto;
+}
+
+.googleReviewsImg {
+    max-width: 140px;
+    object-fit: contain;
+    width: auto;
+}
+
+@media screen and (max-width:550px) {
+    .cta-text h4 {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    .cta-text span {
+        font-size: .9rem;
+    }
+    .cta-icons-top>* {
+        color: var(--primary);
+        font-size: 1.4rem
+    }
+}
