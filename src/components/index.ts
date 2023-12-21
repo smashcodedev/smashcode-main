@@ -18,6 +18,7 @@ import SocialLinks from "./Footer/SocialLinks";
 import QuickLinks from "./Footer/QuickLinks";
 import Copywrite from "./Footer/Copywrite";
 import ContactInfo from "./Footer/ContactInfo";
+import Feedback from './ui/Feedback'
 
 export {
   Navbar,
@@ -40,4 +41,5 @@ export {
   QuickLinks,
   Copywrite,
   ContactInfo,
+  Feedback
 };

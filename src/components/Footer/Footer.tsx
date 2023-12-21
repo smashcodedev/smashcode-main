@@ -12,8 +12,8 @@ const Footer = () => {
       <div className="mx-auto w-full px-4 lg:max-w-7xl">
         <ContactInfo />
         <div className="relative z-[2] pb-3 pt-3">
-          <div className="flex flex-col lg:flex-row gap-2 justify-between">
-            <div className="xl:w-1/3 lg:w-1/3  mb-50 mt-md-0 mt-2">
+          <div className="flex flex-col justify-between gap-2 lg:flex-row">
+            <div className="mb-50 mt-md-0  mt-2 lg:w-1/3 xl:w-1/3">
               <Link href="/">
                 <Image
                   src={logo}
@@ -29,7 +29,7 @@ const Footer = () => {
                   Designers & Developers, Graphic Designers, and Content & Copy
                   Writers.
                 </p>
-                <h4 className="text-2xl my-2">Registered By PSEB </h4>
+                <h4 className="my-2 text-2xl">Registered By PSEB </h4>
                 <div className="my-1 inline-block rounded">
                   <Image
                     className="registered-img rounded"

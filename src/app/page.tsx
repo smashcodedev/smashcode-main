@@ -1,4 +1,4 @@
-import { Footer, HeroSection, Projects } from "@/components";
+import { HeroSection, Projects, Feedback} from "@/components";
 import Services from "@/components/Services-Section/Services";
 import projectsData, { ProjectType } from "@/data/projects";
 import servicesData, { ServiceType } from "@/data/services";
@@ -25,6 +25,8 @@ export default function Home() {
       <Projects projects={projects} />
 
       <Services services={services} />
+
+      < Feedback/>
     </main>
   );
 }

@@ -5,9 +5,9 @@
 }
 
 :root {
-    --primary: #1aaca2;
-    --primary-light: #40e0d6;
-    --primary-dark: #136e68;
+    --project-bg: #1aaca2;
+    --project-bg-light: #40e0d6;
+    --project-bg-dark: #136e68;
     --secondary: #17cae2;
     --secondary-light: #57e4f6;
     --secondary-dark: #15aabe;
@@ -72,7 +72,7 @@ section:not(.no-space) {
 }
 
 .text-pri {
-    color: var(--primary) !important;
+    color: var(--project-bg) !important;
 }
 
 .special-para {
@@ -98,7 +98,7 @@ section:not(.no-space) {
     left: 0;
     width: 85%;
     height: 0.7px;
-    background-color: var(--primary);
+    background-color: var(--project-bg);
 }
 
 
@@ -249,7 +249,7 @@ section:not(.no-space) {
 }
 
 a[href]:hover {
-    color: var(--primary);
+    color: var(--project-bg);
 }
 
 .a-white {
@@ -282,7 +282,7 @@ a[href]:hover {
 }
 
 .primary-btn:hover {
-    color: var(--primary);
+    color: var(--project-bg);
 }
 
 .primary-btn::before {
@@ -308,7 +308,7 @@ a[href]:hover {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: var(--project-bg);
 }
 
 .primary-btn:hover::before {
@@ -317,7 +317,7 @@ a[href]:hover {
     width: 103%;
     height: 104%;
     visibility: visible;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--project-bg);
 }
 
 .bg-black {
@@ -325,21 +325,21 @@ a[href]:hover {
 }
 
 .bg-sec {
-    background-color: var(--primary);
+    background-color: var(--project-bg);
     padding: 0 !important;
 }
 
 .style-right-border {
-    border-right: 2px dashed var(--primary);
+    border-right: 2px dashed var(--project-bg);
 }
 
 .style-left-border {
-    border-left: 2px dashed var(--primary);
+    border-left: 2px dashed var(--project-bg);
 }
 
 .loader {
     border: 5px solid var(--bg-white);
-    border-top: 5px solid var(--primary);
+    border-top: 5px solid var(--project-bg);
     border-radius: 50%;
     width: 70px;
     height: 70px;
@@ -348,7 +348,7 @@ a[href]:hover {
 
 .spinner {
     border: 3px solid var(--bg-white);
-    border-top: 5px solid var(--primary);
+    border-top: 5px solid var(--project-bg);
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -562,7 +562,7 @@ a[href]:hover {
     display: block;
     width: 100%;
     height: 4px;
-    background: var(--primary);
+    background: var(--project-bg);
     animation: load 4s linear infinite;
     animation-delay: 0.7s;
 }
@@ -605,7 +605,7 @@ a[href]:hover {
     content: "";
     width: 30%;
     height: 0.7px;
-    background: var(--primary);
+    background: var(--project-bg);
 }
 
 .hero-image-home {
@@ -694,7 +694,7 @@ a[href]:hover {
     align-items: center;
     margin: 0 auto;
     border-radius: 50px;
-    color: var(--primary);
+    color: var(--project-bg);
     font-weight: 700;
     font-size: 1.2rem;
 }
@@ -811,7 +811,7 @@ a[href]:hover {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--project-bg);
 }
 
 .box-item-icon img {
@@ -849,7 +849,7 @@ a[href]:hover {
 }
 
 .clientName {
-    color: var(--primary);
+    color: var(--project-bg);
     line-height: 5rem;
     display: flex;
     justify-content: flex-start;
@@ -963,7 +963,7 @@ a[href]:hover {
     top: 0;
     right: 0;
     width: 2px;
-    background-color: var(--primary);
+    background-color: var(--project-bg);
     height: 100%;
 }
 
@@ -979,7 +979,7 @@ a[href]:hover {
 }
 
 .social-connect-us-list li:nth-child(1) a:hover {
-    color: var(--primary-dark);
+    color: var(--project-bg-dark);
 }
 
 .social-connect-us-list li:nth-child(2) a:hover {
