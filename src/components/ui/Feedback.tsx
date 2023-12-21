@@ -221,7 +221,7 @@ const Feedback = () => {
                                 url || "https://www.fiverr.com/ismail_muhammad"
                               }
                               target="_blank"
-                              className="a-simple text-pri"
+                              className="a-simple text-primary-green"
                               rel="noreferrer"
                             >
                               Posted on &nbsp;{" "}

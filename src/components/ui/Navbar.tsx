@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className="z-10 m-4 flex items-center justify-between rounded-2xl
-      border-2 border-primary-green bg-secondary-gray px-4 py-1 text-white shadow-lg shadow-secondary-gray lg:px-12 lg:py-3 2xl:mx-32"
+      border-2 border-primary-green bg-secondary-gray px-4 py-1 text-white shadow-xl shadow-secondary-gray lg:px-12 lg:py-3 2xl:mx-36"
       ref={deskHeader}
     >
       <Logo />
