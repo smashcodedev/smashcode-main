@@ -166,21 +166,87 @@ const Feedback = () => {
 
   return (
     <section>
-      <div className="container-lg">
-        <div className="section-heading">
-          <h3 className="sec-subtitle">Clients</h3>
-          <h2>Feedback</h2>
-        </div>
-        <div className="feed-back-short-row style-right-border flex">
-          {!loading && Object.values(featuredReviews).length > 0 ? (
-            <>
-              <div className="w-full sm:w-1/2 md:w-1/4">
+      <div className="section-heading">
+        <SectionHeading subHeading="Clients" heading="Feedback" />
+      </div>
+      <div className="feed-back-short-row style-right-border flex flex-wrap">
+        {!loading && featuredReviews.length > 0 ? (
+          <>
+            <div className="w-full sm:w-1/2 md:w-1/4">
+              <div className="flying-avatar-wrapper">
+                {firstHalf.map(({ id }) => {
+                  return (
+                    <span
+                      onClick={() => setSelectedReview(id)}
+                      key={id}
+                      className="avatar-circle flying"
+                    >
+                      <Image
+                        src={defaultImg}
+                        alt={"image"}
+                        width={100}
+                        height={100}
+                      />
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              {featuredReviews.filter((val) => val.id === selectedReview) ? (
+                featuredReviews
+                  .filter((val) => val.id === selectedReview)
+                  .map(({ clientName, clientFeedback, url, platform }) => {
+                    return (
+                      <div
+                        key={clientName}
+                        className="feed-back-short fade-in-bottom"
+                      >
+                        <p className="clientName">
+                          <span className="avatar-circle">
+                            <Image
+                              src={defaultImg}
+                              alt={"Image"}
+                              width={100}
+                              height={100}
+                            />
+                          </span>
+                          {clientName}
+                        </p>
+                        <blockquote className="blockquote">
+                          <p className="mb-0">“{clientFeedback}”</p>
+                          <footer className="blockquote-footer mt-2">
+                            <a
+                              href={
+                                url || "https://www.fiverr.com/ismail_muhammad"
+                              }
+                              target="_blank"
+                              className="a-simple text-pri"
+                              rel="noreferrer"
+                            >
+                              Posted on &nbsp;{" "}
+                              <span title="Source Title">
+                                {platform || "Fiverr"} &nbsp; ---{">"} &nbsp;
+                                view
+                              </span>
+                            </a>
+                          </footer>
+                        </blockquote>
+                      </div>
+                    );
+                  })
+              ) : (
+                <Loader type="spinner" />
+              )}
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/4">
+              <div className="flying-avatar-wrapper">
                 <div className="flying-avatar-wrapper">
-                  {firstHalf.map((hisData, key) => {
+                  {secondHalf.map(({ id }) => {
                     return (
                       <span
-                        onClick={() => setSelectedReview(hisData.id)}
-                        key={key}
+                        onClick={() => setSelectedReview(id)}
+                        key={id}
                         className="avatar-circle flying"
                       >
                         <Image
@@ -194,83 +260,13 @@ const Feedback = () => {
                   })}
                 </div>
               </div>
-              <div className="w-full md:w-1/2">
-                {featuredReviews.filter((val) => val.id === selectedReview) ? (
-                  featuredReviews
-                    .filter((val) => val.id === selectedReview)
-                    .map((hisData, key) => {
-                      return (
-                        <div
-                          key={key}
-                          className="feed-back-short fade-in-bottom"
-                        >
-                          <p className="clientName">
-                            <span className="avatar-circle">
-                              <Image
-                                src={defaultImg}
-                                alt={"Image"}
-                                width={100}
-                                height={100}
-                              />
-                            </span>
-                            {hisData.clientName}
-                          </p>
-                          <blockquote className="blockquote">
-                            <p className="mb-0">“{hisData.clientFeedback}”</p>
-                            <footer className="blockquote-footer mt-2">
-                              <a
-                                href={
-                                  hisData.url ||
-                                  "https://www.fiverr.com/ismail_muhammad"
-                                }
-                                target="_blank"
-                                className="a-simple text-pri"
-                                rel="noreferrer"
-                              >
-                                Posted on &nbsp;{" "}
-                                <span title="Source Title">
-                                  {hisData.platform || "Fiverr"} &nbsp; ---{">"}{" "}
-                                  &nbsp; view
-                                </span>
-                              </a>
-                            </footer>
-                          </blockquote>
-                        </div>
-                      );
-                    })
-                ) : (
-                  <Loader type="spinner" />
-                )}
-              </div>
-              <div className="w-full sm:w-1/2 md:w-1/4">
-                <div className="flying-avatar-wrapper">
-                  <div className="flying-avatar-wrapper">
-                    {secondHalf.map((hisData, key) => {
-                      return (
-                        <span
-                          onClick={() => setSelectedReview(hisData.id)}
-                          key={key}
-                          className="avatar-circle flying"
-                        >
-                          <Image
-                            src={defaultImg}
-                            alt={"image"}
-                            width={100}
-                            height={100}
-                          />
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </>
-          ) : (
-            <div className="w-full text-center">
-              <Loader type="spinner" />
             </div>
-          )}
-        </div>
+          </>
+        ) : (
+          <div className="w-full text-center">
+            <Loader type="spinner" />
+          </div>
+        )}
       </div>
     </section>
   );

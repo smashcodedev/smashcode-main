@@ -107,7 +107,7 @@
 
   .spinner {
     border: 3px solid var(--bg-white);
-    border-top: 5px solid var(--primary);
+    border-top: 5px solid var(--project-bg);
     border-radius: 50%;
     width: 30px;
     height: 30px;

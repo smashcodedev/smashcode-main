@@ -855,26 +855,6 @@ a[href]:hover {
     justify-content: flex-start;
 }
 
-.avatar-circle {
-    display: flex;
-    width: 50px;
-    background-color: #f3f3f3;
-    height: 50px;
-    border: 2px solid #a0a0a0;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-right: 15px;
-}
-
-.avatar-circle img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    text-align: center;
-}
-
 .flying-avatar-wrapper {
     position: relative;
     width: 100%;
