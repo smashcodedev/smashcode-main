@@ -24,6 +24,7 @@ const HeroSection: React.FC = () => {
             alt="smash code logo"
             width={554}
             height={454}
+            priority
             className="object-contain w-[50rem]"
           />
         </div>

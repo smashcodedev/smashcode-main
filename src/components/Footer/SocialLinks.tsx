@@ -98,6 +98,7 @@ const SocialLinks = () => {
             target="_blank"
             rel="noreferrer"
             className="text-3xl"
+            aria-label="social link"
           >
             {icon}
           </Link>

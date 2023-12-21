@@ -10,7 +10,8 @@ const Logo = () => {
         width={554}
         height={437}
         quality={100}
-        className="object-contain w-20 cursor-pointer"
+        priority
+        className="w-20 cursor-pointer object-contain"
       />
     </Link>
   );
