@@ -43,12 +43,12 @@ const HeroSection: React.FC = () => {
           <Button variant="primary">Let&apos;s talk</Button>
         </div>  
 
-        <div className="relative h-[500px] max-w-[550px]">
+        <div className="relative text-center">
           <canvas
-            className="mx-auto my-0 h-full w-full text-center "
+            className="mx-auto my-auto text-center"
             id="canvas"
-            height="600"
-            width="762"
+            height="500"
+            width="500"
           ></canvas>
         </div>
       </div>
