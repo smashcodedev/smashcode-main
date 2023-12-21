@@ -1,5 +1,4 @@
 import ctImage from "../../public/images/projects/contentWriting.jpg";
-import videoPoster from "../../public/images/projects/videoPoster.jpg";
 import graphProj from "../../public/images/projects/graphProj.png";
 import { StaticImageData } from "next/image";
 
@@ -19,9 +18,9 @@ type Projects = { [K in ProjectNames]: ProjectType };
 
 const projectsData: Projects = {
   rarare: {
-    imageUrl: videoPoster,
-    description: `This Website application created in React.js for the company Rarare. It is mobile responsive and consists of more than 70 pages with cool animations.
-      `,
+    imageUrl: "/images/projects/videoPoster.jpg",
+    description:
+      "This Website application created in React.js for the company Rarare. It is mobile responsive and consists of more than 70 pages with cool animations.",
     title: "Rarare",
     videoUrl:
       "https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/projects-images%2Fvideos%2F2-Rarare.mp4?alt=media&token=d41fc8f7-be11-41de-beda-55d3041a391f",

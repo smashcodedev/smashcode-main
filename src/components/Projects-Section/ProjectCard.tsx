@@ -38,7 +38,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             muted
             playsInline
             controls
-            loop
             src={videoUrl}
             className="w-full rounded-md object-contain"
           ></video>
