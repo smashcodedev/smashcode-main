@@ -406,7 +406,7 @@
   .side-bar-logo {
     padding: 12px 0 15px 0;
     width: 100%;
-    /* background-color: var(--primary); */
+    /* background-color: var(--project-bg); */
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.418);
   }
@@ -432,17 +432,17 @@
     min-width: 225px;
     height: 100vh;
     --black: rgb(20, 20, 20);
-    background-color: var(--black);
+    background-color: #000;
     overflow-x: hidden;
     overflow-y: auto;
-    border-right: var(--primary) 2px solid;
+    border-right: var(--project-bg) 2px solid;
     transition: left 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     display: flex;
     flex-direction: column;
   }
   .sidebar-bottom {
     width: 100%;
-    background-color: var(--primary);
+    background-color: var(--project-bg);
     text-align: center;
     margin-top: auto;
   }
@@ -473,7 +473,7 @@
   }
   .nav-side-bar-mob nav ul .active-nav-link {
     border-bottom: none;
-    background-color: var(--primary);
+    background-color: var(--project-bg);
   }
   /* menu open close svg animation and button */
   .hamburglar {
@@ -508,7 +508,7 @@
     margin: 34px 34px 0 0;
     transform: rotate(0deg);
     transform-origin: 100% 0;
-    background: var(--primary);
+    background: var(--project-bg);
   }
   .path-rotation:before {
     content: "";
@@ -516,7 +516,7 @@
     width: 30px;
     height: 34px;
     margin: 0 4px 0 0;
-    background: var(--primary);
+    background: var(--project-bg);
   }
   @keyframes rotate-out {
     0% {
@@ -602,7 +602,7 @@
     height: 4px;
     width: 36px;
     border-radius: 2px;
-    background: var(--primary);
+    background: var(--project-bg);
   }
   .burger-bun-top {
     top: 0;

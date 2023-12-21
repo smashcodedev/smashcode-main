@@ -42,9 +42,11 @@ const Navbar: React.FC = () => {
   });
 
   const openMenu = () => {
+    console.log("open");
     isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
   };
   const closeSideBar = () => {
+    console.log("close");
     setIsMenuOpen(false);
   };
 
@@ -117,7 +119,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      <div className="nav-side-bar-mob hidden lg:block">
+      <div className="nav-side-bar-mob">
         {isMenuOpen && (
           <div className="side-bar-overlay" onClick={closeSideBar}></div>
         )}
