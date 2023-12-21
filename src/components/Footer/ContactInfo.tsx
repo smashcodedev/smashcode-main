@@ -16,18 +16,16 @@ const contactInfo: ContactInfoTypes[] = [
 
 const ContactInfo: React.FC = () => {
   return (
-    <div className="relative w-full border-b border-b-[#373636] pb-4 pt-5">
-      <div className="-mx-2 flex flex-wrap">
+    <div className="relative w-full border-b border-b-[#373636] pb-4 pt-5 lg:flex">
+      <div className="-mx-2 lg:flex justify-between w-full items-center">
         {contactInfo.map(({ label, info, icon }) => (
-          <div key={label} className="md:w-1/3 md:pb-0">
-            <div className="flex items-center justify-center gap-4 md:gap-2">
-              <div className="min-h-[50px] w-[10%] text-center text-4xl text-primary-green">
-                {icon}
-              </div>
-              <div className="w-5/6 pl-2">
-                <h4 className="text-xl font-semibold text-white">{label}</h4>
-                <span className="text-lg text-light-gray">{info}</span>
-              </div>
+          <div key={label} className="md:w-1/3 flex items-center justify-center lg:gap-4 gap-2">
+            <div className="min-h-[50px] w-[10%] text-center text-4xl text-primary-green">
+              {icon}
+            </div>
+            <div className="w-5/6 pl-2">
+              <h4 className="text-xl font-semibold text-white">{label}</h4>
+              <span className="text-lg text-light-gray">{info}</span>
             </div>
           </div>
         ))}

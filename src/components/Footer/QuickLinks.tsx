@@ -28,7 +28,7 @@ const quickLinks: QuickLinksTypes[] = [
 const QuickLinks = () => {
   return (
     <div className="mt-2 md:mt-0 md:w-1/2 lg:w-1/3 xl:w-1/3">
-      <h3 className="relative mb-10 text-xl font-normal text-white before:absolute before:bottom-[-4px] before:top-0 before:h-[2px] before:w-12 before:bg-primary-green before:content-['']">
+      <h3 className="mb-6 text-xl font-normal text-white">
         Quick - Links
       </h3>
 

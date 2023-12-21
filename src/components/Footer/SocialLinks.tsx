@@ -84,7 +84,7 @@ const socialLinks: SocialLinksTypes[] = [
 const SocialLinks = () => {
   return (
     <div className="mt-2 md:mt-0 md:w-1/2 lg:w-1/3 xl:w-1/3">
-      <h3 className="relative mb-10 text-xl font-normal text-white after:absolute after:bottom-0.5 after:left-1/2 after:h-[1px] after:w-2/5 after:-translate-x-1/2 after:transform  after:content-['']">
+      <h3 className="mb-6 text-xl font-normal text-white">
         Social - Links
       </h3>
       {socialLinks.map(({ href, icon, style }) => (

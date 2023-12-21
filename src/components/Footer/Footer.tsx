@@ -12,9 +12,9 @@ const Footer = () => {
       <div className="mx-auto w-full px-4 lg:max-w-7xl">
         <ContactInfo />
         <div className="relative z-[2] pb-3 pt-3">
-          <div className="flex justify-between">
+          <div className="flex flex-col lg:flex-row gap-2 justify-between">
             <div className="xl:w-1/3 lg:w-1/3  mb-50 mt-md-0 mt-2">
-              <Link href="/" className="a-white">
+              <Link href="/">
                 <Image
                   src={logo}
                   alt="Smash Code logo"
