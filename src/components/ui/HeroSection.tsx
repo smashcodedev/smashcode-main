@@ -29,9 +29,9 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="text-center mt-32 xl:mt-52 xl:text-left">
+    <section className="mt-32 text-center xl:mt-52 xl:text-left">
       <div className="flex flex-col items-center justify-center xl:flex-row">
-        <div className="space-y-6"> 
+        <div className="space-y-6">
           <h1 className="text-center text-2xl capitalize xl:text-left xl:text-6xl xl:leading-tight">
             What you can think <br /> we can develop it <br />{" "}
             <span className="section-heading pb-5">for you!</span>
@@ -41,15 +41,10 @@ const HeroSection: React.FC = () => {
             solutions so that you can focus on your core business.
           </p>
           <Button variant="primary">Let&apos;s talk</Button>
-        </div>  
+        </div>
 
         <div className="relative text-center">
-          <canvas
-            className="mx-auto my-auto text-center"
-            id="canvas"
-            height="500"
-            width="500"
-          ></canvas>
+          <canvas className="mx-auto my-auto text-center w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]" id="canvas"></canvas>
         </div>
       </div>
     </section>
