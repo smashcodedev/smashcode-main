@@ -99,14 +99,9 @@
   }
 
   /* service section */
-  .service-col {
-    @apply m-3;
-  }
-
   .spinner {
     border: 3px solid var(--bg-white);
     border-top: 5px solid var(--project-bg);
-    border-radius: 50%;
     width: 30px;
     height: 30px;
     animation: spin 1s linear infinite;
@@ -116,13 +111,13 @@
   }
 
   .box-item.with-icon {
-    overflow: visible;
     margin-top: 56px;
+    @apply overflow-visible;
   }
 
   .service-box-item {
     background: #282828fc;
-    height: 83%;
+    height: 85%;
   }
 
   .box-item {
@@ -299,13 +294,6 @@
     align-items: center;
     overflow: hidden;
     margin-right: 15px;
-  }
-
-  .avatar-circle img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    text-align: center;
   }
 
   .flying-avatar-wrapper {

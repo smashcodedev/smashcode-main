@@ -1,5 +1,4 @@
 import { ServiceType } from "@/data/services";
-import Image from "next/image";
 
 const ServiceCard: React.FC<ServiceType> = ({ title, description, icon }) => {
   return (

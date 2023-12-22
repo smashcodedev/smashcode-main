@@ -9,7 +9,7 @@ const ServicesList: React.FC<{ services: ServiceType[] }> = ({ services }) => {
       <div className="-mx-2 grid w-full grid-cols-1 md:grid-cols-2">
         {services.map(({ title, description, icon }, key) => {
           return (
-            <div key={key} className="service-col fade-in-bottom">
+            <div key={key} className="m-3 fade-in-bottom">
               <ServiceCard
                 key={key}
                 title={title}

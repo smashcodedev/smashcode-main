@@ -4,4 +4,9 @@ type HeadingProps = {
   description?: string;
 };
 
-export type { HeadingProps };
+type LinksType = {
+  href: string;
+  label: string;
+};
+
+export type { HeadingProps, LinksType };

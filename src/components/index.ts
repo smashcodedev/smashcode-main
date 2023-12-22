@@ -1,7 +1,8 @@
-import Navbar from "./ui/Navbar";
+import Navbar from "./Navbar/Navbar";
 import Logo from "./ui/Logo";
-import NavItems from "./ui/NavItems";
-import NavItem from "./ui/NavItem";
+import NavItems from "./Navbar/NavItems";
+import NavItem from "./Navbar/NavItem";
+import NavMobile from "./Navbar/NavMobile";
 import Button from "./ui/Button";
 import HeroSection from "./ui/HeroSection";
 import Projects from "./Projects-Section/Projects";
@@ -18,12 +19,13 @@ import SocialLinks from "./Footer/SocialLinks";
 import QuickLinks from "./Footer/QuickLinks";
 import Copywrite from "./Footer/Copywrite";
 import ContactInfo from "./Footer/ContactInfo";
-import Feedback from './ui/Feedback'
+import Feedback from "./ui/Feedback";
 
 export {
   Navbar,
   NavItems,
   NavItem,
+  NavMobile,
   HeroSection,
   Logo,
   Button,
@@ -41,5 +43,5 @@ export {
   QuickLinks,
   Copywrite,
   ContactInfo,
-  Feedback
+  Feedback,
 };
