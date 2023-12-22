@@ -9,7 +9,7 @@ import "@/styles/footer.css";
 const Footer = () => {
   return (
     <footer className="relative mt-auto overflow-hidden bg-secondary-gray text-base font-normal">
-      <div className="mx-auto w-full px-4 lg:max-w-7xl">
+      <div className="mx-auto w-full p-4 lg:max-w-7xl">
         <ContactInfo />
         <div className="relative z-[2] pb-3 pt-3">
           <div className="flex flex-col justify-between gap-2 lg:flex-row">

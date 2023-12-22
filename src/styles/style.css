@@ -311,13 +311,6 @@ a[href]:hover {
     padding: 0 !important;
 }
 
-.style-right-border {
-    border-right: 2px dashed var(--project-bg);
-}
-
-.style-left-border {
-    border-left: 2px dashed var(--project-bg);
-}
 
 .loader {
     border: 5px solid var(--bg-white);

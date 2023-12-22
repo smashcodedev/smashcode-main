@@ -1,21 +1,3 @@
-.head-header {
-    position: fixed;
-    top: 2%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 97%;
-    /* height: 125px; */
-    --black: rgb(20, 20, 20);
-    background-color: var(--black);
-    z-index: 999;
-    /* box-shadow: 0 8px 5px rgba(0, 255, 204, 0.548); */
-    box-shadow: -10px 8px 15px rgba(0, 0, 0, 0.363);
-    transition: top .4s ease;
-    max-width: 1300px;
-    border-radius: 14px;
-    border: 2px solid var(--primary);
-}
-
 .header-spacer {
     width: 100vw;
     height: 130px;

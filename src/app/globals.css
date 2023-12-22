@@ -358,6 +358,14 @@
     animation-delay: 0.4s;
   }
 
+  .style-right-border {
+    border-right: 2px dashed var(--project-bg);
+  }
+
+  .style-left-border {
+    border-left: 2px dashed var(--project-bg);
+  }
+
   @keyframes flyingAvatar {
     0% {
       -webkit-transform: rotate(0deg) translate(-10px) rotate(0deg);
@@ -753,5 +761,28 @@
       width: 0;
       left: 36px;
     }
+  }
+
+  .hide-scroll-header {
+    position: fixed;
+    top: -125px;
+  }
+
+  .head-header {
+    position: fixed;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 97%;
+    /* height: 125px; */
+    --black: rgb(20, 20, 20);
+    background-color: var(--black);
+    z-index: 999;
+    /* box-shadow: 0 8px 5px rgba(0, 255, 204, 0.548); */
+    box-shadow: -10px 8px 15px rgba(0, 0, 0, 0.363);
+    transition: top 0.4s ease;
+    max-width: 1300px;
+    border-radius: 14px;
+    border: 2px solid var(--primary);
   }
 }

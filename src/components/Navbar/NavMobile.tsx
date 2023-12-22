@@ -17,7 +17,7 @@ const NavMob: React.FC<NavMobProps> = ({ links }) => {
 
   return (
     <>
-      <div className="header-container-mobile block lg:hidden">
+      <div className="header-container-mobile block lg:hidden mb-2">
         <div className="header-menu-openClose-btn">
           <div
             id="hamburger"
@@ -74,7 +74,10 @@ const NavMob: React.FC<NavMobProps> = ({ links }) => {
           ></div>
         )}
         <nav style={{ left: isMenuOpen ? 0 : "-120%" }}>
-          <div className="side-bar-logo">
+          <div
+            className="side-bar-logo flex items-center justify-center
+          "
+          >
             <Link href="/">
               <Image src={logo} alt="Smash Code logo" />
             </Link>
