@@ -35,29 +35,31 @@ const Navbar: React.FC = () => {
   });
 
   return (
-    <nav
-      className="z-10 m-4 flex items-center justify-between rounded-2xl
-      border-2 border-primary-green bg-secondary-gray px-4 py-1 text-white shadow-xl shadow-secondary-gray lg:px-12 lg:py-3 2xl:mx-36"
-      ref={deskHeader}
-    >
-      <Logo />
+    <header className="fixed top-0 w-full z-50">
+      <nav
+        className="m-4 flex items-center justify-between rounded-2xl
+        border-2 border-primary-green bg-secondary-gray px-4 py-1 text-white shadow-xl shadow-secondary-gray lg:px-12 lg:py-3 2xl:mx-36"
+        ref={deskHeader}
+      >
+        <Logo />
 
-      <div className="hidden lg:block">
-        <NavItems links={links} />
-      </div>
+        <div className="hidden lg:block">
+          <NavItems links={links} />
+        </div>
 
-      <div>
-        <Link href="/contact">
-          <Button
-            variant="secondary"
-            className="header-contact-btn hidden lg:block"
-          >
-            Contact
-          </Button>
-        </Link>
-        <NavMobile links={links} />
-      </div>
-    </nav>
+        <div>
+          <Link href="/contact">
+            <Button
+              variant="secondary"
+              className="header-contact-btn hidden lg:block"
+            >
+              Contact
+            </Button>
+          </Link>
+          <NavMobile links={links} />
+        </div>
+      </nav>
+    </header>
   );
 };
 

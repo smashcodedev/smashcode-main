@@ -29,9 +29,9 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="text-center xl:mt-28 xl:text-left">
+    <section className="text-center mt-32 xl:mt-52 xl:text-left">
       <div className="flex flex-col items-center justify-center xl:flex-row">
-        <div className="space-y-6">
+        <div className="space-y-6"> 
           <h1 className="text-center text-2xl capitalize xl:text-left xl:text-6xl xl:leading-tight">
             What you can think <br /> we can develop it <br />{" "}
             <span className="section-heading pb-5">for you!</span>
