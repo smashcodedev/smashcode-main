@@ -786,7 +786,7 @@
     z-index: 999;
     /* box-shadow: 0 8px 5px rgba(0, 255, 204, 0.548); */
     box-shadow: -10px 8px 15px rgba(0, 0, 0, 0.363);
-    transition: top 0.4s ease;
+
     max-width: 1300px;
     border-radius: 14px;
     border: 2px solid var(--primary);
@@ -801,6 +801,7 @@
   .hide-scroll-header {
     position: fixed;
     top: -125px;
+    transition: top 0.4s ease;
   }
 
   .header-container {

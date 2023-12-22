@@ -12,7 +12,10 @@ const config: Config = {
         "primary-gray": "#1F1F1F",
         "secondary-gray": "#141414",
         "primary-green": "#1AACA2",
-        "light-gray": "#757575"
+        "light-gray": "#757575",
+      },
+      transitionProperty: {
+        top: "top",
       },
     },
   },

@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   });
 
   return (
-    <header className="fixed top-0 z-50 w-full">
+    <header className="fixed top-0 z-50 w-full transition-top duration-500 ease-in-out">
       <nav
         className="m-3 flex items-center justify-between rounded-2xl
         border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray lg:px-12 lg:py-3 2xl:mx-36"
