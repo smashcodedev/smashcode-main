@@ -1,20 +1,8 @@
 import React from "react";
 import { NavItem } from "@/components";
+import { LinksType } from "./Navbar";
 
-type LinksType = {
-  href: string;
-  label: string;
-};
-
-const links: LinksType[] = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/services", label: "Services" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/about", label: "About" },
-];
-
-const NavItems: React.FC = () => {
+const NavItems: React.FC<{ links: LinksType[] }> = ({ links }) => {
   return (
     <div className="flex items-center justify-center gap-4 text-xl font-light uppercase">
       {links.map(({ href, label }) => (

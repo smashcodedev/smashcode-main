@@ -3,10 +3,11 @@
 import { Logo, NavItems, Button } from "@/components";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import logo from "@/../public/images/web/logo.svg";
+import logo from "@/../public/logo.png";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
-type LinksType = {
+export type LinksType = {
   href: string;
   label: string;
 };
@@ -22,6 +23,7 @@ const links: LinksType[] = [
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const deskHeader = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
 
   let lastScroll = 0;
   const headerSticky = () => {
@@ -41,15 +43,6 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", headerSticky);
   });
 
-  const openMenu = () => {
-    console.log("open");
-    isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
-  };
-  const closeSideBar = () => {
-    console.log("close");
-    setIsMenuOpen(false);
-  };
-
   return (
     <nav
       className="z-10 m-4 flex items-center justify-between rounded-2xl
@@ -59,86 +52,95 @@ const Navbar: React.FC = () => {
       <Logo />
 
       <div className="hidden lg:block">
-        <NavItems />
+        <NavItems links={links} />
       </div>
 
-      <Link href="/contact">
-        <Button
-          variant="secondary"
-          className="header-contact-btn hidden lg:block"
-        >
-          Contact
-        </Button>
-      </Link>
-
-      <div className="header-container-mobile block lg:hidden">
-        <div className="header-menu-openClose-btn">
-          <div
-            id="hamburger"
-            className={`hamburglar ${isMenuOpen ? "is-open" : "is-closed"}`}
-            onClick={openMenu}
+      <div>
+        <Link href="/contact">
+          <Button
+            variant="secondary"
+            className="header-contact-btn hidden lg:block"
           >
-            <div className="burger-icon">
-              <div className="burger-container">
-                <span className="burger-bun-top"></span>
-                <span className="burger-filling"></span>
-                <span className="burger-bun-bot"></span>
+            Contact
+          </Button>
+        </Link>
+        <div className="header-container-mobile block lg:hidden">
+          <div className="header-menu-openClose-btn">
+            <div
+              id="hamburger"
+              className={`hamburglar text-4xl ${
+                isMenuOpen ? "is-open" : "is-closed"
+              }`}
+              onClick={() => setIsMenuOpen((isMenuOpen) => !isMenuOpen)}
+            >
+              <div className="burger-icon">
+                <div className="burger-container">
+                  <span className="burger-bun-top"></span>
+                  <span className="burger-filling"></span>
+                  <span className="burger-bun-bot"></span>
+                </div>
               </div>
-            </div>
 
-            <div className="burger-ring">
-              <svg className="svg-ring">
-                <path
-                  className="path"
-                  fill="none"
-                  stroke="var(--primary)"
-                  strokeMiterlimit="10"
-                  strokeWidth="4"
-                  d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2"
-                />
+              <div className="burger-ring">
+                <svg className="svg-ring">
+                  <path
+                    className="path"
+                    fill="none"
+                    stroke="var(--primary)"
+                    strokeMiterlimit="10"
+                    strokeWidth="4"
+                    d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2"
+                  />
+                </svg>
+              </div>
+              <svg width="0" height="0">
+                <mask id="mask">
+                  <path
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    stroke="#ff0000"
+                    strokeMiterlimit="10"
+                    strokeWidth="4"
+                    d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"
+                  />
+                </mask>
               </svg>
-            </div>
-            <svg width="0" height="0">
-              <mask id="mask">
-                <path
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="#ff0000"
-                  strokeMiterlimit="10"
-                  strokeWidth="4"
-                  d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"
-                />
-              </mask>
-            </svg>
-            <div className="path-burger">
-              <div className="animate-path">
-                <div className="path-rotation"></div>
+              <div className="path-burger">
+                <div className="animate-path">
+                  <div className="path-rotation"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="nav-side-bar-mob">
-        {isMenuOpen && (
-          <div className="side-bar-overlay" onClick={closeSideBar}></div>
-        )}
-        <nav style={{ left: isMenuOpen ? 0 : "-120%" }}>
-          <div className="side-bar-logo">
-            <Link href="/">
-              <Image src={logo} alt="Smash Code logo" />
-            </Link>
-          </div>
-          <ul>
-            {links.map(({ href, label }) => (
-              <li key={label}>
-                <Link href={href}>
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="nav-side-bar-mob">
+          {isMenuOpen && (
+            <div
+              className="side-bar-overlay"
+              onClick={() => setIsMenuOpen(false)}
+            ></div>
+          )}
+          <nav style={{ left: isMenuOpen ? 0 : "-120%" }}>
+            <div className="side-bar-logo">
+              <Link href="/">
+                <Image src={logo} alt="Smash Code logo" />
+              </Link>
+            </div>
+            <ul>
+              {links.map(({ href, label }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className={`${pathname === href ? "active-nav-link" : ""}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
     </nav>
   );
