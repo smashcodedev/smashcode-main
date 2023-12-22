@@ -166,10 +166,10 @@ const Feedback = () => {
   }, []);
 
   return (
-    <section>
+    <section className="m-7">
       <SectionHeading subHeading="Clients" heading="Feedback" />
 
-      <div className="feed-back-short-row style-right-border flex flex-wrap">
+      <div className="feed-back-short-row style-right-border flex items-center justify-center flex-wrap">
         {!loading && featuredReviews.length > 0 ? (
           <>
             <div className="w-full sm:w-1/2 md:w-1/4">
@@ -240,7 +240,7 @@ const Feedback = () => {
                 <Loader type="spinner" />
               )}
             </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
+            <div className="w-full mt-12 md:mt-0 sm:w-1/2 md:w-1/4">
               <div className="flying-avatar-wrapper">
                 <div className="flying-avatar-wrapper">
                   {secondHalf.map(({ id }) => {
