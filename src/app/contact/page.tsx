@@ -1,82 +1,33 @@
 "use client";
 
-import { useState } from "react";
 import emailjs from "emailjs-com";
 import { BiRename } from "react-icons/bi";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
-import ContactSVG from "@/components/ui/ContactSVG";
-
-// function Alert(props) {
-//   return <MuiAlert elevation={6} variant="filled" {...props} />;
-// }
+import { ContactSVG } from "@/components";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
+import isEmail from "validator/lib/isEmail";
 
 const ContactPage: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const { register, handleSubmit, reset } = useForm();
 
-  const [popAlert, setPopAlert] = useState({
-    open: false,
-    type: "success",
-    msg: "",
-  });
-
-  const closeNotification = (e, reason) => {
-    if (reason === "clickaway") {
+  const onSubmitForm = async (data: any) => {
+    if (!isEmail(data.email)) {
+      toast.error("Please enter a valid email address.");
       return;
     }
-    setPopAlert({ open: false, type: "success", msg: "" });
-  };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    if (
-      formData.name.trim() &&
-      formData.email.trim() &&
-      formData.message.trim()
-    ) {
-      let emRgx =
-        /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if (emRgx.test(formData.email)) {
-        emailjs
-          .sendForm(
-            "service_6wvrm9j",
-            "template_3agi9v8",
-            e.target,
-            "user_gT75s8QwENPHn7STZsFUI",
-          )
-          .then(
-            (result) => {
-              setPopAlert({
-                open: true,
-                type: "success",
-                msg: "Thank you! for contacting us.",
-              });
-              setFormData({ name: "", email: "", message: "" });
-            },
-            (error) => {
-              setPopAlert({
-                open: true,
-                type: "error",
-                msg: "something went wrong! plz also check your internet connection.",
-              });
-            },
-          );
-      } else {
-        setPopAlert({
-          open: true,
-          type: "info",
-          msg: "Email address is not valid!",
-        });
-      }
-    } else {
-      setPopAlert({
-        open: true,
-        type: "info",
-        msg: "All input fields are required!",
-      });
+    try {
+      await emailjs.send(
+        "service_6wvrm9j",
+        "template_3agi9v8",
+        data,
+        "user_gT75s8QwENPHn7STZsFUI",
+      );
+      toast.success("Thank you! for contacting us.");
+      reset();
+    } catch (error) {
+      toast.error("Something went wrong! Please try again.");
     }
   };
   return (
@@ -96,23 +47,19 @@ const ContactPage: React.FC = () => {
         <div className="form-container flex flex-wrap items-center justify-center">
           <ContactSVG />
           <div className="w-full text-center md:w-1/2">
-            <form onSubmit={(e) => submitForm(e)} className="contact-form">
+            <form
+              onSubmit={handleSubmit(onSubmitForm)}
+              className="contact-form"
+            >
               <div className="form-group relative">
                 <BiRename className="contact-label-icon" />
                 <label htmlFor="formName" className="block"></label>
                 <input
                   type="text"
-                  name="name"
                   id="formName"
                   className="form-control form-control-lg thick"
                   placeholder="Name"
-                  value={formData.name}
-                  onChange={(e) => {
-                    setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value,
-                    });
-                  }}
+                  {...register("name", { required: true })}
                 />
               </div>
               <div className="form-group relative">
@@ -120,33 +67,19 @@ const ContactPage: React.FC = () => {
                 <label htmlFor="formEmail" className="block"></label>
                 <input
                   type="email"
-                  name="email"
                   id="formEmail"
                   className="form-control form-control-lg thick"
                   placeholder="E-mail"
-                  value={formData.email}
-                  onChange={(e) => {
-                    setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value,
-                    });
-                  }}
+                  {...register("email", { required: true })}
                 />
               </div>
               <div className="form-group message relative">
                 <textarea
                   id="formMessage"
-                  name="message"
                   className="form-control form-control-lg"
                   rows={7}
                   placeholder="Message"
-                  value={formData.message}
-                  onChange={(e) => {
-                    setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value,
-                    });
-                  }}
+                  {...register("message", { required: true })}
                 ></textarea>
               </div>
               <div className="text-center">
@@ -165,19 +98,6 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* <Snackbar
-        open={popAlert.open}
-        autoHideDuration={3000}
-        onClose={closeNotification}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
-        }}
-      >
-        <Alert onClose={closeNotification} severity={popAlert.type}>
-          <p className="lead">{popAlert.msg}</p>
-        </Alert>
-      </Snackbar> */}
     </section>
   );
 };

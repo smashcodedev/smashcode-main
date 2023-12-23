@@ -20,6 +20,7 @@ import QuickLinks from "./Footer/QuickLinks";
 import Copywrite from "./Footer/Copywrite";
 import ContactInfo from "./Footer/ContactInfo";
 import Feedback from "./ui/Feedback";
+import ContactSVG from "./ui/ContactSVG";
 
 export {
   Navbar,
@@ -44,4 +45,5 @@ export {
   Copywrite,
   ContactInfo,
   Feedback,
+  ContactSVG,
 };

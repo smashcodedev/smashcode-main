@@ -15,7 +15,7 @@ const services: ServiceType[] = [
   servicesData.photoEditing,
 ];
 
-const page: React.FC = () => {
+const ServicesPage: React.FC = () => {
   return (
     <section className="m-10 mx-auto w-full lg:max-w-7xl">
       <div className="m-7 mt-32 xl:mt-44 2xl:ml-0">
@@ -31,4 +31,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default ServicesPage;
