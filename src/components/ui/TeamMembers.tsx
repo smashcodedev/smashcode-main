@@ -12,7 +12,7 @@ const TeamMembers: React.FC = () => {
         {teamMembers?.length > 0 ? (
           teamMembers.map(({ memberName, role, imageUrl }, key) => {
             return (
-              <div className="w-full md:w-1/2 lg:w-1/3" key={key}>
+              <div className="col-md-4 w-full md:w-1/2 lg:w-1/3" key={key}>
                 <UserCard
                   type={""}
                   memberName={memberName}

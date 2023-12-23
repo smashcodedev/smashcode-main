@@ -35,7 +35,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="style-left-border mt-5 flex flex-wrap items-center px-6 pt-5">
+        <div className="style-left-border mt-16 flex flex-wrap items-center px-6 pt-5">
           <SectionHeading subHeading="Our" heading="Missions" />
           <div className="flex flex-wrap">
             <p className="flex w-full items-center text-base md:w-1/2 md:text-xl">
