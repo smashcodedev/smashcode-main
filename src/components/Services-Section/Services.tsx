@@ -1,6 +1,7 @@
 import React from "react";
-import { SectionHeading, ServiceHeader, ServicesList } from "@/components";
+import { Button, ServiceHeader, ServicesList } from "@/components";
 import { ServiceType } from "../../data/services";
+import Link from "next/link";
 
 type ServicesProps = {
   services: ServiceType[];
@@ -16,6 +17,12 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
       />
 
       <ServicesList services={services} />
+
+      <div className="my-8 text-center">
+        <Link href="/services">
+          <Button className="primary-btn">View More!</Button>
+        </Link>
+      </div>
     </section>
   );
 };

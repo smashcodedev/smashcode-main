@@ -1,8 +1,7 @@
 import React from "react";
-import { Button, ProjectCard } from "@/components";
+import { ProjectCard } from "@/components";
 import { ProjectType } from "../../data/projects";
 import { colors, getDividedData } from "../../utils/helpers";
-import Link from "next/link";
 
 const ProjectsList: React.FC<{ projects: ProjectType[] }> = ({ projects }) => {
   return (
@@ -59,11 +58,6 @@ const ProjectsList: React.FC<{ projects: ProjectType[] }> = ({ projects }) => {
             )}
           </div>
         </div>
-      <div className="w-full pt-10 text-center">
-        <Link href="/projects">
-          <Button variant="primary">View More!</Button>
-        </Link>
-      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
-import { ProjectsHeader, ProjectsList } from "@/components";
+import { Button, ProjectsHeader, ProjectsList } from "@/components";
 import { ProjectType } from "@/data/projects";
+import Link from "next/link";
 
 type ProjectsProps = {
   projects: ProjectType[];
@@ -16,6 +17,12 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       />
 
       <ProjectsList projects={projects} />
+
+      <div className="w-full pt-10 text-center">
+        <Link href="/projects">
+          <Button variant="primary">View More!</Button>
+        </Link>
+      </div>
     </section>
   );
 };

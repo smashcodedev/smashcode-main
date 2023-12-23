@@ -49,7 +49,7 @@ const servicesData: Services = {
     title: "Blockchain Web Apps",
     description:
       "We do frontend of NFT & blockchain websites and web apps and do smart contract integration using web3.js, Alchemy, Moralis, and other 3rd party libraries or tokens like ERC-20, ERC-720, and ERC-1155. In addition, we do wallet integration. These wallets include Metamask, Polygon, Coinbase, etc",
-    icon: <BsCpuFill /> ,
+    icon: <BsCpuFill />,
   },
   graphicsDesigning: {
     title: "Graphics Designing",
