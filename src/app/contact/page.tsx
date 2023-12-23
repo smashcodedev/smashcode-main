@@ -56,7 +56,6 @@ const ContactPage: React.FC = () => {
             >
               <div className="form-group relative">
                 <BiRename className="contact-label-icon" />
-                {/* <label htmlFor="formName" className="block"></label> */}
                 <input
                   type="text"
                   id="formName"
@@ -67,7 +66,6 @@ const ContactPage: React.FC = () => {
               </div>
               <div className="form-group relative">
                 <FaRegEnvelopeOpen className="contact-label-icon" />
-                {/* <label htmlFor="formEmail" className="block"></label> */}
                 <input
                   type="email"
                   id="formEmail"
