@@ -21,6 +21,9 @@ import Copywrite from "./Footer/Copywrite";
 import ContactInfo from "./Footer/ContactInfo";
 import Feedback from "./ui/Feedback";
 import ContactSVG from "./ui/ContactSVG";
+import Loader from "./ui/Loader";
+import TeamMembers from "./ui/TeamMembers";
+import UserCard from "./ui/UserCard";
 
 export {
   Navbar,
@@ -46,4 +49,7 @@ export {
   ContactInfo,
   Feedback,
   ContactSVG,
+  Loader,
+  TeamMembers,
+  UserCard,
 };

@@ -1148,4 +1148,527 @@
       font-size: 1.1rem;
     }
   }
+
+  /* About page */
+  .about-hero {
+    min-height: 90vh;
+  }
+
+  .about-us-hero-bg {
+    max-width: 350px;
+    animation: rotate-img 17s linear infinite;
+  }
+
+  @keyframes rotate-img {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .about-svg-img {
+    width: 100% !important;
+    max-width: 350px;
+  }
+
+  /* Team section cards */
+
+  .user-card {
+    width: 100%;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    position: relative;
+    background-color: var(--bg-white);
+    color: var(--black);
+    margin: 28px auto;
+    box-shadow: 5px 8px 1px var(--primary);
+    user-select: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .user-card-name-sec {
+    padding: 20px 14px 12px 14px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+  }
+
+  .user-card-name-sec h2 {
+    font-size: 2.2rem;
+  }
+
+  .user-card-name-sec p {
+    font-weight: 650;
+    font-size: 1.2rem;
+    color: var(--white);
+  }
+
+  .user-profile-img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f8f9fa;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 5px solid var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.2s linear;
+  }
+
+  .user-card:hover .user-profile-img-wrapper {
+    opacity: 0.2;
+    filter: blur(2px);
+    background-color: var(--primary);
+  }
+
+  .user-card:hover {
+    box-shadow: 5px 8px 1px var(--white);
+  }
+
+  .user-profile-img-wrapper img {
+    width: 100%;
+  }
+
+  /* 11 */
+
+  .user-card1 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .user-card1::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -104%;
+    width: 104%;
+    height: 2.5px;
+    background-color: var(--secondary);
+  }
+
+  .team-member-main .col-md-4:nth-child(3n - 2) .user-card1::before {
+    position: absolute;
+    content: "";
+    top: -100px;
+    left: 50%;
+    width: 4px;
+    height: 100px;
+    background-color: var(--secondary);
+    z-index: -1;
+  }
+
+  .team-member-main .col-md-4:last-child .user-card1::after,
+  .team-member-main .col-md-4:nth-child(3n) .user-card1::after {
+    display: none;
+    width: 0;
+  }
+
+  .team-member-main .col-md-4:nth-child(1) .user-card1::before {
+    display: none;
+    width: 0;
+  }
+
+  .user-card-name-sec1 {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: var(--black);
+  }
+
+  .user-card1:hover {
+    border-color: transparent;
+    transition: 0.7s ease-in-out;
+  }
+  .user-card-name-sec1::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.7s ease-in-out;
+    border: 3px dashed transparent;
+  }
+
+  .user-card1:hover .user-card-name-sec1::before {
+    transform: rotate(40deg);
+    border: 3px dashed var(--primary);
+    background-color: rgba(127, 255, 212, 0.144);
+  }
+
+  @keyframes my {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .user-card-name-sec1 h2 {
+    font-size: 1.1rem;
+    padding-top: 20px;
+  }
+
+  .user-card-name-sec1 p {
+    font-weight: 650;
+    font-size: 0.8rem;
+    color: var(--primary);
+  }
+
+  .user-profile-img-wrapper1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 3px;
+    transition: 0.3s linear;
+    z-index: 111;
+    background-color: var(--black);
+  }
+
+  .user-profile-img-wrapper1 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .user-card1:hover .user-profile-img-wrapper1 {
+    top: -85%;
+    border-radius: 50%;
+  }
+
+  .team-member-main {
+    padding-top: 120px;
+  }
+
+  .team-member-main .col-md-4:nth-child(1) .user-profile-img-wrapper1 {
+    top: -85%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .user-card1 {
+      width: 180px;
+      height: 180px;
+    }
+    .team-member-main .col-md-4:nth-child(3n) .user-card1::after {
+      display: block;
+      width: 104%;
+    }
+    .team-member-main .col-md-4:nth-child(2n) .user-card1::after {
+      display: none;
+      width: 0;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .user-card1::before {
+      display: none !important;
+    }
+    .team-member-main .col-md-4:nth-child(2n) .user-card1::after {
+      display: block;
+      width: 3px;
+    }
+    .user-card1::after {
+      display: block;
+      bottom: -100%;
+      left: 50%;
+      height: 100%;
+      width: 3px !important;
+      background-color: var(--primary);
+      z-index: -1;
+    }
+    .team-member-main .col-md-4:last-child .user-card1::after {
+      display: none;
+    }
+    .user-card-name-sec1 {
+      background-color: #000;
+    }
+    .user-card-name-sec1 h2 {
+      font-size: 0.93rem;
+    }
+    .user-card-name-sec1 p {
+      font-weight: 500;
+      font-size: 0.7rem;
+    }
+  }
+
+  /* Team Section */
+  .user-card {
+    width: 100%;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    position: relative;
+    background-color: var(--bg-white);
+    color: var(--black);
+    margin: 28px auto;
+    box-shadow: 5px 8px 1px var(--primary);
+    user-select: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .user-card-name-sec {
+    padding: 20px 14px 12px 14px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+  }
+
+  .user-card-name-sec h2 {
+    font-size: 2.2rem;
+  }
+
+  .user-card-name-sec p {
+    font-weight: 650;
+    font-size: 1.2rem;
+    color: var(--white);
+  }
+
+  .user-profile-img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f8f9fa;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 5px solid var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.2s linear;
+  }
+
+  .user-card:hover .user-profile-img-wrapper {
+    opacity: 0.2;
+    filter: blur(2px);
+    background-color: var(--primary);
+  }
+
+  .user-card:hover {
+    box-shadow: 5px 8px 1px var(--white);
+  }
+
+  .user-profile-img-wrapper img {
+    width: 100%;
+  }
+
+  /* 11 */
+
+  .user-card1 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .user-card1::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -104%;
+    width: 104%;
+    height: 2.5px;
+    background-color: var(--secondary);
+  }
+
+  .team-member-main .col-md-4:nth-child(3n - 2) .user-card1::before {
+    position: absolute;
+    content: "";
+    top: -100px;
+    left: 50%;
+    width: 4px;
+    height: 100px;
+    background-color: var(--secondary);
+    z-index: -1;
+  }
+
+  .team-member-main .col-md-4:last-child .user-card1::after,
+  .team-member-main .col-md-4:nth-child(3n) .user-card1::after {
+    display: none;
+    width: 0;
+  }
+
+  .team-member-main .col-md-4:nth-child(1) .user-card1::before {
+    display: none;
+    width: 0;
+  }
+
+  .user-card-name-sec1 {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: var(--black);
+  }
+
+  .user-card1:hover {
+    border-color: transparent;
+    transition: 0.7s ease-in-out;
+  }
+  .user-card-name-sec1::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.7s ease-in-out;
+    border: 3px dashed transparent;
+  }
+
+  .user-card1:hover .user-card-name-sec1::before {
+    transform: rotate(40deg);
+    border: 3px dashed var(--primary);
+    background-color: rgba(127, 255, 212, 0.144);
+  }
+
+  @keyframes my {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .user-card-name-sec1 h2 {
+    font-size: 1.1rem;
+    padding-top: 20px;
+  }
+
+  .user-card-name-sec1 p {
+    font-weight: 650;
+    font-size: 0.8rem;
+    color: var(--primary);
+  }
+
+  .user-profile-img-wrapper1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 3px;
+    transition: 0.3s linear;
+    z-index: 111;
+    background-color: var(--black);
+  }
+
+  .user-profile-img-wrapper1 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .user-card1:hover .user-profile-img-wrapper1 {
+    top: -85%;
+    border-radius: 50%;
+  }
+
+  .team-member-main {
+    padding-top: 120px;
+  }
+
+  .team-member-main .col-md-4:nth-child(1) .user-profile-img-wrapper1 {
+    top: -85%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .user-card1 {
+      width: 180px;
+      height: 180px;
+    }
+    .team-member-main .col-md-4:nth-child(3n) .user-card1::after {
+      display: block;
+      width: 104%;
+    }
+    .team-member-main .col-md-4:nth-child(2n) .user-card1::after {
+      display: none;
+      width: 0;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .user-card1::before {
+      display: none !important;
+    }
+    .team-member-main .col-md-4:nth-child(2n) .user-card1::after {
+      display: block;
+      width: 3px;
+    }
+    .user-card1::after {
+      display: block;
+      bottom: -100%;
+      left: 50%;
+      height: 100%;
+      width: 3px !important;
+      background-color: var(--primary);
+      z-index: -1;
+    }
+    .team-member-main .col-md-4:last-child .user-card1::after {
+      display: none;
+    }
+    .user-card-name-sec1 {
+      background-color: #000;
+    }
+    .user-card-name-sec1 h2 {
+      font-size: 0.93rem;
+    }
+    .user-card-name-sec1 p {
+      font-weight: 500;
+      font-size: 0.7rem;
+    }
+  }
 }
