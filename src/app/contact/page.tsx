@@ -34,8 +34,8 @@ const ContactPage: React.FC = () => {
     }
   };
   return (
-    <section>
-      <div className="m-10 mx-auto mt-36 w-full lg:max-w-7xl">
+    <section className="m-10 mx-auto w-full lg:max-w-7xl">
+      <div className="m-10">
         <div className="flex flex-wrap">
           <div className="w-full text-center">
             <h1 className="mb-4 text-4xl">Talk to Us</h1>
@@ -56,22 +56,22 @@ const ContactPage: React.FC = () => {
             >
               <div className="form-group relative">
                 <BiRename className="contact-label-icon" />
-                <label htmlFor="formName" className="block"></label>
+                {/* <label htmlFor="formName" className="block"></label> */}
                 <input
                   type="text"
                   id="formName"
-                  className="form-control form-control-lg thick"
+                  className="form-control form-control-lg thick w-full"
                   placeholder="Name"
                   {...register("name", { required: true })}
                 />
               </div>
               <div className="form-group relative">
                 <FaRegEnvelopeOpen className="contact-label-icon" />
-                <label htmlFor="formEmail" className="block"></label>
+                {/* <label htmlFor="formEmail" className="block"></label> */}
                 <input
                   type="email"
                   id="formEmail"
-                  className="form-control form-control-lg thick"
+                  className="form-control form-control-lg thick w-full"
                   placeholder="E-mail"
                   {...register("email", { required: true })}
                 />
@@ -79,7 +79,7 @@ const ContactPage: React.FC = () => {
               <div className="form-group message relative">
                 <textarea
                   id="formMessage"
-                  className="form-control form-control-lg"
+                  className="form-control form-control-lg w-full"
                   rows={7}
                   placeholder="Message"
                   {...register("message", { required: true })}
