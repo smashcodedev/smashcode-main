@@ -8,6 +8,10 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
 
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+
 const ContactPage: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
 
@@ -17,13 +21,12 @@ const ContactPage: React.FC = () => {
       return;
     }
 
+    if (!serviceId || !templateId || !userId) {
+      throw new Error("Environment variables are not set");
+    }
+
     try {
-      await emailjs.send(
-        "service_6wvrm9j",
-        "template_3agi9v8",
-        data,
-        "user_gT75s8QwENPHn7STZsFUI",
-      );
+      await emailjs.send(serviceId, templateId, data, userId);
       toast.success("Thank you! for contacting us.");
       reset();
     } catch (error) {
