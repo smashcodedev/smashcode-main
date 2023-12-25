@@ -171,9 +171,6 @@
     .hide-scroll-header {
         top: -80px
     }
-    .head-header {
-        overflow: hidden;
-    }
     .header-logo-sec-mobile img {
         width: 75px;
         margin: 8px 0;

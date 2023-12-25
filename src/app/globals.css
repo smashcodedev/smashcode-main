@@ -813,9 +813,8 @@
   }
 
   .hide-scroll-header {
-    position: fixed;
-    top: -125px;
-    transition: top 0.4s ease;
+    transform: translateY(-129px);
+    transition: all 0.4s ease;
   }
 
   .header-container {

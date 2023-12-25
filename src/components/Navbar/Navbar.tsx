@@ -35,10 +35,10 @@ const Navbar: React.FC = () => {
   });
 
   return (
-    <header className="fixed top-0 z-[1000] w-full transition-top duration-500 ease-in-out">
+    <header className="fixed top-0 z-[1000] w-full">
       <nav
-        className="m-3 flex items-center justify-between rounded-2xl
-        border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray lg:max-w-7xl lg:px-14 2xl:mx-auto lg:py-3"
+        className="ease-linea m-3 flex items-center
+        justify-between rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] lg:max-w-7xl lg:px-14 lg:py-3 2xl:mx-auto"
         ref={deskHeader}
       >
         <Logo />
