@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
-      style={{ "--project-bg": bgColor } as any}
+      style={{ "--primary": bgColor } as any}
     >
       <div className="w-full flex flex-col gap-8 pb-8 text-[#e0e0e0]">
         <div className="mb-auto">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import defaultImg from "@/../public/images/noDatafound.png";
+import noDataFoundImg from "@/../public/images/avatar/no-image.jpg";
 import { FeedbackTypes } from "@/types";
 
 const FirstHalf: React.FC<{
@@ -17,7 +17,7 @@ const FirstHalf: React.FC<{
             className="avatar-circle flying"
           >
             <Image
-              src={defaultImg}
+              src={review.Image_URL || noDataFoundImg}
               alt={"image"}
               width={100}
               height={100}

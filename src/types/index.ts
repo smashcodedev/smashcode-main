@@ -16,6 +16,7 @@ type FeedbackTypes = {
   client_feedback: string;
   url: string;
   platform: string;
+  Image_URL: string;
 };
 
 type TeamMemberTypes = {
