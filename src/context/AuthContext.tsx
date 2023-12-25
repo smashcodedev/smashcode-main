@@ -1,5 +1,5 @@
 import { Loader } from "@/components";
-import { auth } from "@/services/apiAuth";
+import { auth } from "@/api/apiAuth";
 import { onAuthStateChanged } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 

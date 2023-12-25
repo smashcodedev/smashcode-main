@@ -5,7 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 const servicesCollectionRef = collection(db, "teamMembers");
 
-const getProjects = async () => {
+const getTeamMembers = async () => {
   try {
     const data = await getDocs(servicesCollectionRef);
 
@@ -15,4 +15,4 @@ const getProjects = async () => {
   }
 };
 
-export { getProjects };
+export { getTeamMembers };
