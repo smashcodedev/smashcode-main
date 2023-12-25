@@ -1,6 +1,5 @@
-import { db, firebaseApp } from "@/firebase/config";
-import { getDatabase, ref, get } from "firebase/database";
-import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/firebase/config";
+import { ref, get } from "firebase/database";
 
 const getProjects = async () => {
   try {

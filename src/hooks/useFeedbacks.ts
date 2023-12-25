@@ -1,5 +1,3 @@
-"use client";
-
 import { getFeedbacks } from "@/api/apiFeedbacks";
 import { useQuery } from "@tanstack/react-query";
 

@@ -13,7 +13,6 @@ const Feedback = () => {
   const [firstHalf, setFirstHalf] = useState([]);
   const [secondHalf, setSecondHalf] = useState([]);
 
-  // Filter and sort feedbacks once after they're loaded
   const featuredReviews = React.useMemo(() => {
     if (!feedbacks) return [];
     const reviewsArray = Object.values(feedbacks);
@@ -21,7 +20,6 @@ const Feedback = () => {
     return featured;
   }, [feedbacks]);
 
-  // Set the first review as selected once featuredReviews changes
   useEffect(() => {
     if (featuredReviews.length > 0) {
       setSelectedReview(featuredReviews[0]);
