@@ -1,7 +1,7 @@
 import React from "react";
 import noDataFoundImg from "@/../public/images/avatar/no-image.jpg";
 import Image from "next/image";
-import { TeamMemberTypes } from "@/data/members";
+import { TeamMemberTypes } from "@/types";
 
 interface UserCardProps extends TeamMemberTypes {
   type: string;
@@ -10,7 +10,7 @@ interface UserCardProps extends TeamMemberTypes {
 const UserCard: React.FC<UserCardProps> = ({
   memberName,
   role,
-  imageUrl,
+  Image_URL: imageUrl,
   type,
 }) => {
   return (
@@ -31,7 +31,7 @@ const UserCard: React.FC<UserCardProps> = ({
         }
       >
         <Image
-          src={imageUrl || noDataFoundImg}  
+          src={imageUrl || noDataFoundImg}
           alt={`${memberName || ""} profile`}
           width={1200}
           height={500}

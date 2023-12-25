@@ -9,7 +9,6 @@ const TeamMembers: React.FC = () => {
 
   if (isLoadingTeamMembers) return <Loader type="spinner" />;
 
-  console.log(Object.values(teamMembers));
   return (
     <div className="px-4">
       <SectionHeading subHeading="Meet out" heading="Team" />
@@ -27,7 +26,7 @@ const TeamMembers: React.FC = () => {
                 type={""}
                 memberName={memberName}
                 role={role}
-                imageUrl={Image_URL}
+                Image_URL={Image_URL}
               />
             </div>
           );

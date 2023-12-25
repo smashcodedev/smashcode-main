@@ -18,4 +18,10 @@ type FeedbackTypes = {
   platform: string;
 };
 
-export type { HeadingProps, LinksType, FeedbackTypes };
+type TeamMemberTypes = {
+  memberName: string;
+  role: string;
+  Image_URL: string;
+};
+
+export type { HeadingProps, LinksType, FeedbackTypes, TeamMemberTypes };
