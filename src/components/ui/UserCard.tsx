@@ -31,12 +31,10 @@ const UserCard: React.FC<UserCardProps> = ({
         }
       >
         <Image
-          src={
-            "https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/Team-members-images%2F209397729_1201098033685868_1434788942201818518_n.jpg%20ugPadwvN?alt=media&token=5d0b72ce-b59f-4116-a60b-c48b30cb8571"
-          }
+          src={imageUrl || noDataFoundImg}  
           alt={`${memberName || ""} profile`}
-          width={100}
-          height={100}
+          width={1200}
+          height={500}
         />
       </div>
     </div>
