@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FeedbackTypes } from "@/types";
-import defaultImg from "@/../public/images/noDatafound.png";
+import noDataFoundImg from "@/../public/images/avatar/no-image.jpg";
 
 const Feedback: React.FC<{
   featuredReviews: FeedbackTypes[];
@@ -16,7 +16,7 @@ const Feedback: React.FC<{
             <p className="clientName">
               <span className="avatar-circle">
                 <Image
-                  src={defaultImg}
+                  src={review.Image_URL || noDataFoundImg}
                   alt={"image"}
                   width={100}
                   height={100}
