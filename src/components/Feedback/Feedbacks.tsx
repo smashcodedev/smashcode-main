@@ -1,13 +1,16 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Feedback, Loader, SectionHeading } from "@/components";
-import useFeedbacks from "@/hooks/useFeedbacks";
-import SecondHalf from "./SecondHalf";
-import FirstHalf from "./FirstHalf";
+import { useEffect, useMemo, useState } from "react";
+
 import { FeedbackTypes } from "@/types";
+import useFeedbacks from "@/hooks/useFeedbacks";
+import {
+  Feedback,
+  FirstHalf,
+  SecondHalf,
+  Loader,
+  SectionHeading,
+} from "@/components";
 
 const Feedbacks = () => {
   const { feedbacks, isLoadingFeedbacks } = useFeedbacks();
@@ -17,7 +20,7 @@ const Feedbacks = () => {
   const [firstHalf, setFirstHalf] = useState<FeedbackTypes[]>([]);
   const [secondHalf, setSecondHalf] = useState<FeedbackTypes[]>([]);
 
-  const featuredReviews = React.useMemo(() => {
+  const featuredReviews = useMemo(() => {
     if (!feedbacks) return [];
     const reviewsArray = Object.values(feedbacks) as FeedbackTypes[];
     const featured = reviewsArray.filter((review) => review.featured);

@@ -1,7 +1,6 @@
-import { FeedbackTypes } from "@/types";
-import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
+import { FeedbackTypes } from "@/types";
 import defaultImg from "@/../public/images/noDatafound.png";
 
 const Feedback: React.FC<{

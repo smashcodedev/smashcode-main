@@ -1,7 +1,6 @@
 import projectsData, { ProjectType } from "@/data/projects";
 import servicesData, { ServiceType } from "@/data/services";
-import Services from "@/components/Services-Section/Services";
-import { Feedbacks, HeroSection, Projects } from "@/components";
+import { Feedbacks, HeroSection, Projects, Services } from "@/components";
 
 const projects: ProjectType[] = [
   projectsData.rarare,
