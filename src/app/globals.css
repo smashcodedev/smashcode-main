@@ -23,8 +23,21 @@
   --bg-black: #1f1f1f;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background: #1aaca2;
+}
+
 @layer components {
-  /* helpers */
   .gradient-bg {
     background: linear-gradient(180deg, var(--primary) 0%, #121212 100%);
   }
@@ -1207,7 +1220,7 @@
 
   .user-card-name-sec p {
     font-weight: 650;
-    font-size: 1.rem;
+    font-size: 1rem;
     color: var(--white);
   }
 
