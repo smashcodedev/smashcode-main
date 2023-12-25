@@ -10,7 +10,7 @@ const TeamMembers: React.FC = () => {
   if (isLoadingTeamMembers) return <Loader type="spinner" />;
 
   return (
-    <div className="px-4">
+    <div className="px-4 mt-12">
       <SectionHeading subHeading="Meet out" heading="Team" />
       <div className="style-right-border team-member-main flex flex-wrap items-center px-5">
         {(

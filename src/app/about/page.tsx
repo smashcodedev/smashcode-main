@@ -35,7 +35,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="style-left-border mt-16 flex flex-wrap items-center px-6 pt-5">
+        <div className="style-left-border mt-[88px] flex flex-wrap items-center px-6 pt-5">
           <SectionHeading subHeading="Our" heading="Missions" />
           <div className="flex flex-wrap">
             <p className="flex w-full items-center text-base md:w-1/2 md:text-xl">
@@ -56,7 +56,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="style-right-border mt-20 ml-2 flex flex-wrap px-4">
+        <div className="style-right-border mt-[85px] ml-2 flex flex-wrap px-4">
           <div className="w-full">
             <SectionHeading subHeading="Technologies we" heading="Use" />
           </div>
@@ -77,7 +77,7 @@ const About: React.FC = () => {
 
         <TeamMembers />
 
-        <div className="style-left-border mt-5 flex flex-wrap px-4">
+        <div className="style-left-border mt-20 flex flex-wrap px-4">
           <div className="ml-5">
             <div className="mb-5 w-full">
               <SectionHeading subHeading="Our" heading="Story" />
