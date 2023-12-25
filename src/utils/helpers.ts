@@ -1,6 +1,6 @@
+import { ProjectType } from "@/data/projects";
 import clsx, { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { ProjectType } from "../data/projects";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

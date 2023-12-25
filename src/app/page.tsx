@@ -1,13 +1,6 @@
-import projectsData, { ProjectType } from "@/data/projects";
+import projectsData from "@/data/projects";
 import servicesData, { ServiceType } from "@/data/services";
 import { Feedbacks, HeroSection, Projects, Services } from "@/components";
-
-const projects: ProjectType[] = [
-  projectsData.rarare,
-  projectsData.journeyBlog,
-  projectsData.trippyFrens,
-  projectsData.phenomAcademy,
-];
 
 const services: ServiceType[] = [
   servicesData.customWebDevelopment,
@@ -21,7 +14,7 @@ export default function Home() {
     <main className="m-10 mx-auto w-full lg:max-w-7xl">
       <HeroSection />
 
-      <Projects projects={projects} />
+      <Projects projects={projectsData} />
 
       <Services services={services} />
 

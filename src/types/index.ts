@@ -25,4 +25,5 @@ type TeamMemberTypes = {
   Image_URL: string;
 };
 
+
 export type { HeadingProps, LinksType, FeedbackTypes, TeamMemberTypes };

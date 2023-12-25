@@ -10,18 +10,18 @@ interface ProjectCardProps extends ProjectType {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   bgColor,
-  title,
-  description,
-  imageUrl,
-  projectUrl,
-  videoUrl,
+  proj_title: title,
+  proj_desc: description,
+  Image_URL: imageUrl,
+  url: projectUrl,
+  video_url: videoUrl,
 }) => {
   return (
     <div
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
-      style={{ "--primary": bgColor } as any}
+      style={{ "--project-bg": bgColor } as any}
     >
-      <div className="w-full flex flex-col gap-8 pb-8 text-[#e0e0e0]">
+      <div className="flex w-full flex-col gap-8 pb-8 text-[#e0e0e0]">
         <div className="mb-auto">
           <h3 className="mb-2 text-3xl font-medium">{title}</h3>
           <p className="text-xl">{description}</p>
@@ -48,7 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               src={imageUrl || placeHolderImg}
               width={1280}
               height={800}
-              className="transition-transform duration-200 hover:scale-105 lg:pt-0 rounded-full"
+              className="rounded-full transition-transform duration-200 hover:scale-105 lg:pt-0"
             />
           ))}
       </div>
