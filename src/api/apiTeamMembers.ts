@@ -1,13 +1,11 @@
-"use server";
-
 import { db } from "@/firebase/config";
-import { collection, getDocs } from "firebase/firestore";
-
-const servicesCollectionRef = collection(db, "teamMembers");
+import { ref, get } from "firebase/database";
 
 const getTeamMembers = async () => {
   try {
-    const data = await getDocs(servicesCollectionRef);
+    const teamMembersRef = ref(db, "teamMembers");
+    const snapshot = await get(teamMembersRef);
+    const data = snapshot.val();
 
     return data;
   } catch (error) {

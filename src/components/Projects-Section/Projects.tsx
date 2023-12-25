@@ -8,6 +8,7 @@ type ProjectsProps = {
 };
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
+
   return (
     <section className="m-7 pb-10 pt-4 xl:mt-32 2xl:ml-0">
       <ProjectsHeader

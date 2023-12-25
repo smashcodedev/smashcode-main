@@ -1,13 +1,15 @@
+"use client";
+
 import { getFeedbacks } from "@/api/apiFeedbacks";
 import { useQuery } from "@tanstack/react-query";
 
 const useFeedbacks = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["projects"],
+  const { data: feedbacks, isLoading: isLoadingFeedbacks } = useQuery({
+    queryKey: ["feedbacks"],
     queryFn: getFeedbacks,
   });
 
-  return { data, isLoading };
+  return { feedbacks, isLoadingFeedbacks };
 };
 
 export default useFeedbacks;
