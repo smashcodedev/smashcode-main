@@ -18,7 +18,7 @@ const TeamMembers: React.FC = () => {
           Object.values(teamMembers) as Array<{
             memberName: string;
             role: string;
-            Image_Url: string;
+            Image_URL: string;
           }>
         ).map(({ memberName, role, Image_URL }, key) => {
           return (

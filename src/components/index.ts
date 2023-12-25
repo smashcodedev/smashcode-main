@@ -19,7 +19,10 @@ import SocialLinks from "./Footer/SocialLinks";
 import QuickLinks from "./Footer/QuickLinks";
 import Copywrite from "./Footer/Copywrite";
 import ContactInfo from "./Footer/ContactInfo";
-import Feedback from "./ui/Feedback";
+import Feedbacks from "./Feedback/Feedbacks";
+import Feedback from "./Feedback/Feedback";
+import FirstHalf from './Feedback/FirstHalf'
+import SecondHalf from './Feedback/SecondHalf'
 import ContactSVG from "./ui/ContactSVG";
 import Loader from "./ui/Loader";
 import TeamMembers from "./ui/TeamMembers";
@@ -47,7 +50,10 @@ export {
   QuickLinks,
   Copywrite,
   ContactInfo,
+  Feedbacks,
   Feedback,
+  FirstHalf,
+  SecondHalf,
   ContactSVG,
   Loader,
   TeamMembers,

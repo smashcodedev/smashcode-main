@@ -9,4 +9,13 @@ type LinksType = {
   label: string;
 };
 
-export type { HeadingProps, LinksType };
+type FeedbackTypes = {
+  featured: boolean;
+  id: number;
+  client_Name: string;
+  client_feedback: string;
+  url: string;
+  platform: string;
+};
+
+export type { HeadingProps, LinksType, FeedbackTypes };

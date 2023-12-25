@@ -1,7 +1,7 @@
 import projectsData, { ProjectType } from "@/data/projects";
 import servicesData, { ServiceType } from "@/data/services";
 import Services from "@/components/Services-Section/Services";
-import { Feedback, HeroSection, Projects } from "@/components";
+import { Feedbacks, HeroSection, Projects } from "@/components";
 
 const projects: ProjectType[] = [
   projectsData.rarare,
@@ -26,7 +26,7 @@ export default function Home() {
 
       <Services services={services} />
 
-      <Feedback />
+      <Feedbacks />
     </main>
   );
 }
