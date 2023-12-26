@@ -22,4 +22,19 @@ const getDividedData = (data: ProjectType[], type: string) => {
   return dataTrimmed;
 };
 
-export { cn, colors, getDividedData };
+const getSortByTransactionDate = (a: any, b: any) => {
+  if (a && b) {
+    return (
+      new Date(b.transaction_date).valueOf() -
+      new Date(a.transaction_date).valueOf()
+    );
+  } else {
+    console.log(
+      "Did not get array of objects to sorting data check your data and also sorting method....",
+    );
+
+    return 0;
+  }
+};
+
+export { cn, colors, getDividedData, getSortByTransactionDate };

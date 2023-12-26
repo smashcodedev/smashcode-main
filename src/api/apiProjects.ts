@@ -1,4 +1,4 @@
-import { db } from "@/firebase/config";
+import { db } from "@/config/config";
 import { ref, get } from "firebase/database";
 
 const getProjects = async () => {

@@ -19,12 +19,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
-      style={{ "--project-bg": bgColor } as any}
+      style={{ "--primary": bgColor } as any}
     >
-      <div className="flex w-full flex-col gap-8 pb-8 text-[#e0e0e0]">
+      <div className="flex w-full flex-col gap- pb-8 text-[#e0e0e0]">
         <div className="mb-auto">
           <h3 className="mb-2 text-3xl font-medium">{title}</h3>
-          <p className="text-xl">{description}</p>
+          <p className="text-xl mb-4">{description}</p>
         </div>
         {(videoUrl && (
           <video
