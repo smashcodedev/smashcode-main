@@ -14,7 +14,7 @@ export default function Home() {
     <main className="m-10 mx-auto w-full lg:max-w-7xl">
       <HeroSection />
 
-      <Projects projects={projectsData} />
+      <Projects projects={projectsData}/>
 
       <Services services={services} />
 

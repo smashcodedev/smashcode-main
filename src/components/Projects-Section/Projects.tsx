@@ -16,7 +16,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         description="Here are some samples of our done projects delivered to our great clients."
       />
 
-      <ProjectsList projects={projects} />
+      <ProjectsList projects={projects} firstLine={true} />
 
       <div className="w-full pt-10 text-center">
         <Link href="/projects">

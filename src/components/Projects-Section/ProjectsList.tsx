@@ -3,12 +3,15 @@ import { ProjectCard } from "@/components";
 import { colors, getDividedData } from "@/utils/helpers";
 import { ProjectType } from "@/data/projects";
 
-const ProjectsList: React.FC<{ projects: ProjectType[] }> = ({ projects }) => {
+const ProjectsList: React.FC<{
+  projects: ProjectType[];
+  firstLine: boolean;
+}> = ({ projects, firstLine }) => {
   return (
     <div className="flex flex-wrap justify-between">
       <div className="m-0 w-full p-0 md:w-1/2">
         <div className="m-0 flex flex-wrap">
-          {getDividedData(projects, "1st").map(
+          {getDividedData(projects, firstLine === true ? "1st" : "").map(
             ({
               proj_title,
               proj_desc,
@@ -34,7 +37,7 @@ const ProjectsList: React.FC<{ projects: ProjectType[] }> = ({ projects }) => {
       </div>
       <div className="w-full p-0 md:w-1/2">
         <div className="m-0 flex flex-wrap">
-          {getDividedData(projects, "").map(
+          {getDividedData(projects, firstLine === true ? "" : "1st").map(
             ({
               proj_title,
               proj_desc,
