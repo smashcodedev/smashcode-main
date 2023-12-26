@@ -28,20 +28,20 @@ const ProjectsPage: React.FC = () => {
 
   const [allProjects, setAllProjects] = useState([]);
 
-  const [filteredProjects, setFiltered] = useState([]);
+  const [filteredProjects, setFiltered] = useState<ProjectType []>([]);
 
   useEffect(() => {
-    let categoriesData = Object.values(allCategories || {});
+    let categoriesData: any = Object.values(allCategories || {});
     setAllCats(categoriesData);
-    let projectsData = Object.values(data || [])?.filter(
-      (val) => val?.featured === true,
+    let projectsData: any = Object.values(data || [])?.filter(
+      (val: any) => val?.featured === true,
     );
     setAllProjects(projectsData);
   }, [data, allCategories]);
 
   useEffect(() => {
-    let finds =
-      allProjects?.filter((item) => item.category === categorySlug) || [];
+    let finds: ProjectType[] =
+      allProjects?.filter((item: ProjectType) => item.category === categorySlug) || [];
     setFiltered(finds);
   }, [categorySlug, subCatId, allProjects]);
 
@@ -84,7 +84,9 @@ const ProjectsPage: React.FC = () => {
                     href={`/projects/${categorySlug}/${subName}`}
                     key={subName}
                     className={`tab-btn ${
-                      checkNested(subName) ? "bg-red-900" : ""
+                      checkNested(subName.replaceAll(" ", "%20"))
+                        ? "active-tab-btn"
+                        : ""
                     }`}
                   >
                     {subName}
