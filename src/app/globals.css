@@ -1683,4 +1683,190 @@
       font-size: 0.7rem;
     }
   }
+
+  /* project page */
+  .tabs-buttons-wrapper {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 5px;
+  }
+
+  .tabs-buttons-wrapper .tab-btn {
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid var(--primary);
+    padding: 12px 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 4px;
+    transition: 0.4 ease;
+    text-decoration: none !important;
+  }
+
+  .active-tab-btn,
+  .tab-btn:hover {
+    background-color: var(--primary) !important;
+    color: #fff !important;
+  }
+
+  .sub-categories-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .sub-categories-btn-wrapper .tab-btn {
+    background-color: #fff;
+    color: var(--white);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4 ease;
+    margin: 8px 1px;
+    outline: none;
+    border: none;
+    text-decoration: none !important;
+    z-index: 1;
+  }
+
+  .sub-categories-btn-wrapper .tab-btn:first-child {
+    border-radius: 8px 0 0 8px;
+  }
+
+  .sub-categories-btn-wrapper .tab-btn:last-child {
+    border-radius: 0 8px 8px 0;
+  }
+
+  .proj-page-bottom-space {
+    margin-bottom: 8rem;
+  }
+
+  @media (max-width: 768px) {
+    .proj-page-bottom-space {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 570px) {
+    .sub-categories-btn-wrapper button {
+      font-size: 0.9rem;
+    }
+    .tabs-buttons-wrapper .tab-btn {
+      padding: 8px 4px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .sub-categories-btn-wrapper {
+      display: block;
+      margin-top: 25px;
+      position: relative;
+    }
+    .sub-categories-btn-wrapper::after {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 170%;
+      background-color: var(--primary);
+    }
+    .sub-categories-btn-wrapper .tab-btn {
+      font-size: 0.7rem;
+      display: block;
+      width: 42%;
+      clear: both;
+      position: relative;
+    }
+    .sub-categories-btn-wrapper .tab-btn::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+    .sub-categories-btn-wrapper .tab-btn:nth-child(even) {
+      float: right;
+      border-radius: 0 8px 8px 0;
+    }
+    .sub-categories-btn-wrapper .tab-btn:nth-child(even):after {
+      left: -21.5%;
+    }
+    .sub-categories-btn-wrapper .tab-btn:nth-child(odd):after {
+      right: -22%;
+    }
+    .sub-categories-btn-wrapper .tab-btn:nth-child(odd) {
+      border-radius: 8px 0 0 8px;
+    }
+    .tabs-buttons-wrapper .tab-btn {
+      padding: 8px;
+      font-size: 0.7rem;
+    }
+  }
+
+  /* dashboard project form video css */
+
+  .video-select-box {
+    width: 100%;
+    height: 150px;
+    border: 2px dashed var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video-select-box video {
+    width: 100%;
+    height: 100%;
+  }
+
+  .remove-video-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    color: #fff;
+  }
+
+  .video-select-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .video-select-box input {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    cursor: pointer;
+  }
 }

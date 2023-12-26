@@ -10,6 +10,9 @@ export type ProjectType = {
   video_url?: string;
   width?: number;
   height?: number;
+  featured?: boolean;
+  category?: string;
+  subCategory?: string;
 };
 
 const projectsData: ProjectType[] = [
