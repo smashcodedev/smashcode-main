@@ -12,7 +12,10 @@ const ProjectsPage: React.FC = () => {
   const { data } = useProjects();
   const { allCategories } = useCategories();
 
-  const { categorySlug, subCatId } = useParams();
+  const { categorySlug, subCatId } = useParams<{
+    categorySlug: string;
+    subCatId: string;
+  }>();
   const pathname = usePathname();
 
   const [allCats, setAllCats] = useState([]);
@@ -30,23 +33,20 @@ const ProjectsPage: React.FC = () => {
     setAllProjects(projectsData);
   }, [data, allCategories]);
 
-  // filter data according to main category
   useEffect(() => {
     let finds =
       projects?.filter((item) => item.category === categorySlug) || [];
     setFiltered(finds);
   }, [categorySlug, subCatId, projects]);
 
-  // filter data according to sub category
   const getDataWithFiltered = (dataToFilter) => {
     let data = dataToFilter?.filter((item) => item?.subCategory === subCatId);
     return data;
   };
-  
+
   const checkNested = (catPath) => {
     return pathname?.includes(catPath);
   };
-  console.log(categorySlug);
 
   return (
     <section className="m-10 mx-auto w-full lg:max-w-7xl">
@@ -60,7 +60,7 @@ const ProjectsPage: React.FC = () => {
                   href={`/projects/${v?.categorySlug}/${v?.subCategories[0]}`}
                   key={key}
                   className={`tab-btn ${
-                    checkNested(v?.categorySlug) ? "active-tab-btn" : " "
+                    checkNested(v?.categorySlug) ? "active-tab-btn" : ""
                   }`}
                 >
                   {v.tittle}
@@ -78,7 +78,9 @@ const ProjectsPage: React.FC = () => {
                   <Link
                     href={`/projects/${categorySlug}/${subName}`}
                     key={key}
-                    className="tab-btn"
+                    className={`tab-btn ${
+                      subCatId === subName ? "active-tab-btn" : ""
+                    }`}
                   >
                     {subName}
                   </Link>
@@ -86,7 +88,10 @@ const ProjectsPage: React.FC = () => {
               })}
           </div>
         </div>
-        <ProjectsList projects={filteredProjects} firstLine={false} />
+        <ProjectsList
+          projects={getDataWithFiltered(filteredProjects)}
+          firstLine={false}
+        />
       </div>
     </section>
   );

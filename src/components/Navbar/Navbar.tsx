@@ -7,7 +7,7 @@ import { LinksType } from "@/types";
 
 const links: LinksType[] = [
   { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
+  { href: "/projects/web-development/Landing%20page", label: "Projects" },
   { href: "/services", label: "Services" },
   { href: "https://smash-code.com/blogs", label: "Blogs" },
   { href: "/about", label: "About" },
@@ -37,8 +37,8 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 z-[1000] w-full">
       <nav
-        className="ease-linea m-3 flex items-center
-        justify-between rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] lg:max-w-7xl lg:px-14 lg:py-3 2xl:mx-auto"
+        className="m-3 flex items-center justify-between
+        rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] ease-linear lg:max-w-7xl lg:px-14 lg:py-3 2xl:mx-auto"
         ref={deskHeader}
       >
         <Logo />

@@ -38,11 +38,11 @@ const ContactPage: React.FC = () => {
       <div className="m-10 mt-28 xl:mt-36">
         <div className="flex flex-wrap">
           <div className="w-full text-center">
-            <h1 className="mb-4 text-4xl">Talk to Us</h1>
+            <h1 className="mb-4 text-4xl">Get a Quote</h1>
 
             <h6 className="text-center text-xl">
-              Let’s discuss about your project. Feel free to send us your
-              queries and details.
+              Let’s share details of your project. So that we can start working
+              on it.
             </h6>
             <br />
           </div>
@@ -82,11 +82,30 @@ const ContactPage: React.FC = () => {
                   {...register("projectDesc", { required: true })}
                 ></textarea>
               </div>
-              <div className="form-group file-input-button relative">
+              <div className="form-group file-input-button relative file:text-white">
                 <input
                   type="file"
+                  id="formFile"
+                  title="klj"
+                  style={{ color: "transparent" }}
                   className=" w-full text-white"
-                  {...register("file", { required: true })}
+                  {...register("file")}
+                />
+              </div>
+              <div className="form-group file-input-button relative">
+                <input
+                  type="number"
+                  className="form-control form-control-lg thick w-full"
+                  placeholder="Project Budget"
+                  {...register("projectBudget")}
+                />
+              </div>
+              <div className="form-group file-input-button relative">
+                <input
+                  type="date"
+                  className="form-control form-control-lg thick w-full"
+                  placeholder="Project Budget"
+                  {...register("projectTimeline")}
                 />
               </div>
               <div className="text-center">
