@@ -46,10 +46,8 @@ const ProjectsPage: React.FC = () => {
   }, [categorySlug, subCatId, allProjects]);
 
   const projects = filteredProjects?.filter(
-    (item) => item?.subCategory === subCatId,
+    (item) => item?.subCategory === decodeURIComponent(subCatId),
   );
-
-  console.log(subCatId)
 
   const checkNested = (catPath: string) => {
     return pathname?.includes(catPath);
