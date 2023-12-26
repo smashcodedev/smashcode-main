@@ -8,6 +8,12 @@ import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+type CatType = {
+  categorySlug: string;
+  subCategories: string[];
+  tittle: string;
+};
+
 const ProjectsPage: React.FC = () => {
   const { data } = useProjects();
   const { allCategories } = useCategories();
@@ -18,9 +24,9 @@ const ProjectsPage: React.FC = () => {
   }>();
   const pathname = usePathname();
 
-  const [allCats, setAllCats] = useState([]);
+  const [allCats, setAllCats] = useState<CatType[]>([]);
 
-  const [projects, setAllProjects] = useState([]);
+  const [allProjects, setAllProjects] = useState([]);
 
   const [filteredProjects, setFiltered] = useState([]);
 
@@ -35,16 +41,17 @@ const ProjectsPage: React.FC = () => {
 
   useEffect(() => {
     let finds =
-      projects?.filter((item) => item.category === categorySlug) || [];
+      allProjects?.filter((item) => item.category === categorySlug) || [];
     setFiltered(finds);
-  }, [categorySlug, subCatId, projects]);
+  }, [categorySlug, subCatId, allProjects]);
 
-  const getDataWithFiltered = (dataToFilter) => {
-    let data = dataToFilter?.filter((item) => item?.subCategory === subCatId);
-    return data;
-  };
+  const projects = filteredProjects?.filter(
+    (item) => item?.subCategory === subCatId,
+  );
 
-  const checkNested = (catPath) => {
+  console.log(subCatId)
+
+  const checkNested = (catPath: string) => {
     return pathname?.includes(catPath);
   };
 
@@ -73,13 +80,13 @@ const ProjectsPage: React.FC = () => {
           <div className="sub-categories-btn-wrapper">
             {allCats
               ?.find((v) => v.categorySlug === categorySlug)
-              ?.subCategories?.map((subName, key) => {
+              ?.subCategories?.map((subName) => {
                 return (
                   <Link
                     href={`/projects/${categorySlug}/${subName}`}
-                    key={key}
+                    key={subName}
                     className={`tab-btn ${
-                      subCatId === subName ? "active-tab-btn" : ""
+                      checkNested(subName) ? "bg-red-900" : ""
                     }`}
                   >
                     {subName}
@@ -88,10 +95,7 @@ const ProjectsPage: React.FC = () => {
               })}
           </div>
         </div>
-        <ProjectsList
-          projects={getDataWithFiltered(filteredProjects)}
-          firstLine={false}
-        />
+        <ProjectsList projects={projects} firstLine={false} />
       </div>
     </section>
   );
