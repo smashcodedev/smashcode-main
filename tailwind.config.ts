@@ -19,6 +19,20 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: { addUtilities: Function }) {
+      const newUtilities = {
+        ".file-input-button": {
+          "::file-selector-button": {
+            "background-color": "#1AACA2",
+            color: "#ffffff",
+            padding: "10px",
+            "border-radius": "5px",
+          },
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };
 export default config;
