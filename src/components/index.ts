@@ -10,6 +10,7 @@ import ProjectsHeader from "./Projects-Section/ProjectsHeader";
 import SectionHeading from "./ui/SectionHeading";
 import ProjectsList from "./Projects-Section/ProjectsList";
 import ProjectCard from "./Projects-Section/ProjectCard";
+import ProjectsPage from "./Projects-Section/ProjectsPage";
 import Services from "./Services-Section/Services";
 import ServiceHeader from "./Services-Section/ServiceHeader";
 import ServicesList from "./Services-Section/ServicesList";
@@ -21,8 +22,8 @@ import Copywrite from "./Footer/Copywrite";
 import ContactInfo from "./Footer/ContactInfo";
 import Feedbacks from "./Feedback/Feedbacks";
 import Feedback from "./Feedback/Feedback";
-import FirstHalf from './Feedback/FirstHalf'
-import SecondHalf from './Feedback/SecondHalf'
+import FirstHalf from "./Feedback/FirstHalf";
+import SecondHalf from "./Feedback/SecondHalf";
 import ContactSVG from "./ui/ContactSVG";
 import Loader from "./ui/Loader";
 import TeamMembers from "./ui/TeamMembers";
@@ -40,6 +41,7 @@ export {
   ProjectsHeader,
   ProjectsList,
   ProjectCard,
+  ProjectsPage,
   SectionHeading,
   Services,
   ServiceHeader,
