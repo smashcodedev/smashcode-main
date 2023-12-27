@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectsList, SectionHeading, Loader } from "@/components";
+import { ProjectsList, SectionHeading } from "@/components";
 import { ProjectType } from "@/data/projects";
 import { getSortByTransactionDate } from "@/utils/helpers";
 import Link from "next/link";
@@ -46,7 +46,7 @@ const ProjectsPage: React.FC<{
       allCategories || {},
     );
     setAllCats(categoriesData);
-    
+
     let projectsData: ProjectType[] = (
       Object.values(data || []) as ProjectType[] | []
     )?.filter((val) => val?.featured === true);
@@ -111,7 +111,9 @@ const ProjectsPage: React.FC<{
               })}
           </div>
         </div>
-        <ProjectsList projects={projects} firstLine={true} />
+        <div data-aos="fade-up">
+          <ProjectsList projects={projects} firstLine={true} />
+        </div>
       </div>
     </section>
   );

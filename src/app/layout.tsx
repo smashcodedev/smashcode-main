@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import { Footer, Navbar } from "@/components";
 
 import "./globals.css";
+import { AOSInit } from "@/components/ui/AOSInit";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <AOSInit />
       <body
         className={`${poppins.className} overflow-x-hidden bg-primary-gray text-white antialiased`}
       >
