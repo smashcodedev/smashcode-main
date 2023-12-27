@@ -12,7 +12,6 @@ const Feedbacks: React.FC<{ feedbacks: FeedbackTypes }> = ({ feedbacks }) => {
   const [firstHalf, setFirstHalf] = useState<FeedbackTypes[]>([]);
   const [secondHalf, setSecondHalf] = useState<FeedbackTypes[]>([]);
 
-  console.log(feedbacks);
   const featuredReviews = useMemo(() => {
     if (!feedbacks) return [];
     const reviewsArray = Object.values(feedbacks) as unknown as FeedbackTypes[];
