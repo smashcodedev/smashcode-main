@@ -5,19 +5,18 @@ import Link from "next/link";
 import { ProjectType } from "@/data/projects";
 import { colors } from "@/utils/helpers";
 
-// interface ProjectCardProps extends ProjectType {
-//   bgColor: string;
-// }
+interface ProjectCardProps extends ProjectType {
+  bgColor: string;
+}
 
-const ProjectCard: React.FC<ProjectType> = ({
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  bgColor,
   proj_title: title,
   proj_desc: description,
   Image_URL: imageUrl,
   url: projectUrl,
   video_url: videoUrl,
 }) => {
-  const bgColor = colors[Math.floor(Math.random() * colors.length)];
-  console.log("rerendered");
   return (
     <div
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
