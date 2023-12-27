@@ -1769,7 +1769,7 @@
     }
   }
 
-  @media (max-width: 460px) {
+  /* @media (max-width: 460px) {
     .sub-categories-btn-wrapper {
       display: block;
       margin-top: 25px;
@@ -1819,7 +1819,7 @@
       padding: 8px;
       font-size: 0.7rem;
     }
-  }
+  } */
 
   /* dashboard project form video css */
 

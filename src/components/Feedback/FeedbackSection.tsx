@@ -4,6 +4,7 @@ import { Feedbacks } from "..";
 
 const FeedbackSection = async () => {
   const feedbacks = await getFeedbacks();
+  
   return (
     <section>
       <Feedbacks feedbacks={feedbacks} />
