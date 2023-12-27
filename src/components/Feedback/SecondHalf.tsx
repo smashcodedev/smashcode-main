@@ -4,10 +4,8 @@ import Image from "next/image";
 import { FeedbackTypes } from "@/types";
 
 const SecondHalf: React.FC<{
-  // featuredReviews: FeedbackTypes[];
   secondHalf: FeedbackTypes[];
   setSelectedReview: (review: FeedbackTypes) => void;
-  // Image_URL: string;
 }> = ({ secondHalf, setSelectedReview }) => {
   return (
     <div className="mt-12 w-full sm:w-1/2 md:mt-0 md:w-1/4">

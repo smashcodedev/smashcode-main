@@ -3,26 +3,19 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { FeedbackTypes } from "@/types";
-import useFeedbacks from "@/hooks/useFeedbacks";
-import {
-  Feedback,
-  FirstHalf,
-  SecondHalf,
-  Loader,
-  SectionHeading,
-} from "@/components";
+import { Feedback, FirstHalf, SecondHalf, SectionHeading } from "@/components";
 
-const Feedbacks = () => {
-  const { feedbacks, isLoadingFeedbacks } = useFeedbacks();
+const Feedbacks: React.FC<{ feedbacks: FeedbackTypes }> = ({ feedbacks }) => {
   const [selectedReview, setSelectedReview] = useState<FeedbackTypes | null>(
     null,
   );
   const [firstHalf, setFirstHalf] = useState<FeedbackTypes[]>([]);
   const [secondHalf, setSecondHalf] = useState<FeedbackTypes[]>([]);
 
+  console.log(feedbacks);
   const featuredReviews = useMemo(() => {
     if (!feedbacks) return [];
-    const reviewsArray = Object.values(feedbacks) as FeedbackTypes[];
+    const reviewsArray = Object.values(feedbacks) as unknown as FeedbackTypes[];
     const featured = reviewsArray.filter((review) => review.featured);
     return featured;
   }, [feedbacks]);
@@ -36,12 +29,8 @@ const Feedbacks = () => {
     }
   }, [featuredReviews]);
 
-  if (isLoadingFeedbacks) {
-    return <Loader type="spinner" />;
-  }
-
   return (
-    <section className="m-7">
+    <div className="m-7">
       <SectionHeading subHeading="Clients" heading="Feedback" />
       <div className="feed-back-short-row style-right-border flex flex-wrap items-center justify-center">
         <FirstHalf
@@ -57,7 +46,7 @@ const Feedbacks = () => {
           setSelectedReview={setSelectedReview}
         />
       </div>
-    </section>
+    </div>
   );
 };
 

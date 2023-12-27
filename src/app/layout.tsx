@@ -5,7 +5,6 @@ import { Poppins } from "next/font/google";
 import { Footer, Navbar } from "@/components";
 
 import "./globals.css";
-import Providers from "@/utils/Providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,10 +28,9 @@ export default function RootLayout({
         className={`${poppins.className} overflow-x-hidden bg-primary-gray text-white antialiased`}
       >
         <Navbar />
-
-        <Providers>{children}</Providers>
-
+        {children}
         <Footer />
+
         <Toaster position="bottom-right" />
       </body>
     </html>

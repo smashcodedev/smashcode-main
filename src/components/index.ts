@@ -20,6 +20,7 @@ import SocialLinks from "./Footer/SocialLinks";
 import QuickLinks from "./Footer/QuickLinks";
 import Copywrite from "./Footer/Copywrite";
 import ContactInfo from "./Footer/ContactInfo";
+import FeedbackSection from "./Feedback/FeedbackSection";
 import Feedbacks from "./Feedback/Feedbacks";
 import Feedback from "./Feedback/Feedback";
 import FirstHalf from "./Feedback/FirstHalf";
@@ -52,6 +53,7 @@ export {
   QuickLinks,
   Copywrite,
   ContactInfo,
+  FeedbackSection,
   Feedbacks,
   Feedback,
   FirstHalf,
