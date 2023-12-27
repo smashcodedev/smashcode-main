@@ -27,7 +27,8 @@ const config: Config = {
             "background-color": "#1AACA2",
             color: "#ffffff",
             padding: "10px",
-            "border-radius": "5px",
+            "border-radius": "12px",
+            border: "none",
           },
         },
       };

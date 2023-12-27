@@ -17,7 +17,7 @@ const TeamMembers: React.FC = async () => {
           }>
         ).map(({ memberName, role, Image_URL }, key) => {
           return (
-            <div className="col-md-4 w-full md:w-1/2 lg:w-1/3" key={key}>
+            <div className="col w-full sm:w-1/2 md:w-1/3" key={key}>
               <UserCard
                 type={""}
                 memberName={memberName}

@@ -3,10 +3,16 @@
 import emailjs from "emailjs-com";
 import { BiRename } from "react-icons/bi";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
-import { ContactSVG } from "@/components";
+import { BudgetSlider } from "@/components";
+// import { FaRegFileAlt } from "react-icons/fa"; // Regular file icon
+// import { FaFileAlt } from "react-icons/fa"; // Solid file icon
+// import { MdDescription } from "react-icons/md"; // Description icon
+// import { IoDocumentTextOutline } from "react-icons/io5"; // Document text
+// import { IoDocumentTextSharp } from "react-icons/io5"; // Document text sharp
 import toast from "react-hot-toast";
-import { useForm } from "react-hook-form";
+import { useForm, useFormState } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
+import { error } from "console";
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -82,40 +88,30 @@ const ContactPage: React.FC = () => {
                   {...register("projectDesc", { required: true })}
                 ></textarea>
               </div>
-              <div className="form-group file-input-button relative file:text-white">
+              <div className="form-group relative file-input-button">
                 <input
                   type="file"
                   id="formFile"
-                  title="klj"
                   style={{ color: "transparent" }}
-                  className=" w-full text-white"
-                  {...register("file")}
+                  className="mt-4 w-full file:text-white"
+                  {...register("file", {
+                    validate: {
+                      checkFileSize: (value) =>
+                        value[0].size <= 2000000 ||
+                        "The file size should be less than 2MB",
+                    },
+                  })}
                 />
               </div>
-              <div className="form-group file-input-button relative">
-                <input
-                  type="number"
-                  className="form-control form-control-lg thick w-full"
-                  placeholder="Project Budget"
-                  {...register("projectBudget")}
-                />
-              </div>
-              <div className="form-group file-input-button relative">
-                <input
-                  type="date"
-                  className="form-control form-control-lg thick w-full"
-                  placeholder="Project Budget"
-                  {...register("projectTimeline")}
-                />
-              </div>
+              <BudgetSlider />
+
               <div className="text-center">
                 <button type="submit" className="btn btn-primary" tabIndex={-1}>
-                  Send a message
+                  Send your quote
                 </button>
               </div>
             </form>
           </div>
-          <ContactSVG />
         </div>
       </div>
     </section>

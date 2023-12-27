@@ -26,6 +26,7 @@ import Feedback from "./Feedback/Feedback";
 import FirstHalf from "./Feedback/FirstHalf";
 import SecondHalf from "./Feedback/SecondHalf";
 import ContactSVG from "./ui/ContactSVG";
+import BudgetSlider from "./ui/BudgetSlider";
 import Loader from "./ui/Loader";
 import TeamMembers from "./ui/TeamMembers";
 import UserCard from "./ui/UserCard";
@@ -59,6 +60,7 @@ export {
   FirstHalf,
   SecondHalf,
   ContactSVG,
+  BudgetSlider,
   Loader,
   TeamMembers,
   UserCard,

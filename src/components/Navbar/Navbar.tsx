@@ -16,23 +16,26 @@ const links: LinksType[] = [
 const Navbar: React.FC = () => {
   const deskHeader = useRef<HTMLElement | null>(null);
 
-  let lastScroll = 0;
-  const headerSticky = () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll <= 0 && deskHeader.current) {
-      deskHeader.current.classList.remove("hide-scroll-header");
-      return;
-    }
-    if (currentScroll > lastScroll && deskHeader.current) {
-      deskHeader.current.classList.add("hide-scroll-header");
-    } else if (currentScroll < lastScroll && deskHeader.current) {
-      deskHeader.current.classList.remove("hide-scroll-header");
-    }
-    lastScroll = currentScroll;
-  };
+  
   useEffect(() => {
+    let lastScroll = 0;
+    const headerSticky = () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll <= 0 && deskHeader.current) {
+        deskHeader.current.classList.remove("hide-scroll-header");
+        return;
+      }
+      if (currentScroll > lastScroll && deskHeader.current) {
+        deskHeader.current.classList.add("hide-scroll-header");
+      } else if (currentScroll < lastScroll && deskHeader.current) {
+        deskHeader.current.classList.remove("hide-scroll-header");
+      }
+      lastScroll = currentScroll;
+    };
     window.addEventListener("scroll", headerSticky);
-  });
+
+    return () => window.removeEventListener("scroll", headerSticky);
+  }, []);
 
   return (
     <header className="fixed top-0 z-[1000] w-full">

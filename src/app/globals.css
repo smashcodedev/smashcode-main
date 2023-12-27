@@ -37,6 +37,7 @@
   background: #1aaca2;
 }
 
+
 @layer components {
   .gradient-bg {
     background: linear-gradient(180deg, var(--primary) 0%, #121212 100%);
