@@ -17,6 +17,7 @@ const ProjectCard: React.FC<ProjectType> = ({
   video_url: videoUrl,
 }) => {
   const bgColor = colors[Math.floor(Math.random() * colors.length)];
+  console.log("rerendered");
   return (
     <div
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
