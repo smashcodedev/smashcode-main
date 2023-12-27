@@ -3,13 +3,15 @@ import logoImg from "../../../public/logo.png";
 import placeHolderImg from "../../../public/images/expedo2.png";
 import Link from "next/link";
 import { ProjectType } from "@/data/projects";
+import { colors } from "@/utils/helpers";
 
-interface ProjectCardProps extends ProjectType {
-  bgColor: string;
-}
+// interface ProjectCardProps extends ProjectType {
+//   bgColor: string;
+// }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  bgColor,
+const bgColor = colors[Math.floor(Math.random() * colors.length)];
+
+const ProjectCard: React.FC<ProjectType> = ({
   proj_title: title,
   proj_desc: description,
   Image_URL: imageUrl,
@@ -21,10 +23,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
       style={{ "--primary": bgColor } as any}
     >
-      <div className="flex w-full flex-col gap- pb-8 text-[#e0e0e0]">
+      <div className="gap- flex w-full flex-col pb-8 text-[#e0e0e0]">
         <div className="mb-auto">
           <h3 className="mb-2 text-3xl font-medium">{title}</h3>
-          <p className="text-xl mb-4">{description}</p>
+          <p className="mb-4 text-xl">{description}</p>
         </div>
         {(videoUrl && (
           <video
