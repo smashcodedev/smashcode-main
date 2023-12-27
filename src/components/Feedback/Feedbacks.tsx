@@ -55,7 +55,6 @@ const Feedbacks = () => {
         <SecondHalf
           secondHalf={secondHalf}
           setSelectedReview={setSelectedReview}
-          // Image_URL={featuredReviews}
         />
       </div>
     </section>

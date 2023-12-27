@@ -23,6 +23,7 @@ const ProjectsPage: React.FC = () => {
     categorySlug: string;
     subCatId: string;
   }>();
+  
   const pathname = usePathname();
 
   const [allCats, setAllCats] = useState<CatType[]>([]);

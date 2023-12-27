@@ -1,16 +1,12 @@
-"use client";
-
 import React from "react";
-import { Loader, SectionHeading, UserCard } from "@/components";
-import useTeamMembers from "@/hooks/useTeamMembers";
+import { SectionHeading, UserCard } from "@/components";
+import { getTeamMembers } from "@/api/apiTeamMembers";
 
-const TeamMembers: React.FC = () => {
-  const { teamMembers, isLoadingTeamMembers } = useTeamMembers();
-
-  if (isLoadingTeamMembers) return <Loader type="spinner" />;
+const TeamMembers: React.FC = async () => {
+  const teamMembers = await getTeamMembers();
 
   return (
-    <div className="px-4 mt-12">
+    <div className="mt-12 px-4">
       <SectionHeading subHeading="Meet out" heading="Team" />
       <div className="style-right-border team-member-main flex flex-wrap items-center px-5">
         {(
