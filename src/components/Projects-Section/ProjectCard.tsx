@@ -9,8 +9,6 @@ import { colors } from "@/utils/helpers";
 //   bgColor: string;
 // }
 
-const bgColor = colors[Math.floor(Math.random() * colors.length)];
-
 const ProjectCard: React.FC<ProjectType> = ({
   proj_title: title,
   proj_desc: description,
@@ -18,6 +16,7 @@ const ProjectCard: React.FC<ProjectType> = ({
   url: projectUrl,
   video_url: videoUrl,
 }) => {
+  const bgColor = colors[Math.floor(Math.random() * colors.length)];
   return (
     <div
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
