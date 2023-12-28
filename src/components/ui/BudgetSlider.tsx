@@ -10,14 +10,13 @@ const BudgetSlider = () => {
   };
 
   return (
-    <div className="w-full px-5 py-5">
+    <div className="px- w-full py-5">
       <div className="mx-auto max-w-xl">
         <label htmlFor="budget" className="text-2xl text-primary-green">
-          Set your budget:
+          <span className="text-white">Your Estimated budget:</span>{" "}
+          <span className="font-old text-primary-gren">${value}</span>
         </label>
-        <output className="mt-2 block text-2xl font-bold text-primary-green">
-          ${value}
-        </output>
+
         <input
           type="range"
           min="50"

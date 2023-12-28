@@ -4,15 +4,9 @@ import emailjs from "emailjs-com";
 import { BiRename } from "react-icons/bi";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
 import { BudgetSlider } from "@/components";
-// import { FaRegFileAlt } from "react-icons/fa"; // Regular file icon
-// import { FaFileAlt } from "react-icons/fa"; // Solid file icon
-// import { MdDescription } from "react-icons/md"; // Description icon
-// import { IoDocumentTextOutline } from "react-icons/io5"; // Document text
-// import { IoDocumentTextSharp } from "react-icons/io5"; // Document text sharp
 import toast from "react-hot-toast";
-import { useForm, useFormState } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
-import { error } from "console";
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -54,7 +48,7 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
         <div className="form-container flex flex-wrap items-center justify-center">
-          <div className="w-full text-center md:w-1/2">
+          <div className="w-full md:w-1/2">
             <form
               onSubmit={handleSubmit(onSubmitForm)}
               className="contact-form"
@@ -111,6 +105,12 @@ const ContactPage: React.FC = () => {
                 </button>
               </div>
             </form>
+            <div className="mt-4 text-center">
+              <p>
+                <span className="text-primary-green">Note:</span> We will
+                contact you as soon as possible through your E-mail.
+              </p>
+            </div>
           </div>
         </div>
       </div>

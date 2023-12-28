@@ -7,7 +7,7 @@ const ServiceCard: React.FC<ServiceType> = ({ title, description, icon }) => {
         {icon}
       </div>
       <h3 className="text-3xl font-medium leading-snug">{title}</h3>
-      <div className="text-lg text-[#a0a0a0] mb-2">
+      <div className="text-lg text-[#a0a0a0] mb-10 md:mb-4 lg:mb-0">
         <p>{description}</p>
       </div>
     </div>

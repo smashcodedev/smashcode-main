@@ -2,6 +2,7 @@
 
 import { Button } from "@/components";
 import Sparkles from "@/config/sparkles";
+import Link from "next/link";
 import { useEffect } from "react";
 
 const HeroSection: React.FC = () => {
@@ -40,7 +41,9 @@ const HeroSection: React.FC = () => {
             We create future-ready websites & web apps via innovative digital
             solutions so that you can focus on your core business.
           </p>
-          <Button variant="primary">Let&apos;s talk</Button>
+          <Link href="/contact">
+            <Button variant="primary">Let&apos;s talk</Button>
+          </Link>
         </div>
 
         <div className="relative text-center">

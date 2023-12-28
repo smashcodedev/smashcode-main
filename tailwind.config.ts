@@ -23,8 +23,11 @@ const config: Config = {
     function ({ addUtilities }: { addUtilities: Function }) {
       const newUtilities = {
         ".file-input-button": {
+          "::hover": {
+            "background-color": "#1aa3",
+          },
           "::file-selector-button": {
-            "background-color": "#1AACA2",
+            "background-color": "#1aaca2",
             color: "#ffffff",
             padding: "10px",
             "border-radius": "12px",

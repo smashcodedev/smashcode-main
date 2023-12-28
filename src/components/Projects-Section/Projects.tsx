@@ -19,7 +19,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       <ProjectsList projects={projects} firstLine={true} />
 
       <div className="w-full pt-10 text-center">
-        <Link href="/projects">
+        <Link href="/projects/web-development/Landing%20page">
           <Button variant="primary">View More!</Button>
         </Link>
       </div>
