@@ -27,7 +27,6 @@ const Feedbacks: React.FC<{ feedbacks: FeedbackTypes }> = ({ feedbacks }) => {
       setSecondHalf(featuredReviews.slice(half));
     }
   }, [featuredReviews]);
-
   return (
     <div className="m-7">
       <SectionHeading subHeading="Clients" heading="Feedback" />
