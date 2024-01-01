@@ -10,7 +10,7 @@ export default function PageLoading() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 10);
+    }, 4);
   }, []);
 
   if (!loading) return null;
