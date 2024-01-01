@@ -1871,6 +1871,215 @@
     }
     .whatstbtn {
       font-size: 25px;
-    } 
+    }
+  }
+
+  /* web start loading */
+  .WebStartLoader {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 9999;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    transition: 1s linear background;
+  }
+
+  .laptop__svg {
+    height: 50%;
+    width: 100%;
+    animation: boom-top 0.9s linear;
+  }
+
+  .code {
+    visibility: hidden;
+  }
+
+  #code-1 {
+    animation: code-1 0.5s linear 3.5s running alternate infinite;
+  }
+
+  #code-2 {
+    animation-delay: 0.4s;
+    animation: code-2 0.5s linear 3s running alternate infinite;
+  }
+
+  #code-3 {
+    animation-delay: 0.7s;
+    animation: code-3 0.5s linear 2.5s running infinite;
+  }
+
+  #code-4 {
+    animation-delay: 0.9s;
+    animation: code-4 0.5s linear 2s running alternate-reverse infinite;
+  }
+
+  #code-5 {
+    animation-delay: 0.4s;
+    animation: code-5 0.5s linear 1.5s running infinite;
+  }
+
+  #code-6 {
+    animation-delay: 1.2s;
+    animation: code-6 0.5s linear 1s running alternate-reverse infinite;
+  }
+
+  #code-7 {
+    animation-delay: 0.7s;
+    animation: code-7 0.5s linear 0.5s running infinite;
+  }
+
+  #code-8 {
+    animation: code-8 0.5s linear 0s running alternate infinite;
+  }
+
+  @keyframes code-1 {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 7px;
+    }
+  }
+
+  @keyframes code-2 {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 4px;
+    }
+  }
+
+  @keyframes code-3 {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 6px;
+    }
+  }
+
+  @keyframes code-4 {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 3px;
+    }
+  }
+
+  @keyframes code-5 {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 3px;
+    }
+  }
+
+  @keyframes code-6 {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 4px;
+    }
+  }
+
+  @keyframes code-7 {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 9.5px;
+    }
+  }
+
+  @keyframes code-8 {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 6px;
+    }
+  }
+
+  .loading-logo {
+    height: 30%;
+    width: 100%;
+  }
+
+  .loading-logo img {
+    width: 100%;
+    height: 100%;
+    margin-left: -20px;
+    object-fit: contain;
+    animation: boom-bottom 2s linear;
+  }
+
+  @keyframes boom-bottom {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes boom-top {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .web-loader-prgress-wrapper {
+    height: 20%;
+    margin: 0 auto;
+  }
+
+  .web-loader-prgress {
+    width: 400px;
+    max-width: 85vw;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(white, 0.5);
+    overflow: hidden;
+  }
+
+  .web-loader-prgress::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+    animation: load 4s linear infinite;
+    animation-delay: 0.7s;
+  }
+
+  @keyframes load {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
   }
 }

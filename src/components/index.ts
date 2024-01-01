@@ -1,3 +1,4 @@
+import PageLoader from "./ui/PageLoader";
 import Navbar from "./Navbar/Navbar";
 import Logo from "./ui/Logo";
 import NavItems from "./Navbar/NavItems";
@@ -32,6 +33,7 @@ import TeamMembers from "./ui/TeamMembers";
 import UserCard from "./ui/UserCard";
 
 export {
+  PageLoader,
   Navbar,
   NavItems,
   NavItem,
