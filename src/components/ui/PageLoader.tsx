@@ -11,7 +11,7 @@ export default function PageLoading() {
     setTimeout(() => {
       setLoading(false);
     }, 2200);
-  }, []);
+  }, [loading]);
 
   if (!loading) return null;
 
