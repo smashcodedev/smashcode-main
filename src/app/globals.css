@@ -239,6 +239,7 @@
     background-color: transparent;
     pointer-events: none;
     transition: 0.2s ease;
+    border-style: none;
   }
 
   .primary-btn::after {

@@ -37,13 +37,16 @@ const HeroSection: React.FC = () => {
             What you can think <br /> we can develop it <br />
             <span className="section-heading pb-5">for you!</span>
           </h1>
-          <p className="mx-4 text-base md:text-lg lg:mx-0 lg:text-xl">
-            We create future-ready websites & web apps via innovative digital
-            solutions so that you can focus on your core business.
-          </p>
-          <Link href="/contact">
-            <Button variant="primary">Let&apos;s talk</Button>
-          </Link>
+          <div className="flex flex-col space-y-6">
+            <p className="mx-4 text-base sm:text-xl lg:mx-0">
+              We create future-ready websites & web apps via innovative digital
+              solutions so that you can focus on your core business.
+            </p>
+
+            <Link href="/contact">
+              <Button variant="primary">Let&apos;s talk</Button>
+            </Link>
+          </div>
         </div>
 
         <div className="relative text-center">
