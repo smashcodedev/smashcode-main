@@ -8,6 +8,7 @@ import "./globals.css";
 import { AOSInit } from "@/components/ui/AOSInit";
 import { FaWhatsapp } from "react-icons/fa6";
 import Link from "next/link";
+import { PageLoaderProvider } from "@/context/PageLoaderContext";
 
 const poppins = Poppins({
   subsets: ["latin"],

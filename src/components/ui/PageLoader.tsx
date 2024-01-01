@@ -1,18 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "@/../public/images/web/logopng.png";
 import Image from "next/image";
+import { PageLoaderContext } from "@/context/PageLoaderContext";
 
 export default function PageLoading() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2200);
-  }, [loading]);
-
+  const { loading } = useContext(PageLoaderContext);
   if (!loading) return null;
 
   return (

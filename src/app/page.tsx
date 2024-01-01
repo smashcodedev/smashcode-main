@@ -2,6 +2,7 @@ import projectsData from "@/data/projects";
 import servicesData, { ServiceType } from "@/data/services";
 import { FeedbackSection, HeroSection, Projects, Services } from "@/components";
 import PageLoading from "@/components/ui/PageLoader";
+import { PageLoaderProvider } from "@/context/PageLoaderContext";
 
 const services: ServiceType[] = [
   servicesData.customWebDevelopment,
@@ -13,7 +14,9 @@ const services: ServiceType[] = [
 export default function Home() {
   return (
     <>
-      <PageLoading />
+      <PageLoaderProvider>
+        <PageLoading />
+      </PageLoaderProvider>
       <main className="m-10 mx-auto w-full lg:max-w-7xl">
         <HeroSection />
 
