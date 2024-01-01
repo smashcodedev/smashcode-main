@@ -37,7 +37,6 @@
   background: #1aaca2;
 }
 
-
 @layer components {
   .gradient-bg {
     background: linear-gradient(180deg, var(--primary) 0%, #121212 100%);
@@ -1771,58 +1770,6 @@
     }
   }
 
-  /* @media (max-width: 460px) {
-    .sub-categories-btn-wrapper {
-      display: block;
-      margin-top: 25px;
-      position: relative;
-    }
-    .sub-categories-btn-wrapper::after {
-      content: "";
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
-      height: 170%;
-      background-color: var(--primary);
-    }
-    .sub-categories-btn-wrapper .tab-btn {
-      font-size: 0.7rem;
-      display: block;
-      width: 42%;
-      clear: both;
-      position: relative;
-    }
-    .sub-categories-btn-wrapper .tab-btn::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: var(--primary);
-    }
-    .sub-categories-btn-wrapper .tab-btn:nth-child(even) {
-      float: right;
-      border-radius: 0 8px 8px 0;
-    }
-    .sub-categories-btn-wrapper .tab-btn:nth-child(even):after {
-      left: -21.5%;
-    }
-    .sub-categories-btn-wrapper .tab-btn:nth-child(odd):after {
-      right: -22%;
-    }
-    .sub-categories-btn-wrapper .tab-btn:nth-child(odd) {
-      border-radius: 8px 0 0 8px;
-    }
-    .tabs-buttons-wrapper .tab-btn {
-      padding: 8px;
-      font-size: 0.7rem;
-    }
-  } */
-
   /* dashboard project form video css */
 
   .video-select-box {
@@ -1870,5 +1817,60 @@
     align-items: center;
     opacity: 0;
     cursor: pointer;
+  }
+
+  /* whatsapp icon */
+  .floating-chat-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.253);
+    overflow: hidden;
+  }
+
+  .whatstbtn {
+    background-color: #25d366;
+    animation-delay: 3s;
+    animation: floating1 1s linear infinite alternate;
+  }
+
+  @keyframes floating1 {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.07);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .floating-chat-btn:hover {
+    animation: none;
+    color: #fff !important;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .floating-chat-btn {
+      width: 35px;
+      height: 35px;
+    }
+    .whatstbtn {
+      font-size: 25px;
+    } 
   }
 }

@@ -6,6 +6,8 @@ import { Footer, Navbar } from "@/components";
 
 import "./globals.css";
 import { AOSInit } from "@/components/ui/AOSInit";
+import { FaWhatsapp } from "react-icons/fa6";
+import Link from "next/link";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -34,6 +36,14 @@ export default function RootLayout({
         <Footer />
 
         <Toaster position="bottom-right" />
+
+        <Link
+          className="floating-chat-btn whatstbtn text-2xl"
+          href="https://wa.me/923071991737"
+          target="_blank"
+        >
+          <FaWhatsapp />
+        </Link>
       </body>
     </html>
   );
