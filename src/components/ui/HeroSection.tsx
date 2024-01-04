@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="mt-32 text-center xl:mt-52 xl:text-left">
+    <section className="mt-32 m-8 2xl:mt-32 text-center xl:text-left">
       <div className="flex flex-col items-center justify-center xl:flex-row">
         <div className="space-y-6">
           <h1 className="text-center text-2xl capitalize xl:text-left xl:text-6xl xl:leading-tight">
