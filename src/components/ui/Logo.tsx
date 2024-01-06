@@ -10,7 +10,7 @@ const Logo = () => {
         alt="smash code logo"
         quality={100}
         priority
-        className="w-20 cursor-pointer object-contain"
+        className="w-24 cursor-pointer object-contain"
       />
     </Link>
   );

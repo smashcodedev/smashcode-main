@@ -1,13 +1,17 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@/../public/images/web/logopng.png";
 import Image from "next/image";
-import { PageLoaderContext } from "@/context/PageLoaderContext";
 
 export default function PageLoading() {
-  const { loading } = useContext(PageLoaderContext);
-  if (!loading) return null;
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
+  if (!isLoadin) return null;
 
   return (
     <div className="laptop WebStartLoader" id="WebStartLoader">
