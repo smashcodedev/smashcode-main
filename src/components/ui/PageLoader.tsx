@@ -11,7 +11,7 @@ export default function PageLoading() {
     setIsLoading(false);
   }, []);
 
-  if (!isLoadin) return null;
+  if (!isLoading) return null;
 
   return (
     <div className="laptop WebStartLoader" id="WebStartLoader">
