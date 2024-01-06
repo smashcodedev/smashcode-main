@@ -1,8 +1,6 @@
 import projectsData from "@/data/projects";
 import servicesData, { ServiceType } from "@/data/services";
 import { FeedbackSection, HeroSection, Projects, Services } from "@/components";
-import PageLoading from "@/components/ui/PageLoader";
-import { PageLoaderProvider } from "@/context/PageLoaderContext";
 
 const services: ServiceType[] = [
   servicesData.customWebDevelopment,
