@@ -5,10 +5,10 @@ import logo from "@/../public/images/web/logopng.png";
 import Image from "next/image";
 
 export default function PageLoading() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setIsLoading(false);
+    setTimeout(() => setIsLoading(false), 2200);
   }, []);
 
   if (!isLoading) return null;
