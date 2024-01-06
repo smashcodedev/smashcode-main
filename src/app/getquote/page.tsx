@@ -7,6 +7,7 @@ import { BudgetSlider } from "@/components";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
+import { getDatabase, ref } from "firebase/database";
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -26,6 +27,7 @@ const ContactPage: React.FC = () => {
     }
 
     try {
+      // const ref = ref(getDatabase(), 'quotes')
       await emailjs.send(serviceId, templateId, data, userId);
       toast.success("Thank you! for contacting us.");
       reset();
