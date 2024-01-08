@@ -7,8 +7,15 @@ import { BudgetSlider } from "@/components";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
-import { getDatabase, ref } from "firebase/database";
+import { child, getDatabase, push, ref, set } from "firebase/database";
+import { ref as storageRef } from "firebase/storage";
 import { db } from "@/config/config";
+import { useState } from "react";
+import {
+  getDownloadURL,
+  getStorage,
+  uploadBytesResumable,
+} from "firebase/storage";
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -16,6 +23,7 @@ const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
 const ContactPage: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
+  const [budget, setBudget] = useState<number>(0);
 
   const onSubmitQuote = async (data: any) => {
     if (!isEmail(data.email)) {
@@ -27,30 +35,43 @@ const ContactPage: React.FC = () => {
     //   throw new Error("Environment variables are not set");
     // }
 
-    try {      
-      toast.success("Thank you! for contacting us.");
-      // const quoteRef = ref(db, "client-quotes");
-      // const newId = push(quoteRef).key as string;
+    try {
+      let fileUrl = "";
 
-      // set(child(quoteRef, newId), {
-      //   id: newId,
-      //   client_name: "John Doe",
-      //   email: "test@gmail.com",
-      //   description: "Lorem ipsum",
-      //   budget: 500,
-      //   file_url: "https:google.com",
-      // })
-      //   .then(() => {
-      //     console.log("Quote has been submitted!");
-      //     toast.success("Your project has been submitted, Thank you!");
-      //   })
-      //   .catch((err) => {
-      //     console.log("Error while saving a new quote => ", err);
-      //     toast.error("Something went wrong");
-      //   });
-      
-      toast.success("form successful");
-      reset();
+      if (data.file && data.file.length > 0) {
+        const file = data.file[0];
+        const storage = getStorage();
+        const storageref = storageRef(storage, "quotes-files");
+
+        const snapshot = await uploadBytesResumable(storageref, file);
+
+        const downloadURL = await getDownloadURL(snapshot.ref);
+      } else {
+        fileUrl = data.fileLink;
+      }
+
+      console.log(data.file, data.fileLink);
+
+      const quoteRef = ref(db, "client-quotes");
+      const newId = push(quoteRef).key as string;
+
+      set(child(quoteRef, newId), {
+        id: newId,
+        client_name: data.name,
+        email: data.email,
+        description: data.description,
+        budget: budget,
+        file_url: fileUrl,
+      })
+        .then(() => {
+          console.log("Quote has been submitted!");
+          toast.success("Your project has been submitted, Thank you!");
+        })
+        .catch((err: unknown) => {
+          console.log("Error while saving a new quote => ", err);
+          toast.error("Something went wrong");
+        });
+      // reset();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
     }
@@ -101,7 +122,7 @@ const ContactPage: React.FC = () => {
                   className="form-control form-control-lg w-full"
                   rows={7}
                   placeholder="Project Description"
-                  {...register("projectDesc", { required: true })}
+                  {...register("description", { required: true })}
                 ></textarea>
               </div>
               <div className="form-group relative file-input-button">
@@ -119,8 +140,19 @@ const ContactPage: React.FC = () => {
                   })}
                 />
               </div>
-              <BudgetSlider />
 
+              <BudgetSlider budget={budget} setBudget={setBudget} />
+
+              <div className="form-group relative">
+                <FaRegEnvelopeOpen className="contact-label-icon" />
+                <input
+                  type="url"
+                  id="fileUrl"
+                  className="form-control form-control-lg thick w-full"
+                  placeholder="File Url"
+                  {...register("fileLink")}
+                />
+              </div>
               <div className="text-center">
                 <button type="submit" className="btn btn-primary" tabIndex={-1}>
                   Send your quote

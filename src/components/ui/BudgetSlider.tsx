@@ -1,12 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
-const BudgetSlider = () => {
-  const [value, setValue] = useState(0);
-
+type BudgetSliderProps = {
+  budget: number;
+  setBudget: (value: number) => void;
+};
+const BudgetSlider: React.FC<BudgetSliderProps> = ({ budget, setBudget }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(Number(event.target.value));
+    setBudget(Number(event.target.value));
   };
 
   return (
@@ -14,14 +17,14 @@ const BudgetSlider = () => {
       <div className="mx-auto max-w-xl">
         <label htmlFor="budget" className="text-2xl text-primary-green">
           <span className="text-white">Your Estimated budget:</span>{" "}
-          <span className="font-old text-primary-gren">${value}</span>
+          <span className="font-old text-primary-gren">${budget}</span>
         </label>
 
         <input
           type="range"
           min="50"
           max="10000"
-          value={value}
+          value={budget}
           id="budget"
           name="budget"
           onChange={handleChange}
