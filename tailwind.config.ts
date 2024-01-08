@@ -23,8 +23,10 @@ const config: Config = {
     function ({ addUtilities }: { addUtilities: Function }) {
       const newUtilities = {
         ".file-input-button": {
-          "::hover": {
-            "background-color": "#1aa3",
+          "::file-selector-button:hover": {
+            "background-color": "#30b4ab",
+            cursor: "pointer",
+            transition: "0.3s all ease",
           },
           "::file-selector-button": {
             "background-color": "#1aaca2",
@@ -33,6 +35,7 @@ const config: Config = {
             "border-radius": "12px",
             border: "none",
           },
+
         },
       };
       addUtilities(newUtilities);

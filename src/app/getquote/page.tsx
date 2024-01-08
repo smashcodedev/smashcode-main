@@ -1,21 +1,23 @@
 "use client";
 
-import emailjs from "emailjs-com";
-import { BiRename } from "react-icons/bi";
-import { FaRegEnvelopeOpen } from "react-icons/fa";
-import { BudgetSlider } from "@/components";
+import { useState } from "react";
+
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
-import isEmail from "validator/lib/isEmail";
-import { child, getDatabase, push, ref, set } from "firebase/database";
-import { ref as storageRef } from "firebase/storage";
+
 import { db } from "@/config/config";
-import { useState } from "react";
-import {
-  getDownloadURL,
-  getStorage,
-  uploadBytesResumable,
-} from "firebase/storage";
+import { BiRename } from "react-icons/bi";
+import { BudgetSlider } from "@/components";
+import isEmail from "validator/lib/isEmail";
+import { FaRegEnvelopeOpen } from "react-icons/fa";
+import { ref as storageRef } from "firebase/storage";
+import { child, push, ref, set } from "firebase/database";
+import { getDownloadURL, getStorage, uploadBytesResumable } from "firebase/storage";
+import { IoIosLink } from "react-icons/io";
+import { LuLink } from "react-icons/lu";
+import { HiOutlineLink } from "react-icons/hi2";
+import { MdOutlineDescription } from "react-icons/md";
+
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -61,11 +63,10 @@ const ContactPage: React.FC = () => {
         file_url: fileUrl,
       })
         .then(() => {
-          console.log("Quote has been submitted!");
           toast.success("Your project has been submitted, Thank you!");
         })
         .catch((err: unknown) => {
-          console.log("Error while saving a new quote => ", err);
+          console.log(err)
           toast.error("Something went wrong");
         });
       reset();
@@ -115,7 +116,7 @@ const ContactPage: React.FC = () => {
               </div>
               <div className="form-group message relative">
                 <textarea
-                  id="formMessage"
+                  id="projectDescription"
                   className="form-control form-control-lg w-full"
                   rows={7}
                   placeholder="Project Description"
@@ -136,13 +137,11 @@ const ContactPage: React.FC = () => {
                     },
                   })}
                 />
-                <p>Or enter file url:</p>
+                <p className="mt-2">Or enter file url:</p>
               </div>
 
-              <BudgetSlider budget={budget} setBudget={setBudget} />
-
               <div className="form-group relative">
-                <FaRegEnvelopeOpen className="contact-label-icon" />
+                <HiOutlineLink className="contact-label-icon" />
                 <input
                   type="url"
                   id="fileUrl"
@@ -151,6 +150,8 @@ const ContactPage: React.FC = () => {
                   {...register("fileLink")}
                 />
               </div>
+              <BudgetSlider budget={budget} setBudget={setBudget} />
+
               <div className="text-center">
                 <button type="submit" className="btn btn-primary" tabIndex={-1}>
                   Send your quote
