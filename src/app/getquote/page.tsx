@@ -12,12 +12,12 @@ import isEmail from "validator/lib/isEmail";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
 import { ref as storageRef } from "firebase/storage";
 import { child, push, ref, set } from "firebase/database";
-import { getDownloadURL, getStorage, uploadBytesResumable } from "firebase/storage";
-import { IoIosLink } from "react-icons/io";
-import { LuLink } from "react-icons/lu";
+import {
+  getDownloadURL,
+  getStorage,
+  uploadBytesResumable,
+} from "firebase/storage";
 import { HiOutlineLink } from "react-icons/hi2";
-import { MdOutlineDescription } from "react-icons/md";
-
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -26,6 +26,7 @@ const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 const ContactPage: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
   const [budget, setBudget] = useState<number>(0);
+  const [projectFileType, setProjectFileType] = useState<string>("");
 
   const onSubmitQuote = async (data: any) => {
     if (!isEmail(data.email)) {
@@ -66,7 +67,7 @@ const ContactPage: React.FC = () => {
           toast.success("Your project has been submitted, Thank you!");
         })
         .catch((err: unknown) => {
-          console.log(err)
+          console.log(err);
           toast.error("Something went wrong");
         });
       reset();
@@ -123,35 +124,66 @@ const ContactPage: React.FC = () => {
                   {...register("description", { required: true })}
                 ></textarea>
               </div>
-              <div className="form-group relative file-input-button">
-                <input
-                  type="file"
-                  id="formFile"
-                  style={{ color: "transparent" }}
-                  className="mt-4 w-full file:text-white"
-                  {...register("file", {
-                    validate: {
-                      checkFileSize: (value) =>
-                        value[0].size <= 2000000 ||
-                        "The file size should be less than 2MB",
-                    },
-                  })}
-                />
-                <p className="mt-2">Or enter file url:</p>
+              <div className="mt-2">
+                <div className="cursor-pointer space-x-2">
+                  <input
+                    type="radio"
+                    name="projectFileType"
+                    id="projectFile"
+                    onChange={() => setProjectFileType("upload")}
+                    className="projectTypeInput"
+                  />
+                  <label className="cursor-pointer" htmlFor="projectFile">
+                    Upload File
+                  </label>
+                </div>
+                <div className="space-x-2">
+                  <input
+                    type="radio"
+                    name="projectFileType"
+                    id="projectFileUrl"
+                    onChange={() => setProjectFileType("url")}
+                    className="projectTypeInput"
+                  />
+                  <label className="cursor-pointer" htmlFor="projectFileUrl">
+                    Upload File Url
+                  </label>
+                </div>
               </div>
 
-              <div className="form-group relative">
-                <HiOutlineLink className="contact-label-icon" />
-                <input
-                  type="url"
-                  id="fileUrl"
-                  className="form-control form-control-lg thick w-full"
-                  placeholder="File Url"
-                  {...register("fileLink")}
-                />
-              </div>
+              {projectFileType === "upload" ? (
+                <div className="form-group relative file-input-button">
+                  <input
+                    type="file"
+                    id="formFile"
+                    style={{ color: "transparent" }}
+                    className="mt-4 w-full file:text-white"
+                    {...register("file", {
+                      validate: {
+                        checkFileSize: (value) =>
+                          value[0].size <= 2000000 ||
+                          "The file size should be less than 2MB",
+                      },
+                    })}
+                  />
+                  <p className="mt-2">
+                    <span className="text-primary-green">Note:</span>The file
+                    should be less than 200mb.
+                  </p>
+                </div>
+              ) : (
+                <div className="form-group relative">
+                  <HiOutlineLink className="contact-label-icon" />
+                  <input
+                    type="url"
+                    id="fileUrl"
+                    className="form-control form-control-lg thick w-full"
+                    placeholder="File Url"
+                    {...register("fileLink")}
+                  />
+                </div>
+              )}
               <BudgetSlider budget={budget} setBudget={setBudget} />
-
               <div className="text-center">
                 <button type="submit" className="btn btn-primary" tabIndex={-1}>
                   Send your quote
