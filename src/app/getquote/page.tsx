@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
 import { getDatabase, ref } from "firebase/database";
+import { db } from "@/config/config";
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -16,7 +17,7 @@ const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 const ContactPage: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
 
-  const onSubmitForm = async (data: any) => {
+  const onSubmitQuote = async (data: any) => {
     if (!isEmail(data.email)) {
       toast.error("Please enter a valid email address.");
       return;
@@ -27,8 +28,7 @@ const ContactPage: React.FC = () => {
     }
 
     try {
-      // const ref = ref(getDatabase(), 'quotes')
-      await emailjs.send(serviceId, templateId, data, userId);
+      
       toast.success("Thank you! for contacting us.");
       reset();
     } catch (error) {
@@ -52,7 +52,7 @@ const ContactPage: React.FC = () => {
         <div className="form-container flex flex-wrap items-center justify-center">
           <div className="w-full md:w-1/2">
             <form
-              onSubmit={handleSubmit(onSubmitForm)}
+              onSubmit={handleSubmit(onSubmitQuote)}
               className="contact-form"
             >
               <div className="form-group relative">
