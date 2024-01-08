@@ -15,7 +15,6 @@ const links: LinksType[] = [
 
 const Navbar: React.FC = () => {
   const deskHeader = useRef<HTMLElement | null>(null);
-
   
   useEffect(() => {
     let lastScroll = 0;
@@ -41,7 +40,7 @@ const Navbar: React.FC = () => {
     <header className="fixed top-0 z-[1000] w-full">
       <nav
         className="mx-4 my-3 flex items-center justify-between
-        rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] ease-linear 2xl:max-w-7xl lg:px-14 lg:py-3 2xl:mx-auto"
+        rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] ease-linear 2xl:max-w-7xl lg:px-10 2xl:mx-auto"
         ref={deskHeader}
       >
         <Logo />

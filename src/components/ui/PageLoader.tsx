@@ -14,7 +14,7 @@ export default function PageLoading() {
   if (!isLoading) return null;
 
   return (
-    <div className="laptop WebStartLoader" id="WebStartLoader">
+    <div className="laptop WebStartLoader overflow-hidden" id="WebStartLoader">
       <svg
         className="laptop__svg"
         xmlns="http://www.w3.org/2000/svg"
