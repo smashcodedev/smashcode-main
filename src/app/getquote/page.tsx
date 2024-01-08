@@ -31,17 +31,16 @@ const ContactPage: React.FC = () => {
       return;
     }
 
-    // if (!serviceId || !templateId || !userId) {
-    //   throw new Error("Environment variables are not set");
-    // }
-
     try {
       let fileUrl = "";
 
       if (data.file && data.file.length > 0) {
         const file = data.file[0];
         const storage = getStorage();
-        const storageref = storageRef(storage, "quotes-files");
+        const storageref = storageRef(
+          storage,
+          `quotes-files/${data.file[0].name}`,
+        );
 
         const snapshot = await uploadBytesResumable(storageref, file);
 
@@ -49,8 +48,6 @@ const ContactPage: React.FC = () => {
       } else {
         fileUrl = data.fileLink;
       }
-
-      console.log(data.file, data.fileLink);
 
       const quoteRef = ref(db, "client-quotes");
       const newId = push(quoteRef).key as string;
@@ -71,7 +68,7 @@ const ContactPage: React.FC = () => {
           console.log("Error while saving a new quote => ", err);
           toast.error("Something went wrong");
         });
-      // reset();
+      reset();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
     }
