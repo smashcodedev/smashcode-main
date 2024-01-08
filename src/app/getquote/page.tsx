@@ -23,13 +23,33 @@ const ContactPage: React.FC = () => {
       return;
     }
 
-    if (!serviceId || !templateId || !userId) {
-      throw new Error("Environment variables are not set");
-    }
+    // if (!serviceId || !templateId || !userId) {
+    //   throw new Error("Environment variables are not set");
+    // }
 
-    try {
-      
+    try {      
       toast.success("Thank you! for contacting us.");
+      // const quoteRef = ref(db, "client-quotes");
+      // const newId = push(quoteRef).key as string;
+
+      // set(child(quoteRef, newId), {
+      //   id: newId,
+      //   client_name: "John Doe",
+      //   email: "test@gmail.com",
+      //   description: "Lorem ipsum",
+      //   budget: 500,
+      //   file_url: "https:google.com",
+      // })
+      //   .then(() => {
+      //     console.log("Quote has been submitted!");
+      //     toast.success("Your project has been submitted, Thank you!");
+      //   })
+      //   .catch((err) => {
+      //     console.log("Error while saving a new quote => ", err);
+      //     toast.error("Something went wrong");
+      //   });
+      
+      toast.success("form successful");
       reset();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
