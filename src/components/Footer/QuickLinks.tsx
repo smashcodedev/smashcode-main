@@ -23,6 +23,7 @@ const quickLinks: QuickLinksTypes[] = [
   { label: "Services", href: "services", icon: <FaServicestack /> },
   { label: "Projects", href: "projects", icon: <FaProjectDiagram /> },
   { label: "Blogs", href: "blogs", icon: <FaBook /> },
+  { label: "Get Quote", href: "getquote", icon: <FaBook /> },
 ];
 
 const QuickLinks = () => {

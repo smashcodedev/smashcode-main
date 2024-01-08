@@ -1,17 +1,17 @@
 "use client";
 
-import emailjs from "emailjs-com";
 import { BiRename } from "react-icons/bi";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
 import { BudgetSlider } from "@/components";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
-import { getDatabase, ref } from "firebase/database";
+import { child, push, ref, set } from "firebase/database";
+import { db } from "@/config/config";
 
-const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+// const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+// const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+// const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
 const ContactPage: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -22,14 +22,33 @@ const ContactPage: React.FC = () => {
       return;
     }
 
-    if (!serviceId || !templateId || !userId) {
-      throw new Error("Environment variables are not set");
-    }
+    // if (!serviceId || !templateId || !userId) {
+    //   throw new Error("Environment variables are not set");
+    // }
 
     try {
-      // const ref = ref(getDatabase(), 'quotes')
-      await emailjs.send(serviceId, templateId, data, userId);
-      toast.success("Thank you! for contacting us.");
+      // const quoteRef = ref(db, "client-quotes");
+      // const newId = push(quoteRef).key as string;
+
+      // set(child(quoteRef, newId), {
+      //   id: newId,
+      //   client_name: "John Doe",
+      //   email: "test@gmail.com",
+      //   description: "Lorem ipsum",
+      //   budget: 500,
+      //   file_url: "https:google.com",
+      // })
+      //   .then(() => {
+      //     console.log("Quote has been submitted!");
+      //     toast.success("Your project has been submitted, Thank you!");
+      //   })
+      //   .catch((err) => {
+      //     console.log("Error while saving a new quote => ", err);
+      //     toast.error("Something went wrong");
+      //   });
+      
+      toast.success("form successful");
+
       reset();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
@@ -93,8 +112,8 @@ const ContactPage: React.FC = () => {
                   {...register("file", {
                     validate: {
                       checkFileSize: (value) =>
-                        value[0].size <= 2000000 ||
-                        "The file size should be less than 2MB",
+                        value[0].size <= 209715200 ||
+                        "The file size should be less than 200MB",
                     },
                   })}
                 />
