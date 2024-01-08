@@ -136,6 +136,7 @@ const ContactPage: React.FC = () => {
                     },
                   })}
                 />
+                <p>Or enter file url:</p>
               </div>
 
               <BudgetSlider budget={budget} setBudget={setBudget} />
