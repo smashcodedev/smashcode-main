@@ -1,5 +1,10 @@
 import { db } from "@/config/config";
 import { child, push, ref, set } from "firebase/database";
+import {
+  getStorage,
+  uploadBytesResumable,
+  ref as storageRef,
+} from "firebase/storage";
 
 type SubmitQuoteFirebaseArgs = {
   name: string;
@@ -27,6 +32,13 @@ const submitQuoteFirebase = async ({
     budget: budget,
     file_url: fileLink,
   });
+};
+
+export const uploadFile = async (file: File) => {
+  const storage = getStorage();
+  const storageref = storageRef(storage, `quotes-files/${file.name}`);
+
+  await uploadBytesResumable(storageref, file);
 };
 
 export default submitQuoteFirebase;

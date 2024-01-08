@@ -5,24 +5,12 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
-import { db } from "@/config/config";
 import { BiRename } from "react-icons/bi";
 import { BudgetSlider } from "@/components";
 import isEmail from "validator/lib/isEmail";
-import { FaRegEnvelopeOpen } from "react-icons/fa";
-import { ref as storageRef } from "firebase/storage";
-import { child, push, ref, set } from "firebase/database";
-import {
-  getDownloadURL,
-  getStorage,
-  uploadBytesResumable,
-} from "firebase/storage";
 import { HiOutlineLink } from "react-icons/hi2";
-import submitQuoteFirebase from "@/api/apiQuote";
-
-const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
+import { FaRegEnvelopeOpen } from "react-icons/fa";
 
 const ContactPage: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -37,32 +25,32 @@ const ContactPage: React.FC = () => {
 
     try {
       if (projectFileType === "url") {
-        submitQuoteFirebase({
+        await submitQuoteFirebase({
           name: data.name,
           email: data.email,
           description: data.description,
           budget: budget,
           fileLink: data.fileLink,
-        })
-          .then(() => {
-            toast.success("Your project has been submitted, Thank you!");
-          })
-          .catch((err: unknown) => {
-            console.log(err);
-            toast.error("Something went wrong");
-          });
+        });
+
+        toast.success("Your project has been submitted, Thank you!");
         reset();
       } else {
         if (data.file && data.file.length > 0) {
           const file = data.file[0];
-          const storage = getStorage();
-          const storageref = storageRef(
-            storage,
-            `quotes-files/${data.file[0].name}`,
-          );
-
-          await uploadBytesResumable(storageref, file);
+          await uploadFile(file);
         }
+
+        await submitQuoteFirebase({
+          name: data.name,
+          email: data.email,
+          description: data.description,
+          budget: budget,
+          fileLink: "",
+        });
+
+        toast.success("Your project has been submitted, Thank you!");
+        reset();
       }
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
@@ -118,7 +106,7 @@ const ContactPage: React.FC = () => {
                 ></textarea>
               </div>
               <div className="mt-2">
-                <div className="cursor-pointer space-x-2">
+                <div className="space-x-2">
                   <input
                     type="radio"
                     name="projectFileType"
@@ -164,7 +152,8 @@ const ContactPage: React.FC = () => {
                     should be less than 200mb.
                   </p>
                 </div>
-              ) : (
+              ) : null}
+              {projectFileType === "url" ? (
                 <div className="form-group relative">
                   <HiOutlineLink className="contact-label-icon" />
                   <input
@@ -175,7 +164,7 @@ const ContactPage: React.FC = () => {
                     {...register("fileLink")}
                   />
                 </div>
-              )}
+              ) : null}
               <BudgetSlider budget={budget} setBudget={setBudget} />
               <div className="text-center">
                 <button type="submit" className="btn btn-primary" tabIndex={-1}>

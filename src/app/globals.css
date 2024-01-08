@@ -2085,6 +2085,7 @@
 
   /* get quote page */
   .projectTypeInput {
+    appearance: none;
     -webkit-appearance: none;
     /* remove default */
     display: inline-block;
@@ -2107,33 +2108,39 @@
     background-repeat: no-repeat;
   }
   .projectTypeInput {
-      -webkit-transition:
-        background-position 0.15s cubic-bezier(0.8, 0, 1, 1),
-        -webkit-transform 0.25s cubic-bezier(0.8, 0, 1, 1);
-      transition:
-        background-position 0.15s cubic-bezier(0.8, 0, 1, 1),
-        transform 0.25s cubic-bezier(0.8, 0, 1, 1);
-      outline: none;
-  }
-
-  .projectTypeInput:checked {
-      -webkit-transition:
-        background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1),
-        -webkit-transform 0.25s cubic-bezier(0, 0, 0.2, 1);
-      transition:
-        background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1),
-        transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+    -webkit-transition:
+      background-position 0.15s cubic-bezier(0.8, 0, 1, 1),
+      -webkit-transform 0.25s cubic-bezier(0.8, 0, 1, 1);
+    transition:
+      background-position 0.15s cubic-bezier(0.8, 0, 1, 1),
+      transform 0.25s cubic-bezier(0.8, 0, 1, 1);
+    outline: none;
   }
 
   .projectTypeInput:checked {
     -webkit-transition:
       background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1),
       -webkit-transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+    transition:
+      background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1),
+      transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .projectTypeInput:checked {
+    -webkit-transition:
+      background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1),
+      -webkit-transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+
+    transition:
+      background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1),
+      transform 0.25s cubic-bezier(0, 0, 0.2, 1);
   }
 
   .projectTypeInput:active {
     -webkit-transform: scale(1.5);
+    transform: scale(1.5);
     -webkit-transition: -webkit-transform 0.1s cubic-bezier(0, 0, 0.2, 1);
+    transition: -webkit-transform 0.1s cubic-bezier(0, 0, 0.2, 1);
   }
 
   /* The up/down direction logic */
