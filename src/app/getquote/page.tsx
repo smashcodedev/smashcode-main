@@ -18,6 +18,7 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { HiOutlineLink } from "react-icons/hi2";
+import submitQuoteFirebase from "@/api/apiQuote";
 
 const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -35,42 +36,34 @@ const ContactPage: React.FC = () => {
     }
 
     try {
-      let fileUrl = "";
-
-      if (data.file && data.file.length > 0) {
-        const file = data.file[0];
-        const storage = getStorage();
-        const storageref = storageRef(
-          storage,
-          `quotes-files/${data.file[0].name}`,
-        );
-
-        const snapshot = await uploadBytesResumable(storageref, file);
-
-        const downloadURL = await getDownloadURL(snapshot.ref);
-      } else {
-        fileUrl = data.fileLink;
-      }
-
-      const quoteRef = ref(db, "client-quotes");
-      const newId = push(quoteRef).key as string;
-
-      set(child(quoteRef, newId), {
-        id: newId,
-        client_name: data.name,
-        email: data.email,
-        description: data.description,
-        budget: budget,
-        file_url: fileUrl,
-      })
-        .then(() => {
-          toast.success("Your project has been submitted, Thank you!");
+      if (projectFileType === "url") {
+        submitQuoteFirebase({
+          name: data.name,
+          email: data.email,
+          description: data.description,
+          budget: budget,
+          fileLink: data.fileLink,
         })
-        .catch((err: unknown) => {
-          console.log(err);
-          toast.error("Something went wrong");
-        });
-      reset();
+          .then(() => {
+            toast.success("Your project has been submitted, Thank you!");
+          })
+          .catch((err: unknown) => {
+            console.log(err);
+            toast.error("Something went wrong");
+          });
+        reset();
+      } else {
+        if (data.file && data.file.length > 0) {
+          const file = data.file[0];
+          const storage = getStorage();
+          const storageref = storageRef(
+            storage,
+            `quotes-files/${data.file[0].name}`,
+          );
+
+          await uploadBytesResumable(storageref, file);
+        }
+      }
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
     }
