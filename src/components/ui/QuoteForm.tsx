@@ -17,7 +17,7 @@ const QuoteForm = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isLoading },
   } = useForm();
   const [budget, setBudget] = useState<number>(0);
   const [projectFileType, setProjectFileType] = useState<string>("upload");
@@ -72,6 +72,7 @@ const QuoteForm = () => {
           className="form-control form-control-lg thick w-full border-none outline-none"
           placeholder="Name"
           {...register("name", { required: true })}
+          
         />
       </div>
       <div className="form-group relative">
@@ -160,8 +161,13 @@ const QuoteForm = () => {
       <BudgetSlider budget={budget} setBudget={setBudget} />
 
       <div className="text-center">
-        <button type="submit" className="btn btn-primary" tabIndex={-1}>
-          Request Quote
+        <button
+          disabled={isLoading}
+          type="submit"
+          className="btn btn-primary"
+          tabIndex={-1}
+        >
+          {isLoading ? "Requesting" : "Request Quote"}
         </button>
       </div>
     </form>
