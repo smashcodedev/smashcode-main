@@ -69,7 +69,7 @@ const QuoteForm = () => {
         <input
           type="text"
           id="formName"
-          className="form-control form-control-lg thick w-full"
+          className="form-control form-control-lg thick w-full border-none outline-none"
           placeholder="Name"
           {...register("name", { required: true })}
         />
@@ -79,15 +79,15 @@ const QuoteForm = () => {
         <input
           type="email"
           id="formEmail"
-          className="form-control form-control-lg thick w-full"
+          className="form-control form-control-lg thick w-full border-none outline-none"
           placeholder="E-mail"
-          {...register("email", { required: true })}
+          {...regiter("email", { required: true })}
         />
       </div>
       <div className="form-group message relative">
         <textarea
           id="projectDescription"
-          className="form-control form-control-lg w-full"
+          className="form-control form-control-lg w-full border-none outline-none"
           rows={7}
           placeholder="Project Description"
           {...register("description", { required: true })}
@@ -150,7 +150,7 @@ const QuoteForm = () => {
           <input
             type="url"
             id="fileUrl"
-            className="form-control form-control-lg thick w-full"
+            className="form-control form-control-lg thick w-full border-none outline-none"
             placeholder="File Url"
             {...register("fileLink")}
           />
