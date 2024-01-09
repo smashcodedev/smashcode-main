@@ -117,7 +117,7 @@ const QuoteForm = () => {
             className="projectTypeInput"
           />
           <label className="cursor-pointer" htmlFor="projectFileUrl">
-            Upload document url
+            Upload url
           </label>
         </div>
       </div>
@@ -151,7 +151,7 @@ const QuoteForm = () => {
             type="url"
             id="fileUrl"
             className="form-control form-control-lg thick w-full border-none outline-none"
-            placeholder="File Url"
+            placeholder="Document Url"
             {...register("fileLink")}
           />
         </div>

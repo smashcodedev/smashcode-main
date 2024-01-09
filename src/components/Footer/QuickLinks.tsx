@@ -9,6 +9,7 @@ import {
   FaServicestack,
   FaUser,
 } from "react-icons/fa";
+import { LuClipboardEdit } from "react-icons/lu";
 
 type QuickLinksTypes = {
   label: string;
@@ -23,7 +24,7 @@ const quickLinks: QuickLinksTypes[] = [
   { label: "Services", href: "services", icon: <FaServicestack /> },
   { label: "Projects", href: "projects", icon: <FaProjectDiagram /> },
   { label: "Blogs", href: "blogs", icon: <FaBook /> },
-  { label: "Get Quote", href: "getquote", icon: <FaBook /> },
+  { label: "Get a Quote", href: "getquote", icon: <LuClipboardEdit /> },
 ];
 
 const QuickLinks = () => {
