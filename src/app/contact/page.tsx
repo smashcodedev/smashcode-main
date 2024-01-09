@@ -33,10 +33,10 @@ const ContactPage: React.FC = () => {
       toast.error("Something went wrong! Please try again.");
     }
   };
-  
+
   return (
     <section className="m-10 mx-auto w-full lg:max-w-7xl">
-      <div className="m-10 mt-28 xl:mt-36">
+      <div className="m-10 mt-36 xl:mt-36">
         <div className="flex flex-wrap">
           <div className="w-full text-center">
             <h1 className="mb-4 text-4xl">Talk to Us</h1>

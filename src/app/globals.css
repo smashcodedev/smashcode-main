@@ -2100,10 +2100,10 @@
       inset hsla(0, 0%, 0%, 0.5) 0 0 0 1px;
     background-color: hsla(0, 1%, 52%, 0.2);
     background-image: -webkit-radial-gradient(
-      hsla(118, 100%, 90%, 1) 0%,
-      hsla(118, 100%, 70%, 1) 15%,
-      hsla(118, 100%, 60%, 0.3) 28%,
-      hsla(118, 100%, 30%, 0) 70%
+      #ccffff 0,
+      #1caca3 15%,
+      rgb(51 231 255 / 30%) 28%,
+      rgba(5, 153, 0, 0) 70%
     );
     background-repeat: no-repeat;
   }

@@ -13,9 +13,14 @@ import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
 
 const ContactPage: React.FC = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const [budget, setBudget] = useState<number>(0);
-  const [projectFileType, setProjectFileType] = useState<string>("");
+  const [projectFileType, setProjectFileType] = useState<string>("upload");
 
   const onSubmitQuote = async (data: any) => {
     if (!isEmail(data.email)) {
@@ -53,17 +58,18 @@ const ContactPage: React.FC = () => {
         reset();
       }
     } catch (error) {
+      console.log(error);
       toast.error("Something went wrong! Please try again.");
     }
   };
   return (
     <section className="m-10 mx-auto w-full lg:max-w-7xl">
-      <div className="m-10 mt-28 xl:mt-36">
+      <div className="m-10 mt-36">
         <div className="flex flex-wrap">
           <div className="w-full text-center">
             <h1 className="mb-4 text-4xl">Get a Quote</h1>
 
-            <h6 className="text-center text-xl">
+            <h6 className="text-center text-lg sm:text-xl">
               Let’s share details of your project. So that we can start working
               on it.
             </h6>
@@ -111,11 +117,12 @@ const ContactPage: React.FC = () => {
                     type="radio"
                     name="projectFileType"
                     id="projectFile"
+                    checked={projectFileType === "upload"}
                     onChange={() => setProjectFileType("upload")}
                     className="projectTypeInput"
                   />
                   <label className="cursor-pointer" htmlFor="projectFile">
-                    Upload File
+                    Upload a document
                   </label>
                 </div>
                 <div className="space-x-2">
@@ -123,11 +130,12 @@ const ContactPage: React.FC = () => {
                     type="radio"
                     name="projectFileType"
                     id="projectFileUrl"
+                    checked={projectFileType === "url"}
                     onChange={() => setProjectFileType("url")}
                     className="projectTypeInput"
                   />
                   <label className="cursor-pointer" htmlFor="projectFileUrl">
-                    Upload File Url
+                    Upload document url
                   </label>
                 </div>
               </div>
@@ -143,14 +151,13 @@ const ContactPage: React.FC = () => {
                       validate: {
                         checkFileSize: (value) =>
                           value[0].size <= 2000000 ||
-                          "The file size should be less than 2MB",
+                          "The file size should be less than 200mb",
                       },
                     })}
                   />
-                  <p className="mt-2">
-                    <span className="text-primary-green">Note:</span>The file
-                    should be less than 200mb.
-                  </p>
+                  {errors.file && (
+                    <p className="mt-2">The file should be less than 200mb</p>
+                  )}
                 </div>
               ) : null}
               {projectFileType === "url" ? (
@@ -168,7 +175,7 @@ const ContactPage: React.FC = () => {
               <BudgetSlider budget={budget} setBudget={setBudget} />
               <div className="text-center">
                 <button type="submit" className="btn btn-primary" tabIndex={-1}>
-                  Send your quote
+                  Request Quote
                 </button>
               </div>
             </form>
