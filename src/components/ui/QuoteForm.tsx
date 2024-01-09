@@ -81,7 +81,7 @@ const QuoteForm = () => {
           id="formEmail"
           className="form-control form-control-lg thick w-full border-none outline-none"
           placeholder="E-mail"
-          {...regiter("email", { required: true })}
+          {...register("email", { required: true })}
         />
       </div>
       <div className="form-group message relative">

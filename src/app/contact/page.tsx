@@ -60,7 +60,7 @@ const ContactPage: React.FC = () => {
                 <input
                   type="text"
                   id="formName"
-                  className="form-control form-control-lg thick w-full"
+                  className="form-control form-control-lg thick w-full border-none outline-none"
                   placeholder="Name"
                   {...register("name", { required: true })}
                 />
@@ -70,7 +70,7 @@ const ContactPage: React.FC = () => {
                 <input
                   type="email"
                   id="formEmail"
-                  className="form-control form-control-lg thick w-full"
+                  className="form-control form-control-lg thick w-full border-none outline-none"
                   placeholder="E-mail"
                   {...register("email", { required: true })}
                 />
@@ -78,7 +78,7 @@ const ContactPage: React.FC = () => {
               <div className="form-group message relative">
                 <textarea
                   id="formMessage"
-                  className="form-control form-control-lg w-full"
+                  className="form-control form-control-lg w-full border-none outline-none"
                   rows={7}
                   placeholder="Message"
                   {...register("message", { required: true })}
