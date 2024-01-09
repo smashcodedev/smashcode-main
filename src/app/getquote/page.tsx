@@ -145,8 +145,8 @@ const ContactPage: React.FC = () => {
                   <input
                     type="file"
                     id="formFile"
-                    style={{ color: "transparent" }}
-                    className="mt-4 w-full file:text-white"
+                    className="mt-4 w-full text-lg"
+                    style={{ color: "#ffffff"}}
                     {...register("file", {
                       validate: {
                         checkFileSize: (value) =>
@@ -156,7 +156,7 @@ const ContactPage: React.FC = () => {
                     })}
                   />
                   {errors.file && (
-                    <p className="mt-2">The file should be less than 200mb</p>
+                    <p className="mt-2 text-red-500">The file should be less than 200mb</p>
                   )}
                 </div>
               ) : null}
@@ -172,7 +172,9 @@ const ContactPage: React.FC = () => {
                   />
                 </div>
               ) : null}
+
               <BudgetSlider budget={budget} setBudget={setBudget} />
+              
               <div className="text-center">
                 <button type="submit" className="btn btn-primary" tabIndex={-1}>
                   Request Quote

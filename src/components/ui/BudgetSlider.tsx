@@ -6,6 +6,7 @@ type BudgetSliderProps = {
   budget: number;
   setBudget: (value: number) => void;
 };
+
 const BudgetSlider: React.FC<BudgetSliderProps> = ({ budget, setBudget }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBudget(Number(event.target.value));
@@ -15,7 +16,7 @@ const BudgetSlider: React.FC<BudgetSliderProps> = ({ budget, setBudget }) => {
     <div className="px- w-full py-5">
       <div className="mx-auto max-w-xl">
         <label htmlFor="budget" className="text-2xl text-primary-green">
-          <span className="text-white">Your Estimated budget:</span>{" "}
+          <span className="text-white text-xl">Your Estimated budget:</span>{" "}
           <span className="font-old text-primary-gren">${budget}</span>
         </label>
 
