@@ -22,8 +22,9 @@ const BudgetSlider: React.FC<BudgetSliderProps> = ({ budget, setBudget }) => {
 
         <input
           type="range"
-          min="50"
+          min="100"
           max="10000"
+          step="100"
           value={budget}
           id="budget"
           name="budget"

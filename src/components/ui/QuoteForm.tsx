@@ -17,9 +17,9 @@ const QuoteForm = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isLoading },
+    formState: { errors, isSubmitting: isLoading },
   } = useForm();
-  const [budget, setBudget] = useState<number>(0);
+  const [budget, setBudget] = useState<number>(100);
   const [projectFileType, setProjectFileType] = useState<string>("upload");
 
   const onSubmitQuote = async (data: any) => {
@@ -39,7 +39,7 @@ const QuoteForm = () => {
         });
 
         toast.success("Your project has been submitted, Thank you!");
-        reset();
+        // reset();
       } else {
         if (data.file && data.file.length > 0) {
           const file = data.file[0];
@@ -55,7 +55,7 @@ const QuoteForm = () => {
         });
 
         toast.success("Your project has been submitted, Thank you!");
-        reset();
+        // reset();
       }
     } catch (error) {
       console.log(error);
@@ -63,7 +63,10 @@ const QuoteForm = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit(onSubmitQuote)} className="contact-form">
+    <form
+      onSubmit={handleSubmit(onSubmitQuote)}
+      className="contact-form disabled:bg-red-400"
+    >
       <div className="form-group relative">
         <BiRename className="contact-label-icon" />
         <input
@@ -71,8 +74,8 @@ const QuoteForm = () => {
           id="formName"
           className="form-control form-control-lg thick w-full border-none outline-none"
           placeholder="Name"
+          disabled={isLoading}
           {...register("name", { required: true })}
-          
         />
       </div>
       <div className="form-group relative">
@@ -82,6 +85,7 @@ const QuoteForm = () => {
           id="formEmail"
           className="form-control form-control-lg thick w-full border-none outline-none"
           placeholder="E-mail"
+          disabled={isLoading}
           {...register("email", { required: true })}
         />
       </div>
@@ -91,7 +95,9 @@ const QuoteForm = () => {
           className="form-control form-control-lg w-full border-none outline-none"
           rows={7}
           placeholder="Project Description"
-          {...register("description", { required: true })}
+          disabled={isLoading}
+          maxLength={400}
+          {...register("description")}
         ></textarea>
       </div>
       <div className="mt-2">
@@ -136,6 +142,7 @@ const QuoteForm = () => {
                   value[0].size <= 2000000 ||
                   "The file size should be less than 200mb",
               },
+              required: false,
             })}
           />
           {errors.file && (
@@ -153,6 +160,7 @@ const QuoteForm = () => {
             id="fileUrl"
             className="form-control form-control-lg thick w-full border-none outline-none"
             placeholder="Document Url"
+            disabled={isLoading}
             {...register("fileLink")}
           />
         </div>
