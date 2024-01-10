@@ -65,7 +65,7 @@ const QuoteForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmitQuote)}
-      className="contact-form disabled:bg-red-400"
+      className="contact-form"
     >
       <div className="form-group relative">
         <BiRename className="contact-label-icon" />
@@ -139,7 +139,7 @@ const QuoteForm = () => {
             {...register("file", {
               validate: {
                 checkFileSize: (value) =>
-                  value[0].size <= 2000000 ||
+                  value[0]?.size <= 2000000 ||
                   "The file size should be less than 200mb",
               },
               required: false,
@@ -172,7 +172,7 @@ const QuoteForm = () => {
         <button
           disabled={isLoading}
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-primary disbabled:opacity-50 disabled:cursor-not-allowed"
           tabIndex={-1}
         >
           {isLoading ? "Requesting" : "Request Quote"}
