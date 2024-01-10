@@ -12,7 +12,7 @@ import { HiOutlineLink } from "react-icons/hi2";
 import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
 
-const QuoteForm = () => {
+const QuoteForm: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -40,19 +40,19 @@ const QuoteForm = () => {
 
         toast.success("Your project has been submitted, Thank you!");
         // reset();
-      } else {
+      } else if (projectFileType === "upload") {
         if (data.file && data.file.length > 0) {
           const file = data.file[0];
-          await uploadFile(file);
+          await uploadFile(file).then((url) => {
+            submitQuoteFirebase({
+              name: data.name,
+              email: data.email,
+              description: data.description,
+              budget: budget,
+              fileLink: url,
+            });
+          });
         }
-
-        await submitQuoteFirebase({
-          name: data.name,
-          email: data.email,
-          description: data.description,
-          budget: budget,
-          fileLink: "",
-        });
 
         toast.success("Your project has been submitted, Thank you!");
         // reset();
@@ -63,36 +63,35 @@ const QuoteForm = () => {
     }
   };
   return (
-    <form
-      onSubmit={handleSubmit(onSubmitQuote)}
-      className="contact-form"
-    >
+    <form onSubmit={handleSubmit(onSubmitQuote)} className="contact-form">
       <div className="form-group relative">
         <BiRename className="contact-label-icon" />
         <input
           type="text"
           id="formName"
-          className="form-control form-control-lg thick w-full border-none outline-none"
+          className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed disabled:bg-slate-300"
           placeholder="Name"
           disabled={isLoading}
           {...register("name", { required: true })}
         />
       </div>
+
       <div className="form-group relative">
         <FaRegEnvelopeOpen className="contact-label-icon" />
         <input
           type="email"
           id="formEmail"
-          className="form-control form-control-lg thick w-full border-none outline-none"
+          className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed disabled:bg-slate-300"
           placeholder="E-mail"
           disabled={isLoading}
           {...register("email", { required: true })}
         />
       </div>
+
       <div className="form-group message relative">
         <textarea
           id="projectDescription"
-          className="form-control form-control-lg w-full border-none outline-none"
+          className="form-control form-control-lg w-full border-none outline-none disabled:cursor-not-allowed disabled:bg-slate-300"
           rows={7}
           placeholder="Project Description"
           disabled={isLoading}
@@ -100,6 +99,7 @@ const QuoteForm = () => {
           {...register("description")}
         ></textarea>
       </div>
+
       <div className="mt-2">
         <div className="space-x-2">
           <input
@@ -111,9 +111,10 @@ const QuoteForm = () => {
             className="projectTypeInput"
           />
           <label className="cursor-pointer" htmlFor="projectFile">
-            Upload a document
+            Upload a document (optional - max 200mb)
           </label>
         </div>
+
         <div className="space-x-2">
           <input
             type="radio"
@@ -124,7 +125,7 @@ const QuoteForm = () => {
             className="projectTypeInput"
           />
           <label className="cursor-pointer" htmlFor="projectFileUrl">
-            Upload url
+            Upload url (optional)
           </label>
         </div>
       </div>
@@ -158,7 +159,7 @@ const QuoteForm = () => {
           <input
             type="url"
             id="fileUrl"
-            className="form-control form-control-lg thick w-full border-none outline-none"
+            className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed disabled:bg-slate-300"
             placeholder="Document Url"
             disabled={isLoading}
             {...register("fileLink")}
@@ -175,7 +176,7 @@ const QuoteForm = () => {
           className="btn btn-primary disbabled:opacity-50 disabled:cursor-not-allowed"
           tabIndex={-1}
         >
-          {isLoading ? "Requesting" : "Request Quote"}
+          {isLoading ? "Requesting..." : "Request Quote"}
         </button>
       </div>
     </form>

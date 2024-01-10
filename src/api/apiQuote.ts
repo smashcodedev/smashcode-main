@@ -4,6 +4,7 @@ import {
   getStorage,
   uploadBytesResumable,
   ref as storageRef,
+  getDownloadURL,
 } from "firebase/storage";
 
 type SubmitQuoteFirebaseArgs = {
@@ -32,6 +33,7 @@ const submitQuoteFirebase = async ({
     budget: budget,
     file_url: fileLink,
   });
+  console.log(fileLink);
 };
 
 export const uploadFile = async (file: File) => {
@@ -39,6 +41,10 @@ export const uploadFile = async (file: File) => {
   const storageref = storageRef(storage, `quotes-files/${file.name}`);
 
   await uploadBytesResumable(storageref, file);
+
+  const downloadURL = await getDownloadURL(storageref);
+
+  return downloadURL;
 };
 
 export default submitQuoteFirebase;
