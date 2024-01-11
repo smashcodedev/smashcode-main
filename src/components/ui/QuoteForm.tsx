@@ -96,7 +96,7 @@ const QuoteForm: React.FC = () => {
           placeholder="Project Description"
           disabled={isLoading}
           maxLength={400}
-          {...regiter("description")}
+          {...register("description")}
         ></textarea>
       </div>
 
