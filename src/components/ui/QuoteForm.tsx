@@ -74,6 +74,11 @@ const QuoteForm: React.FC = () => {
           disabled={isLoading}
           {...register("name", { required: true })}
         />
+        {errors.name && (
+          <p className="text-right text-sm text-red-500">
+            This field is required
+          </p>
+        )}
       </div>
 
       <div className="form-group relative">
@@ -86,6 +91,11 @@ const QuoteForm: React.FC = () => {
           disabled={isLoading}
           {...register("email", { required: true })}
         />
+        {errors.email && (
+          <p className="text-right text-sm text-red-500">
+            This field is required
+          </p>
+        )}
       </div>
 
       <div className="form-group message relative">
@@ -98,9 +108,18 @@ const QuoteForm: React.FC = () => {
           maxLength={400}
           {...register("description")}
         ></textarea>
+        {errors.description ? (
+          <p className="text-right text-sm text-red-500">
+            This field is required.
+          </p>
+        ) : (
+          <p className="text-right text-sm text-gray-400">
+            400 characters max.
+          </p>
+        )}
       </div>
 
-    <p className="text-sm">Optional</p>
+      <p className="mb-[-12px] ml-2 mt-2 text-sm">(Optional)</p>
       <div className="mt-2">
         <div className="space-x-2">
           <input
@@ -174,7 +193,7 @@ const QuoteForm: React.FC = () => {
         <button
           disabled={isLoading}
           type="submit"
-          className="btn btn-primary disbabled:opacity-50 disabled:cursor-not-allowed"
+          className="btn btn-primary disbabled:opacity-50 cursor-not-allowed opacity-50 disabled:cursor-not-allowed"
           tabIndex={-1}
         >
           {isLoading ? "Requesting..." : "Request Quote"}
