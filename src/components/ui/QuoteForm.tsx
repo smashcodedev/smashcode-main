@@ -96,7 +96,7 @@ const QuoteForm: React.FC = () => {
           placeholder="Project Description"
           disabled={isLoading}
           maxLength={400}
-          {...register("description")}
+          {...regiter("description")}
         ></textarea>
       </div>
 
@@ -111,7 +111,6 @@ const QuoteForm: React.FC = () => {
             onChange={() => setProjectFileType("upload")}
             className="projectTypeInput"
           />
-          <label htmlFor="">loption</label>
           <label className="cursor-pointer" htmlFor="projectFile">
             Upload a document
           </label>
