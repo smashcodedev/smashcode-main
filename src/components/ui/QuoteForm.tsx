@@ -100,6 +100,7 @@ const QuoteForm: React.FC = () => {
         ></textarea>
       </div>
 
+    <p className="text-sm">Optional</p>
       <div className="mt-2">
         <div className="space-x-2">
           <input
@@ -110,8 +111,9 @@ const QuoteForm: React.FC = () => {
             onChange={() => setProjectFileType("upload")}
             className="projectTypeInput"
           />
+          <label htmlFor="">loption</label>
           <label className="cursor-pointer" htmlFor="projectFile">
-            Upload a document (optional - max 200mb)
+            Upload a document
           </label>
         </div>
 
@@ -125,7 +127,7 @@ const QuoteForm: React.FC = () => {
             className="projectTypeInput"
           />
           <label className="cursor-pointer" htmlFor="projectFileUrl">
-            Upload url (optional)
+            Upload url
           </label>
         </div>
       </div>
