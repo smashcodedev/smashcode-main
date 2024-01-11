@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
@@ -11,17 +11,40 @@ import isEmail from "validator/lib/isEmail";
 import { HiOutlineLink } from "react-icons/hi2";
 import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
+import { ref } from "firebase/database";
 
 const QuoteForm: React.FC = () => {
   const {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isSubmitting: isLoading },
   } = useForm();
   const [budget, setBudget] = useState<number>(100);
   const [projectFileType, setProjectFileType] = useState<string>("upload");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [selectedFilename, setSelectedFilename] = useState<string>("");
 
+  const onFileButtonClick = () => {
+    if (fileInputRef.current) fileInputRef.current.click();
+  };
+
+  const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      const filename = files[0].name;
+      setSelectedFilename(filename);
+    } else {
+      setSelectedFilename("");
+    }
+  };
+
+  const descriptionValue = watch("description");
+  const descriptionLength = descriptionValue?.length || 0;
+
+  const isFileUploaded = watch("file");
+  
   const onSubmitQuote = async (data: any) => {
     if (!isEmail(data.email)) {
       toast.error("Please enter a valid email address.");
@@ -58,7 +81,6 @@ const QuoteForm: React.FC = () => {
         // reset();
       }
     } catch (error) {
-      console.log(error);
       toast.error("Something went wrong! Please try again.");
     }
   };
@@ -110,16 +132,16 @@ const QuoteForm: React.FC = () => {
         ></textarea>
         {errors.description ? (
           <p className="text-right text-sm text-red-500">
-            This field is required.
+            This field is required
           </p>
         ) : (
           <p className="text-right text-sm text-gray-400">
-            400 characters max.
+            {descriptionLength} / 400 characters
           </p>
         )}
       </div>
 
-      <p className="mb-[-12px] ml-2 mt-2 text-sm">(Optional)</p>
+      <p className="mb-[-12px] ml-2 text-sm">(Optional)</p>
       <div className="mt-2">
         <div className="space-x-2">
           <input
@@ -150,30 +172,43 @@ const QuoteForm: React.FC = () => {
         </div>
       </div>
 
-      {projectFileType === "upload" ? (
+      {projectFileType === "upload" && (
         <div className="form-group relative file-input-button">
           <input
             type="file"
             id="formFile"
             className="mt-4 w-full text-lg"
-            style={{ color: "#ffffff" }}
+            style={{ display: "none" }}
             {...register("file", {
               validate: {
                 checkFileSize: (value) =>
-                  value[0]?.size <= 2000000 ||
+                  (value && value[0] && value[0]?.size <= 2000000) ||
                   "The file size should be less than 200mb",
               },
-              required: false,
             })}
+            onChange={onFileInputChange}
+            ref={fileInputRef}
           />
-          {errors.file && (
-            <p className="mt-2 text-red-500">
+          <button
+            className="mt-4 rounded-xl bg-primary-green px-2 py-3 text-lg text-white hover:bg-[#30b4ab] disabled:cursor-not-allowed"
+            id="formFile"
+            type="button"
+            onClick={onFileButtonClick}
+          >
+            Choose File
+          </button>
+          {selectedFilename && (
+            <p className="mt-2 text-gray-500">{selectedFilename}</p>
+          )}
+
+          {isFileUploaded && isFileUploaded.length > 0 && errors.file && (
+            <p className="mt-2 text-right text-red-500">
               The file should be less than 200mb
             </p>
           )}
         </div>
-      ) : null}
-      {projectFileType === "url" ? (
+      )}
+      {projectFileType === "url" && (
         <div className="form-group relative">
           <HiOutlineLink className="contact-label-icon" />
           <input
@@ -185,7 +220,7 @@ const QuoteForm: React.FC = () => {
             {...register("fileLink")}
           />
         </div>
-      ) : null}
+      )}
 
       <BudgetSlider budget={budget} setBudget={setBudget} />
 
@@ -193,7 +228,7 @@ const QuoteForm: React.FC = () => {
         <button
           disabled={isLoading}
           type="submit"
-          className="btn btn-primary disbabled:opacity-50 cursor-not-allowed opacity-50 disabled:cursor-not-allowed"
+          className="btn btn-primary disbabled:opacity-50 disabled:cursor-not-allowed"
           tabIndex={-1}
         >
           {isLoading ? "Requesting..." : "Request Quote"}
