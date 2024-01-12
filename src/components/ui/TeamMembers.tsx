@@ -4,13 +4,17 @@ import { getTeamMembers } from "@/api/apiTeamMembers";
 
 const TeamMembers: React.FC = async () => {
   const teamMembers = await getTeamMembers();
+  console.log(teamMembers);
+  const filteredMembers = Object.values(teamMembers).filter(
+    (member: any) => member.featured === true,
+  );
 
   return (
     <div className="mt-12 px-4">
       <SectionHeading subHeading="Meet out" heading="Team" />
       <div className="style-right-border team-member-main flex flex-wrap items-center px-5">
         {(
-          Object.values(teamMembers) as Array<{
+          filteredMembers as Array<{
             memberName: string;
             role: string;
             Image_URL: string;
