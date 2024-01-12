@@ -11,7 +11,6 @@ import isEmail from "validator/lib/isEmail";
 import { HiOutlineLink } from "react-icons/hi2";
 import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
-import { ref } from "firebase/database";
 
 const QuoteForm: React.FC = () => {
   const {
@@ -51,8 +50,6 @@ const QuoteForm: React.FC = () => {
       return;
     }
 
-    console.log("submitted 0");
-
     try {
       if (projectFileType === "url") {
         await submitQuoteFirebase({
@@ -63,7 +60,6 @@ const QuoteForm: React.FC = () => {
           fileLink: data.fileLink,
         });
 
-        console.log("submitted 1");
         toast.success("Your project has been submitted, Thank you!");
         reset();
       } else if (projectFileType === "upload") {
@@ -78,7 +74,6 @@ const QuoteForm: React.FC = () => {
               fileLink: url,
             });
           });
-          console.log("submitted 2");
         }
 
         toast.success("Your project has been submitted, Thank you!");
@@ -86,7 +81,7 @@ const QuoteForm: React.FC = () => {
       }
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
-      console.log(error)
+      console.log(error);
     }
   };
   return (
@@ -172,7 +167,7 @@ const QuoteForm: React.FC = () => {
             className="projectTypeInput"
           />
           <label className="cursor-pointer" htmlFor="projectFileUrl">
-            Upload url
+            Share file link
           </label>
         </div>
       </div>
@@ -220,7 +215,7 @@ const QuoteForm: React.FC = () => {
             type="url"
             id="fileUrl"
             className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed disabled:bg-slate-300"
-            placeholder="Document Url"
+            placeholder="Enter file link"
             disabled={isLoading}
             {...register("fileLink")}
           />
@@ -229,15 +224,14 @@ const QuoteForm: React.FC = () => {
 
       <BudgetSlider budget={budget} setBudget={setBudget} />
 
-      <div className="text-center">
-        <button
-          // disabled={isLoading}
-          type="submit"
-          className="btn btn-primary disabled::opacity-50 disabled:cursor-not-allowed"
-        >
-          {isLoading ? "Requesting..." : "Request Quote"}
-        </button>
-      </div>
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="btn btn-primary disabled:cursor-not-allowed
+        disabled:opacity-50"
+      >
+        {isLoading ? "Requesting..." : "Request Quote"}
+      </button>
     </form>
   );
 };
