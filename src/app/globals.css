@@ -1279,7 +1279,7 @@
     background-color: var(--secondary);
   }
 
-  .team-member-main .col-md-4:nth-child(3n - 2) .user-card1::before {
+  .team-member-main .col:nth-child(3n - 2) .user-card1::before {
     position: absolute;
     content: "";
     top: -100px;
@@ -1290,13 +1290,13 @@
     z-index: -1;
   }
 
-  .team-member-main .col-md-4:last-child .user-card1::after,
-  .team-member-main .col-md-4:nth-child(3n) .user-card1::after {
+  .team-member-main .col:last-child .user-card1::after,
+  .team-member-main .col:nth-child(3n) .user-card1::after {
     display: none;
     width: 0;
   }
 
-  .team-member-main .col-md-4:nth-child(1) .user-card1::before {
+  .team-member-main .col:nth-child(1) .user-card1::before {
     display: none;
     width: 0;
   }
@@ -1385,7 +1385,7 @@
     padding-top: 120px;
   }
 
-  .team-member-main .col-md-4:nth-child(1) .user-profile-img-wrapper1 {
+  .team-member-main .col:nth-child(1) .user-profile-img-wrapper1 {
     top: -85%;
   }
 
@@ -1394,11 +1394,11 @@
       width: 180px;
       height: 180px;
     }
-    .team-member-main .col-md-4:nth-child(3n) .user-card1::after {
+    .team-member-main .col:nth-child(3n) .user-card1::after {
       display: block;
       width: 104%;
     }
-    .team-member-main .col-md-4:nth-child(2n) .user-card1::after {
+    .team-member-main .col:nth-child(2n) .user-card1::after {
       display: none;
       width: 0;
     }
@@ -1408,7 +1408,7 @@
     .user-card1::before {
       display: none !important;
     }
-    .team-member-main .col-md-4:nth-child(2n) .user-card1::after {
+    .team-member-main .col:nth-child(2n) .user-card1::after {
       display: block;
       width: 3px;
     }
@@ -1421,7 +1421,7 @@
       background-color: var(--primary);
       z-index: -1;
     }
-    .team-member-main .col-md-4:last-child .user-card1::after {
+    .team-member-main .col:last-child .user-card1::after {
       display: none;
     }
     .user-card-name-sec1 {
@@ -1528,7 +1528,7 @@
     background-color: var(--secondary);
   }
 
-  .team-member-main .col-md-4:nth-child(3n - 2) .user-card1::before {
+  .team-member-main .col:nth-child(3n - 2) .user-card1::before {
     position: absolute;
     content: "";
     top: -100px;
@@ -1539,13 +1539,13 @@
     z-index: -1;
   }
 
-  .team-member-main .col-md-4:last-child .user-card1::after,
-  .team-member-main .col-md-4:nth-child(3n) .user-card1::after {
+  .team-member-main .col:last-child .user-card1::after,
+  .team-member-main .col:nth-child(3n) .user-card1::after {
     display: none;
     width: 0;
   }
 
-  .team-member-main .col-md-4:nth-child(1) .user-card1::before {
+  .team-member-main .col:nth-child(1) .user-card1::before {
     display: none;
     width: 0;
   }
@@ -1634,7 +1634,7 @@
     padding-top: 120px;
   }
 
-  .team-member-main .col-md-4:nth-child(1) .user-profile-img-wrapper1 {
+  .team-member-main .col:nth-child(1) .user-profile-img-wrapper1 {
     top: -85%;
   }
 
@@ -1643,11 +1643,11 @@
       width: 180px;
       height: 180px;
     }
-    .team-member-main .col-md-4:nth-child(3n) .user-card1::after {
+    .team-member-main .col:nth-child(3n) .user-card1::after {
       display: block;
       width: 104%;
     }
-    .team-member-main .col-md-4:nth-child(2n) .user-card1::after {
+    .team-member-main .col:nth-child(2n) .user-card1::after {
       display: none;
       width: 0;
     }
@@ -1657,7 +1657,7 @@
     .user-card1::before {
       display: none !important;
     }
-    .team-member-main .col-md-4:nth-child(2n) .user-card1::after {
+    .team-member-main .col:nth-child(2n) .user-card1::after {
       display: block;
       width: 3px;
     }
@@ -1670,7 +1670,7 @@
       background-color: var(--primary);
       z-index: -1;
     }
-    .team-member-main .col-md-4:last-child .user-card1::after {
+    .team-member-main .col:last-child .user-card1::after {
       display: none;
     }
     .user-card-name-sec1 {

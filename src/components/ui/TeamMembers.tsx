@@ -18,11 +18,11 @@ const TeamMembers: React.FC = async () => {
   return (
     <div className="mt-12 px-4">
       <SectionHeading subHeading="Meet out" heading="Team" />
-      <div className="style-right-border team-member-main flex flex-wrap items-center px-5">
+      <div className="style-right-border team-member-main col flex flex-wrap items-center px-5">
         {(filteredMembers as Array<TeamMemberType>).map(
           ({ memberName, role, Image_URL }, key) => {
             return (
-              <div className="col w-full sm:w-1/2 md:w-1/3" key={key}>
+              <div className="col w-full sm:w-1/2 md:w-4/12" key={key}>
                 <UserCard
                   type={""}
                   memberName={memberName}
