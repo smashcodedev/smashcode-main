@@ -187,7 +187,7 @@ const QuoteForm: React.FC = () => {
               },
             })}
             onChange={onFileInputChange}
-            ref={fileInputRe}
+            ref={fileInputRef}
           />
           <button
             className="mt-4 rounded-xl bg-primary-green px-2 py-3 text-lg text-white hover:bg-[#30b4ab] disabled:cursor-not-allowed"
