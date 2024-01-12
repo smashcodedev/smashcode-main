@@ -175,7 +175,7 @@ const QuoteForm: React.FC = () => {
         </div>
       </div>
 
-      {projectFileType === "upload" && (
+      {/* {projectFileType === "upload" && (
         <div className="form-group relative file-input-button">
           <input
             type="file"
@@ -209,7 +209,7 @@ const QuoteForm: React.FC = () => {
             </p>
           )}
         </div>
-      )}
+      )} */}
       {projectFileType === "url" && (
         <div className="form-group relative">
           <HiOutlineLink className="contact-label-icon" />
