@@ -18,7 +18,7 @@ const ContactPage: React.FC = () => {
         <div className="form-container flex flex-wrap items-center justify-center">
           <div className="w-full md:w-1/2">
             <QuoteForm />
-            <div className="mt-4 text-center">
+            <div className="-mt-4 text-center">
               <p>
                 <span className="text-primary-green">Note:</span> We will
                 contact you as soon as possible through your E-mail.

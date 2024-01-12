@@ -24,12 +24,7 @@ const QuoteForm: React.FC = () => {
 
   const [budget, setBudget] = useState<number>(100);
   const [projectFileType, setProjectFileType] = useState<string>("upload");
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const [selectedFilename, setSelectedFilename] = useState<string>("");
-
-  const onFileButtonClick = () => {
-    if (fileInputRef.current) fileInputRef.current.click();
-  };
 
   const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -175,13 +170,13 @@ const QuoteForm: React.FC = () => {
         </div>
       </div>
 
-      {/* {projectFileType === "upload" && (
+      {projectFileType === "upload" && (
         <div className="form-group relative file-input-button">
           <input
             type="file"
             id="formFile"
             className="mt-4 w-full text-lg"
-            style={{ display: "none" }}
+            style={{ color: "transparent" }}
             {...register("file", {
               validate: {
                 checkFileSize: (value) =>
@@ -189,16 +184,8 @@ const QuoteForm: React.FC = () => {
                 "The file size should be less than 200mb",
               },
             })}
-            ref={fileInputRef}
             onChange={onFileInputChange}
           />
-          <div
-            className="mt-4 rounded-xl bg-primary-green px-2 py-3 text-lg text-white hover:bg-[#30b4ab] disabled:cursor-not-allowed"
-            id="formFile"
-            onClick={onFileButtonClick}
-          >
-            Choose File
-          </div>
           {selectedFilename && (
             <p className="mt-2 text-gray-500">{selectedFilename}</p>
           )}
@@ -209,7 +196,7 @@ const QuoteForm: React.FC = () => {
             </p>
           )}
         </div>
-      )} */}
+      )}
       {projectFileType === "url" && (
         <div className="form-group relative">
           <HiOutlineLink className="contact-label-icon" />
