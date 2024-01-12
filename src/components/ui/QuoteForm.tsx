@@ -44,12 +44,14 @@ const QuoteForm: React.FC = () => {
   const descriptionLength = descriptionValue?.length || 0;
 
   const isFileUploaded = watch("file");
-  
+
   const onSubmitQuote = async (data: any) => {
     if (!isEmail(data.email)) {
       toast.error("Please enter a valid email address.");
       return;
     }
+
+    console.log("submitted 0");
 
     try {
       if (projectFileType === "url") {
@@ -61,13 +63,14 @@ const QuoteForm: React.FC = () => {
           fileLink: data.fileLink,
         });
 
+        console.log("submitted 1");
         toast.success("Your project has been submitted, Thank you!");
-        // reset();
+        reset();
       } else if (projectFileType === "upload") {
         if (data.file && data.file.length > 0) {
           const file = data.file[0];
-          await uploadFile(file).then((url) => {
-            submitQuoteFirebase({
+          await uploadFile(file).then(async (url) => {
+            await submitQuoteFirebase({
               name: data.name,
               email: data.email,
               description: data.description,
@@ -75,13 +78,15 @@ const QuoteForm: React.FC = () => {
               fileLink: url,
             });
           });
+          console.log("submitted 2");
         }
 
         toast.success("Your project has been submitted, Thank you!");
-        // reset();
+        reset();
       }
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
+      console.log(error)
     }
   };
   return (
@@ -128,9 +133,9 @@ const QuoteForm: React.FC = () => {
           placeholder="Project Description"
           disabled={isLoading}
           maxLength={400}
-          {...register("description")}
+          {...register("description", { required: true })}
         ></textarea>
-        {errors.description ? (
+        {errors.description && descriptionLength === 0 ? (
           <p className="text-right text-sm text-red-500">
             This field is required
           </p>
@@ -226,10 +231,9 @@ const QuoteForm: React.FC = () => {
 
       <div className="text-center">
         <button
-          disabled={isLoading}
+          // disabled={isLoading}
           type="submit"
-          className="btn btn-primary disbabled:opacity-50 disabled:cursor-not-allowed"
-          tabIndex={-1}
+          className="btn btn-primary disabled::opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? "Requesting..." : "Request Quote"}
         </button>
