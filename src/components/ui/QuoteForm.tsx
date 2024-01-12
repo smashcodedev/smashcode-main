@@ -224,14 +224,16 @@ const QuoteForm: React.FC = () => {
 
       <BudgetSlider budget={budget} setBudget={setBudget} />
 
-      <button
-        type="submit"
-        disabled={isLoading}
-        className="btn btn-primary disabled:cursor-not-allowed
-        disabled:opacity-50"
-      >
-        {isLoading ? "Requesting..." : "Request Quote"}
-      </button>
+      <div className="text-center">
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="btn btn-primary disabled:cursor-not-allowed
+          disabled:opacity-50"
+        >
+          {isLoading ? "Requesting..." : "Request Quote"}
+        </button>
+      </div>
     </form>
   );
 };
