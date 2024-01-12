@@ -50,6 +50,8 @@ const QuoteForm: React.FC = () => {
       return;
     }
 
+    console.log("submitted 0");
+
     try {
       if (projectFileType === "url") {
         await submitQuoteFirebase({
@@ -60,6 +62,7 @@ const QuoteForm: React.FC = () => {
           fileLink: data.fileLink,
         });
 
+        console.log("submitted 1");
         toast.success("Your project has been submitted, Thank you!");
         reset();
       } else if (projectFileType === "upload") {
@@ -74,6 +77,7 @@ const QuoteForm: React.FC = () => {
               fileLink: url,
             });
           });
+          console.log("submitted 2");
         }
 
         toast.success("Your project has been submitted, Thank you!");
