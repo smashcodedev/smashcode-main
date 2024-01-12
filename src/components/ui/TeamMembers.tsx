@@ -23,7 +23,7 @@ const TeamMembers: React.FC = async () => {
           ({ memberName, role, Image_URL }, key) => {
             return (
               <div className="col w-full sm:w-1/2 md:w-1/3" key={key}>
-                <UsrCard
+                <UserCard
                   type={""}
                   memberName={memberName}
                   role={role}
