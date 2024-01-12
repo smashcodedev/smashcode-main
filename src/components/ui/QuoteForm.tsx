@@ -11,6 +11,7 @@ import isEmail from "validator/lib/isEmail";
 import { HiOutlineLink } from "react-icons/hi2";
 import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
+import { ref } from "firebase/database";
 
 const QuoteForm: React.FC = () => {
   const {
@@ -20,6 +21,7 @@ const QuoteForm: React.FC = () => {
     watch,
     formState: { errors, isSubmitting: isLoading },
   } = useForm();
+
   const [budget, setBudget] = useState<number>(100);
   const [projectFileType, setProjectFileType] = useState<string>("upload");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -50,8 +52,6 @@ const QuoteForm: React.FC = () => {
       return;
     }
 
-    console.log("submitted 0");
-
     try {
       if (projectFileType === "url") {
         await submitQuoteFirebase({
@@ -62,7 +62,6 @@ const QuoteForm: React.FC = () => {
           fileLink: data.fileLink,
         });
 
-        console.log("submitted 1");
         toast.success("Your project has been submitted, Thank you!");
         reset();
       } else if (projectFileType === "upload") {
@@ -77,7 +76,6 @@ const QuoteForm: React.FC = () => {
               fileLink: url,
             });
           });
-          console.log("submitted 2");
         }
 
         toast.success("Your project has been submitted, Thank you!");
@@ -85,9 +83,10 @@ const QuoteForm: React.FC = () => {
       }
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
-      console.log(error);
     }
   };
+
+
   return (
     <form onSubmit={handleSubmit(onSubmitQuote)} className="contact-form">
       <div className="form-group relative">
@@ -186,21 +185,20 @@ const QuoteForm: React.FC = () => {
             {...register("file", {
               validate: {
                 checkFileSize: (value) =>
-                  (value && value[0] && value[0]?.size <= 2000000) ||
-                  "The file size should be less than 200mb",
+                (value && value[0] && value[0]?.size <= 2000000) ||
+                "The file size should be less than 200mb",
               },
             })}
-            onChange={onFileInputChange}
             ref={fileInputRef}
+            onChange={onFileInputChange}
           />
-          <button
+          <div
             className="mt-4 rounded-xl bg-primary-green px-2 py-3 text-lg text-white hover:bg-[#30b4ab] disabled:cursor-not-allowed"
             id="formFile"
-            type="button"
             onClick={onFileButtonClick}
           >
             Choose File
-          </button>
+          </div>
           {selectedFilename && (
             <p className="mt-2 text-gray-500">{selectedFilename}</p>
           )}
@@ -229,14 +227,13 @@ const QuoteForm: React.FC = () => {
       <BudgetSlider budget={budget} setBudget={setBudget} />
 
       <div className="text-center">
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="btn btn-primary disabled:cursor-not-allowed
-          disabled:opacity-50"
-        >
-          {isLoading ? "Requesting..." : "Request Quote"}
-        </button>
+      <button
+        type="submit"
+        className="btn btn-primary disabled:cursor-not-allowed disabled:opacity-50"
+        disabled={isLoading}
+      >
+        {isLoading ? "Requesting..." : "Request Quote"}
+      </button>
       </div>
     </form>
   );

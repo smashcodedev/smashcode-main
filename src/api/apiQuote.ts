@@ -33,7 +33,6 @@ const submitQuoteFirebase = async ({
     budget: budget,
     file_url: fileLink,
   });
-  console.log(fileLink);
 };
 
 export const uploadFile = async (file: File) => {
