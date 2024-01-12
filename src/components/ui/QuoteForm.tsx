@@ -58,6 +58,7 @@ const QuoteForm: React.FC = () => {
         });
 
         toast.success("Your project has been submitted, Thank you!");
+        setBudget(100);
         reset();
       } else if (projectFileType === "upload") {
         if (data.file && data.file.length > 0) {
@@ -74,13 +75,13 @@ const QuoteForm: React.FC = () => {
         }
 
         toast.success("Your project has been submitted, Thank you!");
+        setBudget(100);
         reset();
       }
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
     }
   };
-
 
   return (
     <form onSubmit={handleSubmit(onSubmitQuote)} className="contact-form">
@@ -180,8 +181,8 @@ const QuoteForm: React.FC = () => {
             {...register("file", {
               validate: {
                 checkFileSize: (value) =>
-                (value && value[0] && value[0]?.size <= 2000000) ||
-                "The file size should be less than 200mb",
+                  (value && value[0] && value[0]?.size <= 2000000) ||
+                  "The file size should be less than 200mb",
               },
             })}
             onChange={onFileInputChange}
@@ -214,13 +215,13 @@ const QuoteForm: React.FC = () => {
       <BudgetSlider budget={budget} setBudget={setBudget} />
 
       <div className="text-center">
-      <button
-        type="submit"
-        className="btn btn-primary disabled:cursor-not-allowed disabled:opacity-50"
-        disabled={isLoading}
-      >
-        {isLoading ? "Requesting..." : "Request Quote"}
-      </button>
+        <button
+          type="submit"
+          className="btn btn-primary disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={isLoading}
+        >
+          {isLoading ? "Requesting..." : "Request Quote"}
+        </button>
       </div>
     </form>
   );

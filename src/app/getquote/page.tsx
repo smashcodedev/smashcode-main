@@ -20,7 +20,7 @@ const ContactPage: React.FC = () => {
             <QuoteForm />
             <div className="-mt-4 text-center">
               <p>
-                <span className="text-primary-green">Note:</span> We will
+                <span className="text-primary-green mt-4">Note:</span> We will
                 contact you as soon as possible through your E-mail.
               </p>
             </div>
