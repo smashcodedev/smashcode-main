@@ -17,7 +17,7 @@ const BudgetSlider: React.FC<BudgetSliderProps> = ({ budget, setBudget }) => {
       <div className="mx-auto max-w-xl">
         <label htmlFor="budget" className="text-2xl text-primary-green">
           <span className="text-white text-xl">Your Estimated budget:</span>{" "}
-          <span className="font-old text-primary-gren">${budget}</span>
+          <span className="font-old block sm:inline text-primary-gren">${budget}</span>
         </label>
 
         <input
