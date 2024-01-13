@@ -1,4 +1,4 @@
-import QuoteForm from "@/components/Quote-Form/QuoteForm";
+import { QuoteForm } from "@/components";
 
 const ContactPage: React.FC = () => {
   return (

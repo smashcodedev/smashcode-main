@@ -31,7 +31,7 @@ import BudgetSlider from "./ui/BudgetSlider";
 import Loader from "./ui/Loader";
 import TeamMembers from "./ui/TeamMembers";
 import UserCard from "./ui/UserCard";
-import QuoteForm from "./Quote-Form/QuoteFormd";
+import QuoteForm from "./Quote-Form/QuoteForm";
 import FileInput from "./Quote-Form/FileInput";
 
 export {
