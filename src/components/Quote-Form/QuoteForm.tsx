@@ -52,7 +52,7 @@ const QuoteForm: React.FC = () => {
     const emailTempleteParams = {
       from_name: data.name,
       from_email: data.email,
-      message: `${data.description} \n \n File Url: ${data.fileLink} \n \n Project budget: ${budget}`,
+      message: `${data.description} \n \n File Url: ${data.fileLink} \n \n Project budget: $${budget}`,
     };
 
     try {
@@ -70,7 +70,6 @@ const QuoteForm: React.FC = () => {
         toast.success("Your project has been submitted, Thank you!");
         resetForm();
       } else if (
-        projectFileType === "upload" &&
         data.file &&
         data.file.length > 0
       ) {
@@ -83,9 +82,18 @@ const QuoteForm: React.FC = () => {
             budget: budget,
             fileLink: url,
           });
-        });
 
-        await emailjs.send(serviceId, templateId, emailTempleteParams, userId);
+          await emailjs.send(
+            serviceId,
+            templateId,
+            {
+              from_name: data.name,
+              from_email: data.email,
+              message: `${data.description} \n \n File Url: ${url} \n \n Project budget: $${budget}`,
+            },
+            userId,
+          );
+        });
 
         toast.success("Your project has been submitted, Thank you!");
         resetForm();
