@@ -28,6 +28,12 @@ const QuoteForm: React.FC = () => {
   const descriptionValue = watch("description");
   const descriptionLength = descriptionValue?.length || 0;
 
+  const resetForm = () => {
+    setBudget(100);
+    setSelectedFilename("");
+    reset();
+  };
+
   const onSubmitQuote = async (data: any) => {
     if (!isEmail(data.email)) {
       toast.error("Please enter a valid email address.");
@@ -45,27 +51,36 @@ const QuoteForm: React.FC = () => {
         });
 
         toast.success("Your project has been submitted, Thank you!");
-        setBudget(100);
-        reset();
-      } else if (projectFileType === "upload") {
-        if (data.file && data.file.length > 0) {
-          const file = data.file[0];
-          await uploadFile(file).then(async (url) => {
-            await submitQuoteFirebase({
-              name: data.name,
-              email: data.email,
-              description: data.description,
-              budget: budget,
-              fileLink: url,
-            });
+        resetForm();
+      } else if (
+        projectFileType === "upload" &&
+        data.file &&
+        data.file.length > 0
+      ) {
+        const file = data.file[0];
+        await uploadFile(file).then(async (url) => {
+          await submitQuoteFirebase({
+            name: data.name,
+            email: data.email,
+            description: data.description,
+            budget: budget,
+            fileLink: url,
           });
-        }
+        });
 
         toast.success("Your project has been submitted, Thank you!");
-        setBudget(100);
-        setSelectedFilename("");
-        reset();
+        resetForm();
+      } else {
+        await submitQuoteFirebase({
+          name: data.name,
+          email: data.email,
+          description: data.description,
+          budget: budget,
+          fileLink: "",
+        });
       }
+
+      resetForm();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
     }
@@ -137,7 +152,12 @@ const QuoteForm: React.FC = () => {
           <BudgetSlider budget={budget} setBudget={setBudget} />
 
           <div className="text-center">
-            <Button variant="submitButton" type="submit" disabled={isLoading}>
+            <Button
+              variant="submitButton"
+              type="submit"
+              disabled={isLoading}
+              className="disabled:cursor-not-allowed disabled:opacity-50"
+            >
               {isLoading ? "Requesting..." : "Request Quote"}
             </Button>
           </div>
