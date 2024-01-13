@@ -10,6 +10,11 @@ import { BudgetSlider, Button, FileInput } from "@/components";
 import isEmail from "validator/lib/isEmail";
 import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
+import emailjs from "emailjs-com";
+
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_QUOTE_PAGE_TEMPLATE_ID;
+const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
 const QuoteForm: React.FC = () => {
   const methods = useForm();
@@ -40,6 +45,16 @@ const QuoteForm: React.FC = () => {
       return;
     }
 
+    if (!serviceId || !templateId || !userId) {
+      throw new Error("Environment variables are not set");
+    }
+
+    const emailTempleteParams = {
+      from_name: data.name,
+      from_email: data.email,
+      message: `${data.description} \n \n File Url: ${data.fileLink} \n \n Project budget: ${budget}`,
+    };
+
     try {
       if (projectFileType === "url") {
         await submitQuoteFirebase({
@@ -50,9 +65,15 @@ const QuoteForm: React.FC = () => {
           fileLink: data.fileLink,
         });
 
+        await emailjs.send(serviceId, templateId, emailTempleteParams, userId);
+
         toast.success("Your project has been submitted, Thank you!");
         resetForm();
-      } else if (data.file && data.file.length > 0) {
+      } else if (
+        projectFileType === "upload" &&
+        data.file &&
+        data.file.length > 0
+      ) {
         const file = data.file[0];
         await uploadFile(file).then(async (url) => {
           await submitQuoteFirebase({
@@ -64,9 +85,15 @@ const QuoteForm: React.FC = () => {
           });
         });
 
+        await emailjs.send(serviceId, templateId, emailTempleteParams, userId);
+
         toast.success("Your project has been submitted, Thank you!");
         resetForm();
-      } else {
+      } else if (
+        projectFileType === "upload" &&
+        !data.file &&
+        data.fileLink === ""
+      ) {
         await submitQuoteFirebase({
           name: data.name,
           email: data.email,
@@ -74,9 +101,12 @@ const QuoteForm: React.FC = () => {
           budget: budget,
           fileLink: "",
         });
+
+        await emailjs.send(serviceId, templateId, emailTempleteParams, userId);
+
+        toast.success("Your project has been submitted, Thank you!");
+        resetForm();
       }
-      toast.success("Your project has been submitted, Thank you!");
-      resetForm();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
     }
