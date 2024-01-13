@@ -31,7 +31,8 @@ import BudgetSlider from "./ui/BudgetSlider";
 import Loader from "./ui/Loader";
 import TeamMembers from "./ui/TeamMembers";
 import UserCard from "./ui/UserCard";
-import QuoteForm from "./ui/QuoteForm";
+import QuoteForm from "./Quote-Form/QuoteFormd";
+import FileInput from "./Quote-Form/FileInput";
 
 export {
   PageLoader,
@@ -68,4 +69,5 @@ export {
   TeamMembers,
   UserCard,
   QuoteForm,
+  FileInput,
 };

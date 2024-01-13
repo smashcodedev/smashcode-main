@@ -3,7 +3,7 @@
 import emailjs from "emailjs-com";
 import { BiRename } from "react-icons/bi";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
-import { ContactSVG } from "@/components";
+import { Button, ContactSVG } from "@/components";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
@@ -13,7 +13,12 @@ const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
 const ContactPage: React.FC = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting: isLoading, errors },
+  } = useForm();
 
   const onSubmitForm = async (data: any) => {
     if (!isEmail(data.email)) {
@@ -50,7 +55,7 @@ const ContactPage: React.FC = () => {
         </div>
         <div className="form-container flex flex-wrap items-center justify-center">
           <ContactSVG />
-          <div className="w-full text-center md:w-1/2">
+          <div className="w-full md:w-1/2">
             <form
               onSubmit={handleSubmit(onSubmitForm)}
               className="contact-form"
@@ -64,6 +69,11 @@ const ContactPage: React.FC = () => {
                   placeholder="Name"
                   {...register("name", { required: true })}
                 />
+                {errors.name && (
+                  <p className="text-right text-sm text-red-500">
+                    This field is required
+                  </p>
+                )}
               </div>
               <div className="form-group relative">
                 <FaRegEnvelopeOpen className="contact-label-icon" />
@@ -74,6 +84,11 @@ const ContactPage: React.FC = () => {
                   placeholder="E-mail"
                   {...register("email", { required: true })}
                 />
+                {errors.email && (
+                  <p className="text-right text-sm text-red-500">
+                    This field is required
+                  </p>
+                )}
               </div>
               <div className="form-group message relative">
                 <textarea
@@ -83,13 +98,22 @@ const ContactPage: React.FC = () => {
                   placeholder="Message"
                   {...register("message", { required: true })}
                 ></textarea>
+                {errors.message && (
+                  <p className="text-right text-sm text-red-500">
+                    This field is required
+                  </p>
+                )}
               </div>
               <div className="text-center">
-                <button type="submit" className="btn btn-primary" tabIndex={-1}>
-                  Send a message
-                </button>
+                <Button
+                  variant="submitButton"
+                  type="submit"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Sending..." : "Send a message"}
+                </Button>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 text-center">
                 <p>
                   <span className="text-primary-green">Note:</span> If you find
                   any issue with our website, let us know about your valuable

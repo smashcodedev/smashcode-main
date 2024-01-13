@@ -2,12 +2,14 @@ import { VariantProps, cva } from "class-variance-authority";
 import React, { ButtonHTMLAttributes, FC } from "react";
 import { cn } from "../../utils/helpers";
 
-const buttonVariants = cva("button",{
+const buttonVariants = cva("button", {
   variants: {
     variant: {
       primary: "primary-btn btn",
       secondary:
         "header-contact-btn border border-primary-green text-primary-green",
+      submitButton:
+        "btn btn-primary disabled:cursor-not-allowed disabled:opacity-50",
     },
   },
 });
