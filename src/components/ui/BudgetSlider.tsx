@@ -36,4 +36,4 @@ const BudgetSlider: React.FC<BudgetSliderProps> = ({ budget, setBudget }) => {
   );
 };
 
-export default udgetSlider;
+export default BudgetSlider;
