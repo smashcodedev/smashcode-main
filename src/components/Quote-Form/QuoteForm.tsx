@@ -52,11 +52,7 @@ const QuoteForm: React.FC = () => {
 
         toast.success("Your project has been submitted, Thank you!");
         resetForm();
-      } else if (
-        projectFileType === "upload" &&
-        data.file &&
-        data.file.length > 0
-      ) {
+      } else if (data.file && data.file.length > 0) {
         const file = data.file[0];
         await uploadFile(file).then(async (url) => {
           await submitQuoteFirebase({
@@ -79,7 +75,7 @@ const QuoteForm: React.FC = () => {
           fileLink: "",
         });
       }
-
+      toast.success("Your project has been submitted, Thank you!");
       resetForm();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
