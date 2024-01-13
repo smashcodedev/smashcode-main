@@ -1,6 +1,6 @@
 import QuoteForm from "@/components/Quote-Form/QuoteForm";
 
-const ContacPage: React.FC = () => {
+const ContactPage: React.FC = () => {
   return (
     <section className="m-10 mx-auto w-full lg:max-w-7xl">
       <div className="m-10 mt-36">
