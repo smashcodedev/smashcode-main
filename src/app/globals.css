@@ -1653,7 +1653,7 @@
     }
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 640px) {
     .user-card1::before {
       display: none !important;
     }
