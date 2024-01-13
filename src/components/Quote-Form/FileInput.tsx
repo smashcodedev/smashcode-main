@@ -70,7 +70,7 @@ const FileInput: React.FC<FileInputProps> = ({
             type="file"
             id="formFile"
             className="mt-4 w-full text-lg"
-            style={{ color: "white" }}
+            style={{ color: "transparent" }}
             {...register("file", {
               validate: {
                 checkFileSize: (value) =>
