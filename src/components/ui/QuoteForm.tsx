@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
@@ -11,7 +11,6 @@ import isEmail from "validator/lib/isEmail";
 import { HiOutlineLink } from "react-icons/hi2";
 import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
-import { ref } from "firebase/database";
 
 const QuoteForm: React.FC = () => {
   const {
