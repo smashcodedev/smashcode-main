@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { HiOutlineLink } from "react-icons/hi2";
@@ -20,6 +22,7 @@ const FileInput: React.FC<FileInputProps> = ({
     watch,
     formState: { isSubmitting: isLoading, errors },
   } = useFormContext();
+
   const isFileUploaded = watch("file");
 
   const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,8 +76,10 @@ const FileInput: React.FC<FileInputProps> = ({
             style={{ color: "transparent" }}
             {...register("file", {
               validate: {
-                checkFileSize: (value) =>
-                  (value && value[0] && value[0]?.size <= 209715200) ||
+                checkFileSize: (files) =>
+                  !files ||
+                  !files.length ||
+                  files[0].size <= 209715200 ||
                   "The file size should be less than 200mb",
               },
             })}

@@ -52,69 +52,35 @@ const QuoteForm: React.FC = () => {
     const emailTempleteParams = {
       from_name: data.name,
       from_email: data.email,
-      message: `${data.description} \n \n File Url: ${data.fileLink} \n \n Project budget: $${budget}`,
+      message: `${data.description} \n \n File Url: ${
+        data.fileLink === "" && "No file provided"
+      } \n \n Project budget: $${budget}`,
     };
 
     try {
+      let fileLink = "";
       if (projectFileType === "url") {
-        await submitQuoteFirebase({
-          name: data.name,
-          email: data.email,
-          description: data.description,
-          budget: budget,
-          fileLink: data.fileLink,
-        });
-
-        await emailjs.send(serviceId, templateId, emailTempleteParams, userId);
-
-        toast.success("Your project has been submitted, Thank you!");
-        resetForm();
+        fileLink = data.fileLink || "";
       } else if (
+        projectFileType === "upload" &&
         data.file &&
         data.file.length > 0
       ) {
-        const file = data.file[0];
-        await uploadFile(file).then(async (url) => {
-          await submitQuoteFirebase({
-            name: data.name,
-            email: data.email,
-            description: data.description,
-            budget: budget,
-            fileLink: url,
-          });
-
-          await emailjs.send(
-            serviceId,
-            templateId,
-            {
-              from_name: data.name,
-              from_email: data.email,
-              message: `${data.description} \n \n File Url: ${url} \n \n Project budget: $${budget}`,
-            },
-            userId,
-          );
-        });
-
-        toast.success("Your project has been submitted, Thank you!");
-        resetForm();
-      } else if (
-        projectFileType === "upload" &&
-        !data.file &&
-        data.fileLink === ""
-      ) {
-        await submitQuoteFirebase({
-          name: data.name,
-          email: data.email,
-          description: data.description,
-          budget: budget,
-          fileLink: "",
-        });
-
-        await emailjs.send(serviceId, templateId, emailTempleteParams, userId);
-
-        toast.success("Your project has been submitted, Thank you!");
-        resetForm();
+        fileLink = await uploadFile(data.file[0]);
       }
+
+      await submitQuoteFirebase({
+        name: data.name,
+        email: data.email,
+        description: data.description,
+        budget: budget,
+        fileLink: fileLink,
+      });
+
+      await emailjs.send(serviceId, templateId, emailTempleteParams, userId);
+
+      toast.success("Your project has been submitted, Thank you!");
+      resetForm();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
     }
@@ -129,7 +95,7 @@ const QuoteForm: React.FC = () => {
             <input
               type="text"
               id="formName"
-              className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed disabled:bg-slate-300"
+              className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed"
               placeholder="Name"
               disabled={isLoading}
               {...register("name", { required: true })}
@@ -143,7 +109,7 @@ const QuoteForm: React.FC = () => {
             <input
               type="email"
               id="formEmail"
-              className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed disabled:bg-slate-300"
+              className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed"
               placeholder="E-mail"
               disabled={isLoading}
               {...register("email", { required: true })}
@@ -155,7 +121,7 @@ const QuoteForm: React.FC = () => {
           <div className="form-group message relative">
             <textarea
               id="projectDescription"
-              className="form-control form-control-lg w-full border-none outline-none disabled:cursor-not-allowed disabled:bg-slate-300"
+              className="form-control form-control-lg w-full border-none outline-none disabled:cursor-not-allowed"
               rows={7}
               placeholder="Project Description"
               disabled={isLoading}
