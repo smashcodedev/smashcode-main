@@ -52,8 +52,8 @@ const QuoteForm: React.FC = () => {
     const emailTempleteParams = {
       from_name: data.name,
       from_email: data.email,
-      message: `${data.description} \n \n File Url: ${
-        data.fileLink === "" && "No file provided"
+      message: `${data.description} \n \n File Url:  ${
+        data.fileLink ? data.fileLink : "No file provided"
       } \n \n Project budget: $${budget}`,
     };
 
@@ -156,7 +156,7 @@ const QuoteForm: React.FC = () => {
               variant="submitButton"
               type="submit"
               disabled={isLoading}
-              className="disabled:cursor-not-allowed disabled:opacity-50"
+              className="disabled:opacity-50 disabled:hover:cursor-not-allowed"
             >
               {isLoading ? "Requesting..." : "Request Quote"}
             </Button>
