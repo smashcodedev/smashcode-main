@@ -4,8 +4,6 @@ import psebImg from "@/../public/images/pseb.jpg";
 import logo from "@/../public/images/web/logopng.png";
 import { ContactInfo, Copywrite, QuickLinks, SocialLinks } from "@/components";
 
-import "@/styles/footer.css";
-
 const Footer = () => {
   return (
     <footer className="relative mt-auto overflow-hidden bg-secondary-gray text-base font-normal">
