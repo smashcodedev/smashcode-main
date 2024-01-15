@@ -30,22 +30,24 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="mt-32 m-8 2xl:mt-32 text-center xl:text-left">
-      <div className="flex flex-col items-center justify-center xl:flex-row">
+    <section className="m-8 mt-32 2xl:mt-32">
+      <div className="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
         <div className="space-y-6">
-          <h1 className="text-center text-2xl capitalize xl:text-left xl:text-6xl xl:leading-tight">
+          <h1 className="text-center text-2xl capitalize md:text-left md:text-6xl md:leading-tight">
             What you can think <br /> we can develop it <br />
             <span className="section-heading pb-5">for you!</span>
           </h1>
           <div className="flex flex-col space-y-6">
-            <p className="mx-4 text-base sm:text-xl lg:mx-0">
+            <p className="mx-4 text-base sm:text-xl md:mx-0">
               We create future-ready websites & web apps via innovative digital
               solutions so that you can focus on your core business.
             </p>
 
-            <Link href="/contact">
-              <Button variant="primary">Let&apos;s talk</Button>
-            </Link>
+            <div className="flex  items-center justify-center text-center md:justify-start">
+              <Button variant="primary" className="w-max">
+                <Link href="/getquote">Let&apos;s talk</Link>
+              </Button>
+            </div>
           </div>
         </div>
 

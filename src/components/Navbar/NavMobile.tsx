@@ -17,7 +17,7 @@ const NavMob: React.FC<NavMobProps> = ({ links }) => {
 
   return (
     <>
-      <div className="header-container-mobile block lg:hidden mb-4">
+      <div className="header-container-mobile block md:hidden mb-4">
         <div className="header-menu-openClose-btn">
           <div
             id="hamburger"

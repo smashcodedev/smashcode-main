@@ -47,8 +47,7 @@ const ContactPage: React.FC = () => {
             <h1 className="mb-4 text-4xl">Talk to Us</h1>
 
             <h6 className="text-center text-xl">
-              Let’s discuss your project. Feel free to send us your queries and
-              details.
+              Feel free to send us your queries and details.
             </h6>
             <br />
           </div>
@@ -81,7 +80,7 @@ const ContactPage: React.FC = () => {
                   type="email"
                   id="formEmail"
                   className="form-control form-control-lg thick w-full border-none outline-none"
-                  placeholder="E-mail"
+                  placeholder="Email"
                   {...register("email", { required: true })}
                 />
                 {errors.email && (

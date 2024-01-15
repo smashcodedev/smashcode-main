@@ -34,7 +34,7 @@ const QuickLinks = () => {
         Quick - Links
       </h3>
 
-      <ul className="m-0 grid grid-cols-2 p-0">
+      <ul className="m-0 mt-10 grid grid-cols-2 p-0">
         {quickLinks.map(({ label, href, icon }) => (
           <li
             key={label}

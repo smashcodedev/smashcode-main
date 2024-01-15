@@ -11,7 +11,7 @@ const Footer = () => {
         <ContactInfo />
         <div className="relative z-[2] pb-3 pt-3">
           <div className="flex flex-col justify-between gap-2 lg:flex-row">
-            <div className="mb-50 mt-md-0  mt-2 lg:w-1/3 xl:w-1/3">
+            <div className="mb-50 mt-md-0 mt-2 lg:w-1/3 xl:w-1/3">
               <Link href="/">
                 <Image
                   src={logo}
@@ -30,7 +30,7 @@ const Footer = () => {
                 <h4 className="my-2 text-2xl">Registered By PSEB </h4>
                 <div className="my-1 inline-block rounded">
                   <Image
-                    className="registered-img rounded"
+                    className="w-72 rounded"
                     src={psebImg}
                     alt="Registered at Pseb"
                   />

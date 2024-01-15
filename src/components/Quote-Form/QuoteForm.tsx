@@ -110,7 +110,7 @@ const QuoteForm: React.FC = () => {
               type="email"
               id="formEmail"
               className="form-control form-control-lg thick w-full border-none outline-none disabled:cursor-not-allowed"
-              placeholder="E-mail"
+              placeholder="Email"
               disabled={isLoading}
               {...register("email", { required: true })}
             />
@@ -164,7 +164,7 @@ const QuoteForm: React.FC = () => {
           <div className="mt-4 text-center">
             <p>
               <span className="text-primary-green">Note:</span> We will contact
-              you as soon as possible through your E-mail.
+              you as soon as possible through your email.
             </p>
           </div>
         </form>
