@@ -8,7 +8,7 @@ import heroSvg2 from "@/../public/images/illustration/heroSvg2.svg";
 
 const About: React.FC = () => {
   return (
-    <main className="m-10 mx-auto w-full lg:max-w-7xl">
+    <main className="m-10 overflow-x-hidden mx-auto w-full lg:max-w-7xl">
       <section className="m-7 mt-32 xl:mt-52 2xl:ml-0">
         <div className="style-right-border my-5 flex flex-wrap ">
           <div className="mr-5 w-full md:mr-0 md:w-1/2">

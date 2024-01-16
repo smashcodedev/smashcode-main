@@ -11,11 +11,12 @@ const links: LinksType[] = [
   { href: "/services", label: "Services" },
   { href: "https://smash-code.com/blogs", label: "Blogs" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const Navbar: React.FC = () => {
   const deskHeader = useRef<HTMLElement | null>(null);
-  
+
   useEffect(() => {
     let lastScroll = 0;
     const headerSticky = () => {
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
     <header className="fixed top-0 z-[1000] w-full">
       <nav
         className="mx-4 my-3 flex items-center justify-between
-        rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] ease-linear 2xl:max-w-7xl md:px-10 2xl:mx-auto"
+        rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] ease-linear md:px-10 2xl:mx-auto 2xl:max-w-7xl"
         ref={deskHeader}
       >
         <Logo />
@@ -50,12 +51,12 @@ const Navbar: React.FC = () => {
         </div>
 
         <div>
-          <Link href="/contact">
+          <Link href="/getquote">
             <Button
               variant="secondary"
               className="header-contact-btn hidden md:block"
             >
-              Contact
+              Get Quote
             </Button>
           </Link>
           <NavMobile links={links} />
