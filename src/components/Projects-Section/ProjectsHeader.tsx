@@ -17,11 +17,8 @@ const ProjectsHeader: React.FC<HeadingProps> = ({
 
         <ul className="list-disc px-3">
           <li>Custom Web Development</li>
-          <li>Content & Copy Writing</li>
           <li>Blockchain Web Apps</li>
-          <li>Graphic Designing</li>
         </ul>
-   
     </>
   );
 };

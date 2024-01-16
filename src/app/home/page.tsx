@@ -5,8 +5,6 @@ import { FeedbackSection, HeroSection, Projects, Services } from "@/components";
 const services: ServiceType[] = [
   servicesData.customWebDevelopment,
   servicesData.blockchainWebApps,
-  servicesData.graphicsDesigning,
-  servicesData.contentWriting,
 ];
 
 export default function Home() {

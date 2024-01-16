@@ -9,10 +9,6 @@ const services: ServiceType[] = [
   servicesData.nftLandingPages,
   servicesData.responsiveWebsites,
   servicesData.fullStackWebApps,
-  servicesData.copyWriting,
-  servicesData.blogAndArticalWriting,
-  servicesData.logoDesign,
-  servicesData.photoEditing,
 ];
 
 const ServicesPage: React.FC = () => {

@@ -10,7 +10,6 @@ const links: LinksType[] = [
   { href: "/projects/web-development/Landing%20page", label: "Projects" },
   { href: "/services", label: "Services" },
   { href: "https://smash-code.com/blogs", label: "Blogs" },
-  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -56,7 +55,7 @@ const Navbar: React.FC = () => {
               variant="secondary"
               className="header-contact-btn hidden md:block"
             >
-              Get Quote
+              Get quote
             </Button>
           </Link>
           <NavMobile links={links} />

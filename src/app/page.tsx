@@ -6,8 +6,6 @@ import PageLoading from "@/components/ui/PageLoader";
 const services: ServiceType[] = [
   servicesData.customWebDevelopment,
   servicesData.blockchainWebApps,
-  servicesData.graphicsDesigning,
-  servicesData.contentWriting,
 ];
 
 export default function Home() {

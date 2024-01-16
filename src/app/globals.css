@@ -70,7 +70,7 @@
 
   .header-contact-btn {
     box-shadow: 0 0 15px rgba(79, 209, 196, 0.452);
-    @apply relative flex h-9 w-24 items-center justify-center rounded-full bg-transparent text-center no-underline transition-all duration-300 ease-in-out;
+    @apply relative flex h-9 w-28 items-center justify-center rounded-full bg-transparent text-center no-underline transition-all duration-300 ease-in-out;
   }
 
   .header-contact-btn::before {

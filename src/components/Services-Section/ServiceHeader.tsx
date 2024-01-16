@@ -22,8 +22,6 @@ const ServicesHeader: React.FC<HeadingProps> = ({
             Blockchain Web Apps (Minting, Wallet Connectivity, Smart Contract
             Integration)
           </li>
-          <li>Graphic Designing (Logo Design, Cv Design, Photo Editing)</li>
-          <li>Content and Copy Writing (Web Pages, Blog & Article Writing)</li>
         </ul>
       </div>
     </>
