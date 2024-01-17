@@ -33,13 +33,28 @@ const projectsData: ProjectType[] = [
     height: 720,
   },
   {
-    Image_URL: ctImage,
+    Image_URL:
+      "https://smashcode-trippyfrens.netlify.app/static/media/logo-colour.1c5979e0.svg",
     proj_desc:
-      "This blog focuses on the success story of Muhammad Ismail. The writer has explored the journey of a young web developer and the owner of a software company who was once struggling to survive and ready to quit.",
-    proj_title:
-      "My Journey from Zero-Knowledge of Computers to Owning a Software House",
-    url: "https://medium.com/unique-content/my-journey-from-zero-knowledge-of-computers-to-owning-a-software-house-73e8531ed298",
+      "This is a full stack nft minting website. We converted figma design in to ReactJs website. Integrated Smart Contract and Connect wallet with Metamask.",
+    proj_title: "Trippy Frens",
+    url: "https://smashcode-trippyfrens.netlify.app/",
   },
+  // {
+  //   Image_URL: ctImage,
+  //   proj_desc:
+  //     "This blog focuses on the success story of Muhammad Ismail. The writer has explored the journey of a young web developer and the owner of a software company who was once struggling to survive and ready to quit.",
+  //   proj_title:
+  //     "My Journey from Zero-Knowledge of Computers to Owning a Software House",
+  //   url: "https://medium.com/unique-content/my-journey-from-zero-knowledge-of-computers-to-owning-a-software-house-73e8531ed298",
+  // },
+  // {
+  //   Image_URL: graphProj,
+  //   proj_desc:
+  //     "This is a logo for Personal training and Athletic Training company, created in illustrator.",
+  //   proj_title: "Phenom Academy",
+  //   url: "/projects/-MsLMt8PEcADy4k2_v9p/Logo%20Design",
+  // },
 ];
 
 export default projectsData;

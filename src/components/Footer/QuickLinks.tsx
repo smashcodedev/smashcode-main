@@ -22,8 +22,12 @@ const quickLinks: QuickLinksTypes[] = [
   { label: "About", href: "about", icon: <FaUser /> },
   { label: "Contact", href: "contact", icon: <FaPhone /> },
   { label: "Services", href: "services", icon: <FaServicestack /> },
-  { label: "Projects", href: "projects", icon: <FaProjectDiagram /> },
-  { label: "Blogs", href: "blogs", icon: <FaBook /> },
+  {
+    label: "Projects",
+    href: "/projects/web-development/Landing%20page",
+    icon: <FaProjectDiagram />,
+  },
+  { label: "Blogs", href: "https://smash-code.com/blogs", icon: <FaBook /> },
   { label: "Get a Quote", href: "getquote", icon: <LuClipboardEdit /> },
 ];
 
@@ -40,7 +44,12 @@ const QuickLinks = () => {
             key={label}
             className="mb-3 mr-4 min-w-[40%] text-base capitalize text-light-gray transition-colors hover:text-primary-green"
           >
-            <Link href={`/${href}`} className="flex items-center gap-2">
+            <Link
+              href={`/${href}`}
+              // target={label === "Blogs" ? "_blank" : ""}
+              target="_blank"
+              className="flex items-center gap-2"
+            >
               {icon} {label}
             </Link>
           </li>

@@ -74,8 +74,8 @@
   }
 
   .header-contact-btn::before {
-    min-width: calc(100px + 8px);
-    min-height: calc(35px + 3px);
+    min-width: calc(100px + 12px);
+    min-height: calc(35px + 4px);
     border: 6px solid #00ffcb;
     box-shadow: 0 0 15px rgba(0, 255, 204, 0.548);
 
