@@ -8,6 +8,7 @@ import "./globals.css";
 import { AOSInit } from "@/components/ui/AOSInit";
 import { FaWhatsapp } from "react-icons/fa6";
 import Link from "next/link";
+import PageLoading from "@/components/ui/PageLoader";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AOSInit />
+
       <body
         className={`${poppins.className} overflow-x-hidden bg-primary-gray text-white antialiased`}
       >

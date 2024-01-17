@@ -8,13 +8,22 @@ export default function PageLoading() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 2200);
+    // Hide the scrollbar
+    document.body.classList.add("no-scrollbar");
+
+    // Simulate loading time and then show content
+    const timer = setTimeout(() => setIsLoading(false), 2200);
+
+    return () => {
+      document.body.classList.remove("no-scrollbar");
+      clearTimeout(timer);
+    };
   }, []);
 
   if (!isLoading) return null;
 
   return (
-    <div className="laptop WebStartLoader overflow-hidden" id="WebStartLoader">
+    <div className="laptop WebStartLoader" id="WebStartLoader">
       <svg
         className="laptop__svg"
         xmlns="http://www.w3.org/2000/svg"
