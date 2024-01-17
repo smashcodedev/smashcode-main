@@ -22,10 +22,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
       style={{ "--primary": bgColor } as any}
     >
-      <div className="gap- flex w-full flex-col pb-8 text-[#e0e0e0]">
+      <div className="group flex w-full flex-col pb-8 text-[#e0e0e0]">
         <div className="mb-auto">
-          <h3 className="mb-2 text-3xl font-medium">{title}</h3>
-          <p className="mb-4 text-xl">{description}</p>
+          <h3 className="mb-2 text-3xl font-medium group-hover:text-white">{title}</h3>
+          <p className="mb-4 text-xl group-hover:text-white">{description}</p>
         </div>
         {(videoUrl && (
           <video
@@ -44,12 +44,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ></video>
         )) ??
           (imageUrl && (
-            <Image
+            <Imag
               alt={`${title} project image`}
               src={imageUrl || placeHolderImg}
               width={1280}
               height={800}
-              className="rounded-full transition-transform duration-200 hover:scale-105 lg:pt-0"
+              className="rounded-full transition-transform duration-200 group-hover:scale-105 lg:pt-0"
             />
           ))}
       </div>
