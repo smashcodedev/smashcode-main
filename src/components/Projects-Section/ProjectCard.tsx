@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ></video>
         )) ??
           (imageUrl && (
-            <Imag
+            <Image
               alt={`${title} project image`}
               src={imageUrl || placeHolderImg}
               width={1280}
