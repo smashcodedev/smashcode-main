@@ -18,17 +18,17 @@ type QuickLinksTypes = {
 };
 
 const quickLinks: QuickLinksTypes[] = [
-  { label: "Home", href: "home", icon: <FaHome /> },
-  { label: "About", href: "about", icon: <FaUser /> },
-  { label: "Contact", href: "contact", icon: <FaPhone /> },
-  { label: "Services", href: "services", icon: <FaServicestack /> },
+  { label: "Home", href: "/home", icon: <FaHome /> },
+  { label: "About", href: "/about", icon: <FaUser /> },
+  { label: "Contact", href: "/contact", icon: <FaPhone /> },
+  { label: "Services", href: "/services", icon: <FaServicestack /> },
   {
     label: "Projects",
     href: "/projects/web-development/Landing%20page",
-    icon: <FaProjectDiagram />,
+    icon: <FaProjectDiagam />,
   },
   { label: "Blogs", href: "https://smash-code.com/blogs", icon: <FaBook /> },
-  { label: "Get a Quote", href: "getquote", icon: <LuClipboardEdit /> },
+  { label: "Get a Quote", href: "/getquote", icon: <LuClipboardEdit /> },
 ];
 
 const QuickLinks = () => {
@@ -45,9 +45,8 @@ const QuickLinks = () => {
             className="mb-3 mr-4 min-w-[40%] text-base capitalize text-light-gray transition-colors hover:text-primary-green"
           >
             <Link
-              href={`/${href}`}
-              // target={label === "Blogs" ? "_blank" : ""}
-              target="_blank"
+              href={href}
+              target={label === "Blogs" ? "_blank" : ""}
               className="flex items-center gap-2"
             >
               {icon} {label}
