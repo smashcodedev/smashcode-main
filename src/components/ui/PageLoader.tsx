@@ -8,16 +8,7 @@ export default function PageLoading() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // Hide the scrollbar
-    document.body.classList.add("no-scrollbar");
-
-    // Simulate loading time and then show content
-    const timer = setTimeout(() => setIsLoading(false), 2200);
-
-    return () => {
-      document.body.classList.remove("no-scrollbar");
-      clearTimeout(timer);
-    };
+    setTimeout(() => setIsLoading(false), 2200);
   }, []);
 
   if (!isLoading) return null;
