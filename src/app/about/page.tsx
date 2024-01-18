@@ -8,9 +8,9 @@ import heroSvg2 from "@/../public/images/illustration/heroSvg2.svg";
 
 const About: React.FC = () => {
   return (
-    <main className="m-10 overflow-x-hidden mx-auto w-full lg:max-w-7xl">
+    <main className="m-10 mx-auto w-full overflow-x-hidden lg:max-w-7xl">
       <section className="m-7 mt-32 xl:mt-52 2xl:ml-0">
-        <div className="style-right-border my-5 flex flex-wrap ">
+        <div className="style-right-border my-5 flex flex-wrap">
           <div className="mr-5 w-full md:mr-0 md:w-1/2">
             <SectionHeading subHeading="Who we" heading="Are?" />
             <p className="text-base md:text-xl">
@@ -56,7 +56,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="style-right-border mt-[85px] ml-2 flex flex-wrap px-4">
+        <div className="style-right-border ml-2 mt-[85px] flex flex-wrap px-4">
           <div className="w-full">
             <SectionHeading subHeading="Technologies we" heading="Use" />
           </div>
@@ -95,7 +95,7 @@ const About: React.FC = () => {
                   firms.
                 </p>
               </div>
-              <div className="w-full mt-2 md:mt-0 md:w-1/2">
+              <div className="mt-2 w-full md:mt-0 md:w-1/2">
                 <div className="img-container flex items-center justify-center">
                   <Image
                     className="about-svg-img"

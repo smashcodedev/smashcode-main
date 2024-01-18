@@ -2441,4 +2441,27 @@
   .pure-material-button-outlined:disabled::after {
     opacity: 0;
   }
+
+  /* privacy-policy page */
+  .privacy-policy-heading {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+
+  .privacy-policy-row {
+    margin-left: calc(1.5rem * -0.5);
+    margin-right: calc(1.5rem * -0.5);
+    margin-top: calc(1.5rem * -1);
+  }
+
+  .privacy-policy-row p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 550px) {
+    .privacy-policy-row p {
+      font-size: 1rem;
+    }
+  }
 }
