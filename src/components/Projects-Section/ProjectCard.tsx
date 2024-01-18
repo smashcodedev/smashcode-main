@@ -3,7 +3,6 @@ import logoImg from "../../../public/logo.png";
 import placeHolderImg from "../../../public/images/expedo2.png";
 import Link from "next/link";
 import { ProjectType } from "@/data/projects";
-import { colors } from "@/utils/helpers";
 
 interface ProjectCardProps extends ProjectType {
   bgColor: string;
