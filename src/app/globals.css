@@ -10,7 +10,7 @@
 
 :root {
   --primary: #1aaca2;
-  --primary-light: #40e0d6;
+  --primary-light: #a;
   --primary-dark: #136e68;
   --secondary: #17cae2;
   --secondary-light: #57e4f6;
@@ -70,6 +70,7 @@
 
   .header-contact-btn {
     box-shadow: 0 0 15px rgba(79, 209, 196, 0.452);
+
     @apply relative flex h-9 w-28 items-center justify-center rounded-full bg-transparent text-center no-underline transition-all duration-300 ease-in-out;
   }
 
@@ -98,6 +99,7 @@
     height: 30px;
     border: 6px solid #00ffcb;
     animation: ring 1.5s infinite;
+    pointer-events: none;
 
     @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-all duration-300 ease-in-out content-[''];
   }
@@ -2154,5 +2156,289 @@
   .projectTypeInput:checked ~ .projectTypeInput,
   .projectTypeInput:checked ~ .projectTypeInput:active {
     background-position: 0 -24px;
+  }
+
+  /* notfound-page */
+  .notfound_404 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-black);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .notfound_404 svg {
+    width: 100%;
+  }
+
+  .notfound_btn_wrapper {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+
+  .notfound_btn_wrapper a {
+    font-size: 1.8rem;
+  }
+
+  .st0 {
+    fill: var(--bg-black);
+  }
+
+  .st2 {
+    fill: var(--bg-black);
+  }
+
+  .st3 {
+    fill: var(--primary);
+  }
+
+  .st4 {
+    fill: #fff;
+    stroke: #b3dcdf;
+    stroke-miterlimit: 10;
+  }
+
+  .st6 {
+    stroke-width: 2;
+    fill: var(--primary);
+    stroke: var(--bg-black);
+    stroke-miterlimit: 10;
+  }
+
+  .st7,
+  .st8,
+  .st9 {
+    stroke: var(--primary-dark);
+    stroke-miterlimit: 10;
+  }
+
+  .st7 {
+    stroke-width: 5;
+    stroke-linecap: round;
+    fill: none;
+  }
+
+  .st8,
+  .st9 {
+    fill: #fff;
+  }
+
+  .st9 {
+    fill: none;
+  }
+
+  #cloud1 {
+    animation: cloud003 15s linear infinite;
+  }
+
+  #cloud2 {
+    animation: cloud002 25s linear infinite;
+  }
+
+  #cloud3 {
+    animation: cloud003 20s linear infinite;
+  }
+
+  #cloud4 {
+    animation: float 4s linear infinite;
+  }
+
+  #cloud5 {
+    animation: float 8s linear infinite;
+  }
+
+  #cloud7 {
+    animation: float 5s linear infinite;
+  }
+
+  #tracks {
+    animation: slide 650ms linear infinite;
+  }
+
+  #bumps {
+    animation: land 10000ms linear infinite;
+  }
+
+  @keyframes jig {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(1px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  #car-layers {
+    animation: jig 0.35s linear infinite;
+  }
+
+  @keyframes land {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(1000px);
+    }
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(100px);
+    }
+  }
+
+  /* @keyframes cloudFloat {
+  0% { transform: translateX(0) translateY(3px); }
+  100% { transform: translateX(1000px) translateY(0); }
+} */
+
+  @keyframes cloud001 {
+    0% {
+      transform: translateX(-1000px) translateY(3px);
+    }
+    100% {
+      transform: translateX(1000px) translateY(0);
+    }
+  }
+
+  @keyframes cloud002 {
+    0% {
+      transform: translateX(-1000px) translateY(3px);
+    }
+    100% {
+      transform: translateX(1000px) translateY(0);
+    }
+  }
+
+  @keyframes cloud003 {
+    0% {
+      transform: translateX(-1000px) translateY(3px);
+    }
+    100% {
+      transform: translateX(1000px) translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px) translateX(0);
+    }
+    50% {
+      transform: translateY(8px) translateX(5px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0);
+    }
+  }
+
+  #bracefront,
+  #braceback {
+    animation: braces 1s linear infinite;
+  }
+
+  @keyframes braces {
+    0% {
+      transform: translateX(-2px);
+    }
+    25% {
+      transform: translateX(3px);
+    }
+    50% {
+      transform: translateX(-2px);
+    }
+    75% {
+      transform: translateX(3px);
+    }
+    100% {
+      transform: translateX(-2px);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .notfound_btn_wrapper a {
+      font-size: 1.2rem;
+    }
+  }
+
+  .pure-material-button-outlined {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+
+  .pure-material-button-outlined::-moz-focus-inner {
+    border: none;
+  }
+
+  .pure-material-button-outlined::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  /* Ripple */
+  .pure-material-button-outlined::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    padding: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: currentColor;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition:
+      opacity 1s,
+      transform 0.5s;
+  }
+
+  .pure-material-button-outlined:hover::before {
+    opacity: 0.04;
+  }
+
+  .pure-material-button-outlined:focus::before {
+    opacity: 0.12;
+  }
+
+  .pure-material-button-outlined:hover:focus::before {
+    opacity: 0.16;
+  }
+
+  /* Active */
+  .pure-material-button-outlined:active::after {
+    opacity: 0.16;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s;
+  }
+
+  /* Disabled */
+  .pure-material-button-outlined:disabled {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    background-color: transparent;
+    cursor: initial;
+  }
+
+  .pure-material-button-outlined:disabled::before {
+    opacity: 0;
+  }
+
+  .pure-material-button-outlined:disabled::after {
+    opacity: 0;
   }
 }
