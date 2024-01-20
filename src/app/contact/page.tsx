@@ -108,7 +108,6 @@ const ContactPage: React.FC = () => {
                   variant="submitButton"
                   type="submit"
                   disabled={isLoading}
-                  className="disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {isLoading ? "Sending..." : "Send a message"}
                 </Button>

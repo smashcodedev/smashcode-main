@@ -9,7 +9,7 @@ const buttonVariants = cva("button", {
       secondary:
         "header-contact-btn border border-primary-green text-primary-green",
       submitButton:
-        "btn btn-primary disabled:hover:cursor-not-allowed disabled:opacity-50",
+        "btn btn-primary",
     },
   },
 });
