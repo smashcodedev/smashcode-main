@@ -9,16 +9,16 @@ const ProjectsHeader: React.FC<HeadingProps> = ({
 }) => {
   return (
     <>
-        <SectionHeading
-          heading={heading}
-          subHeading={subHeading}
-          description={description}
-        />
+      <SectionHeading
+        heading={heading}
+        subHeading={subHeading}
+        description={description}
+      />
 
-        <ul className="list-disc px-3">
-          <li>Custom Web Development</li>
-          <li>Blockchain Web Apps</li>
-        </ul>
+      <ul className="list-disc px-3">
+        <li>Custom Web Development</li>
+        <li>Blockchain Web Apps</li>
+      </ul>
     </>
   );
 };

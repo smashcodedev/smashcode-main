@@ -4,7 +4,7 @@ import React from "react";
 
 const Privacy = () => {
   return (
-    <main className="m-10 mx-auto w-full overflow-x-hidden lg:max-w-7x">
+    <main className="lg:max-w-7x m-10 mx-auto w-full overflow-x-hidden">
       <section className="m-7 mt-32 xl:mt-52 2xl:ml-0">
         <div className="container-lg about-hero py-6">
           <div className="privacy-policy-row mb-12 items-center justify-center">
@@ -81,7 +81,7 @@ const Privacy = () => {
                   to:
                 </p>
 
-                <ul className="list-disc mx-8">
+                <ul className="mx-8 list-disc">
                   <li>Provide, operate, and maintain our website</li>
                   <li>Improve, personalize, and expand our website</li>
                   <li>Understand and analyze how you use our website</li>
