@@ -9,7 +9,7 @@ const Privacy = () => {
         <div className="container-lg about-hero py-6">
           <div className="privacy-policy-row mb-12 items-center justify-center">
             <div className="style-right-border mx-2 w-full">
-              <SectionHeading subHeading="Privacy" heading="Policy" />
+              <SectionHeading subHeading"Privacy" heading="Policy" />
 
               <p>
                 At Smash Code, accessible from{" "}
