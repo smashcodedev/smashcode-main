@@ -7,7 +7,7 @@ const nextConfig = {
       { hostname: "lh3.googleusercontent.com" },
     ],
   },
-  distDir: "build"
+  // distDir: "build"
 };
 
 module.exports = nextConfig;
