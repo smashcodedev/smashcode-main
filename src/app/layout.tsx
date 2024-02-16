@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       "Smash Code is a Web Design & Development Company based in Faisalabad, Pakistan founded in 2019. We are a team of skilled Web Designers & Developers, Graphic Designers, and Content & Copy Writers.",
     url: "https://smashcode.dev",
     siteName: "Smash Code",
-    images: ["./opengraph-image.png"],
+    // images: ["./opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Smash Code",
     description:
       "Smash Code is a Web Design & Development Company based in Faisalabad, Pakistan founded in 2019. We are a team of skilled Web Designers & Developers, Graphic Designers, and Content & Copy Writers.",
-    images: ["./twitter-image.png"],
+    // images: ["./twitter-image.png"],
   },
 };
 
