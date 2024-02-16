@@ -14,10 +14,56 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
+{
+  /* 
+<meta name="robots" content="index, follow" />
+<meta name="image" content="https://smashcode.dev/smashcode.png?prev=s78" />
+<!-- og -->
+<meta
+  property="og:image"
+  content="https://smashcode.dev/smashcode.png?prev=s78"
+/>
+<meta property="fb:app_id" content="402147468021324" />
+
+
+
+<!-- twitter -->
+ */
+}
+
 export const metadata: Metadata = {
   title: "Smash Code",
   description:
     "We create future-ready websites & web apps via innovative digital solutions so that you can focus on your core business.",
+  creator: "Smash Code",
+  authors: [{ name: "Smash Code", url: "https://smashcode.dev" }],
+  keywords: [
+    "Web development",
+    "ReactJs",
+    "React",
+    "Frontend Developer",
+    "freelancer",
+    "Html",
+    "javascript",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US.utf-8",
+    title: "Smash Code",
+    description:
+      "Smash Code is a Web Design & Development Company based in Faisalabad, Pakistan founded in 2019. We are a team of skilled Web Designers & Developers, Graphic Designers, and Content & Copy Writers.",
+    url: "https://smashcode.dev",
+    siteName: "Smash Code",
+    images: ["./opengraph-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@Smashcodedev",
+    title: "Smash Code",
+    description:
+      "Smash Code is a Web Design & Development Company based in Faisalabad, Pakistan founded in 2019. We are a team of skilled Web Designers & Developers, Graphic Designers, and Content & Copy Writers.",
+    images: ["./twitter-image.png"],
+  },
 };
 
 export default function RootLayout({
