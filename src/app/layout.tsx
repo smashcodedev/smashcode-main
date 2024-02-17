@@ -14,23 +14,6 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-{
-  /* 
-<meta name="robots" content="index, follow" />
-<meta name="image" content="https://smashcode.dev/smashcode.png?prev=s78" />
-<!-- og -->
-<meta
-  property="og:image"
-  content="https://smashcode.dev/smashcode.png?prev=s78"
-/>
-<meta property="fb:app_id" content="402147468021324" />
-
-
-
-<!-- twitter -->
- */
-}
-
 export const metadata: Metadata = {
   title: "Smash Code",
   description:

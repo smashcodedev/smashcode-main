@@ -23,10 +23,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       <div className="group flex w-full flex-col pb-8 text-[#e0e0e0]">
         <div className="mb-auto">
-          <h3 className="mb-2 text-3xl font-medium group-hover:text-white">{title}</h3>
+          <h3 className="mb-2 text-3xl font-medium group-hover:text-white">
+            {title}
+          </h3>
           <p className="mb-4 text-xl group-hover:text-white">{description}</p>
         </div>
-        {(videoUrl && (
+        {videoUrl ? (
           <video
             poster={
               typeof imageUrl === "string"
@@ -41,8 +43,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             src={videoUrl}
             className="w-full rounded-md object-contain"
           ></video>
-        )) ??
-          (imageUrl && (
+        ) : (
+          imageUrl && (
             <Image
               alt={`${title} project image`}
               src={imageUrl || placeHolderImg}
@@ -50,7 +52,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               height={800}
               className="rounded-full transition-transform duration-200 group-hover:scale-105 lg:pt-0"
             />
-          ))}
+          )
+        )}
       </div>
       <div className="mx-auto my-1">
         {projectUrl || videoUrl ? (
