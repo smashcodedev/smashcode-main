@@ -46,6 +46,7 @@ export const metadata: Metadata = {
     "Html",
     "javascript",
   ],
+  metadataBase: new URL("https://smashcode.dev"),
   openGraph: {
     type: "website",
     locale: "en_US.utf-8",
