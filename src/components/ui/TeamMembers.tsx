@@ -17,7 +17,7 @@ const TeamMembers: React.FC = async () => {
 
   return (
     <div className="mt-12 px-4">
-      <SectionHeading subHeading="Meet out" heading="Team" />
+      <SectionHeading subHeading="Meet our" heading="Team" />
       <div className="style-right-border team-member-main col flex flex-wrap items-center px-5">
         {(filteredMembers as Array<TeamMemberType>).map(
           ({ memberName, role, Image_URL }, key) => {
