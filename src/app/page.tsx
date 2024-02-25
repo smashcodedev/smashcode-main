@@ -11,7 +11,7 @@ const services: ServiceType[] = [
 export default function Home() {
   return (
     <>
-      <PageLoading />
+      {/* <PageLoading /> */}
       <main className="m-10 mx-auto w-full lg:max-w-7xl">
         <HeroSection />
 
