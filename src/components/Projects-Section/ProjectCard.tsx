@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logoImg from "../../../public/logo.png";
+import logoImg from "../../../public/logo.webp";
 import placeHolderImg from "../../../public/images/expedo2.png";
 import Link from "next/link";
 import { ProjectType } from "@/data/projects";

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import logo from "@/../public/logo.png";
+import logo from "@/../public/logo.webp";
 import { usePathname } from "next/navigation";
 import { LinksType } from "@/types";
 
@@ -17,7 +17,7 @@ const NavMob: React.FC<NavMobProps> = ({ links }) => {
 
   return (
     <>
-      <div className="header-container-mobile block md:hidden mb-4">
+      <div className="header-container-mobile mb-4 block md:hidden">
         <div className="header-menu-openClose-btn">
           <div
             id="hamburger"

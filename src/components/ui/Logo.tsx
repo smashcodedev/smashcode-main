@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/../public/logo.png";
+import logo from "@/../public/logo.webp";
 
 const Logo = () => {
   return (
     <Link href="/">
-    {/* <Link href="/home"> */}
+      {/* <Link href="/home"> */}
       <Image
         src={logo}
         alt="smash code logo"
