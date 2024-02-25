@@ -6,7 +6,8 @@ import { useEffect, useRef } from "react";
 import { LinksType } from "@/types";
 
 const links: LinksType[] = [
-  { href: "/home", label: "Home" },
+  { href: "/", label: "Home" },
+  // { href: "/home", label: "Home" },
   { href: "/projects/web-development/Landing%20page", label: "Projects" },
   { href: "/services", label: "Services" },
   { href: "https://smash-code.com/blogs", label: "Blogs" },

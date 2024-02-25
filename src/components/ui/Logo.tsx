@@ -4,7 +4,8 @@ import logo from "@/../public/logo.png";
 
 const Logo = () => {
   return (
-    <Link href="/home">
+    <Link href="/">
+    {/* <Link href="/home"> */}
       <Image
         src={logo}
         alt="smash code logo"

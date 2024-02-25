@@ -18,7 +18,8 @@ type QuickLinksTypes = {
 };
 
 const quickLinks: QuickLinksTypes[] = [
-  { label: "Home", href: "/home", icon: <FaHome /> },
+  { label: "Home", href: "/", icon: <FaHome /> },
+  // { label: "Home", href: "/home", icon: <FaHome /> },
   { label: "About", href: "/about", icon: <FaUser /> },
   { label: "Contact", href: "/contact", icon: <FaPhone /> },
   { label: "Services", href: "/services", icon: <FaServicestack /> },

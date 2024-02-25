@@ -389,7 +389,8 @@ const Custom404: React.FC = () => {
           tabIndex={0}
           role="button"
           aria-disabled="false"
-          href="/home"
+          href="/"
+          // href="/home"
         >
           <span className="button-label">Go Back</span>
         </Link>
