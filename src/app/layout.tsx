@@ -5,7 +5,14 @@ import { Poppins } from "next/font/google";
 import { Footer, Navbar } from "@/components";
 
 import "./globals.css";
-import { AOSInit } from "@/components/ui/AOSInit";
+// import { AOSInit } from "@/components/ui/AOSInit";
+import dynamic from "next/dynamic";
+const AOSInit = dynamic(
+  () => import("@/components/ui/AOSInit").then((mod) => mod.AOSInit),
+  {
+    ssr: false,
+  },
+);
 import { FaWhatsapp } from "react-icons/fa6";
 import Link from "next/link";
 

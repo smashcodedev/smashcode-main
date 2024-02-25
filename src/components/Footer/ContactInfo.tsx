@@ -25,9 +25,9 @@ const ContactInfo = () => {
               {icon}
             </div>
             <div className="w-5/6 pl-2">
-              <h4 className="text-[1rem] font-medium sm:font-semibold text-white sm:text-[1.2rem]">
+              <span className="text-[1rem] font-medium sm:font-semibold text-white sm:text-[1.2rem]">
                 {label}
-              </h4>
+              </span>
               <span className="text-[0.9rem] sm:text-[1.1rem] text-light-gray">
                 {info}
               </span>
