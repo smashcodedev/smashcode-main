@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import psebImg from "@/../public/images/pseb.jpg";
-import logo from "@/../public/images/web/logopng.png";
+import logo from "@/../public/logo.png";
 import { ContactInfo, Copywrite, QuickLinks, SocialLinks } from "@/components";
 
 const Footer = () => {

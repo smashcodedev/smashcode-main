@@ -22,7 +22,7 @@ export type ProjectType = {
 
 const projectsData: ProjectType[] = [
   {
-    Image_URL: "/images/projects/videoPoster.jpg",
+    Image_URL: "/images/projects/videoPoster.webp",
     proj_desc:
       "This Website application created in React.js for the company Rarare. It is mobile responsive and consists of more than 70 pages with cool animations.",
     proj_title: "Rarare",
