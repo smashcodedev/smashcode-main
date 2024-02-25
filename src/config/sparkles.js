@@ -115,6 +115,7 @@ class Sparkles {
     t.width = r;
     t.height = r;
     e.drawImage(i, 0, 0);
+    e.willReadFrequently = true;
     const o = e.getImageData(0, 0, r, r);
     this.config.target[n] = [];
     const s = o.data.length;
