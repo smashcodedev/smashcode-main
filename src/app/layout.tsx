@@ -72,6 +72,7 @@ export default function RootLayout({
           className="floating-chat-btn whatstbtn text-2xl"
           href="https://wa.me/923071991737"
           target="_blank"
+          aria-label="whatsapp icon"
         >
           <FaWhatsapp />
         </Link>

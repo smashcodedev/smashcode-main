@@ -27,7 +27,7 @@ const Footer = () => {
                   Designers & Developers, Graphic Designers, and Content & Copy
                   Writers.
                 </p>
-                <h4 className="my-2 text-2xl">Registered By PSEB </h4>
+                <h3 className="my-2 text-2xl">Registered By PSEB </h3>
                 <div className="my-1 inline-block rounded">
                   <Image
                     className="w-72 rounded"
