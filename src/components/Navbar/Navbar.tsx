@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <div>
-          <Link href="/getquote">
+          <Link href="/get-quote">
             <Button
               variant="secondary"
               className="header-contact-btn hidden md:block"
