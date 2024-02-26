@@ -22,7 +22,7 @@ const Footer = () => {
                   quality={100}
                   width={200}
                   height={200}
-                  className="max-w-[120px]"
+                  className="-ml-8 max-w-[120px]"
                 />
               </Link>
 
