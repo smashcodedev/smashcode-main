@@ -1,33 +1,7 @@
-"use client";
-
-import Sparkles from "@/config/sparkles";
 import Link from "next/link";
-import { useEffect } from "react";
+import SparklesInit from "./SparklesInit";
 
 const HeroSection: React.FC = () => {
-  useEffect(() => {
-    if (!Sparkles) return;
-    const sparkles = new Sparkles({
-      imagesArray: [
-        "/1.React.svg",
-        "/8.Node.svg",
-        "/22.PS.svg",
-        "/23.AI.svg",
-        "/19.Figma.svg",
-        "/1.React.svg",
-        "/21.XD.svg",
-      ],
-      canvasId: "canvas",
-      numLines: 60000,
-      fieldOfView: 17,
-      color: "#4dd0e1",
-      timeout: 2500,
-      targetCoefficient: 0.006,
-      compressionSpeed: 2.8,
-    });
-    sparkles.init();
-  }, []);
-
   return (
     <section className="m-8 mt-32 2xl:mt-32">
       <div className="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
@@ -52,6 +26,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
+        <SparklesInit />
         <div className="relative text-center">
           <canvas
             className="mx-auto my-auto h-[300px] w-[300px] text-center md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
