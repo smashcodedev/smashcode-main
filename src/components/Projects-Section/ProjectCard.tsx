@@ -10,6 +10,7 @@ interface ProjectCardProps extends ProjectType {
 }
 
 const bgColor = colors[Math.floor(Math.random() * colors.length)];
+
 const ProjectCard: React.FC<ProjectType> = ({
   // bgColor,
   proj_title: title,
