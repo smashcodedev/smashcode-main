@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import logo from "@/../public/logo.png";
 import Image from "next/image";
 
 export default function PageLoading() {
@@ -419,7 +418,14 @@ export default function PageLoading() {
         </g>
       </svg>
       <div className="loading-logo flex items-center justify-center">
-        <Image src={logo} alt="SmashCode" />
+        <Image
+          src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Flogo.png?alt=media&token=03ad23b2-117d-405e-b75d-cf6ff119274f"
+          alt="smash code logo"
+          quality={100}
+          width={65}
+          height={65}
+          priority
+        />
       </div>
       <div className="web-loader-prgress-wrapper flex items-center justify-center">
         <div className="web-loader-prgress"></div>

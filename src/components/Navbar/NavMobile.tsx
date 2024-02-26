@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import logo from "@/../public/logo.png";
 import { usePathname } from "next/navigation";
 import { LinksType } from "@/types";
 
@@ -79,7 +78,15 @@ const NavMob: React.FC<NavMobProps> = ({ links }) => {
           "
           >
             <Link href="/">
-              <Image src={logo} alt="Smash Code logo" />
+              <Image
+                src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Flogo.png?alt=media&token=03ad23b2-117d-405e-b75d-cf6ff119274f"
+                alt="smash code logo"
+                quality={100}
+                width={65}
+                height={65}
+                priority
+                className="w-24 cursor-pointer object-contain"
+              />
             </Link>
           </div>
           <ul>
