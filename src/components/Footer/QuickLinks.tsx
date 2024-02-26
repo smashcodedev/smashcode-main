@@ -29,7 +29,7 @@ const quickLinks: QuickLinksTypes[] = [
     icon: <FaProjectDiagram />,
   },
   { label: "Blogs", href: "https://smash-code.com/blogs", icon: <FaBook /> },
-  { label: "Get a Quote", href: "/getquote", icon: <LuClipboardEdit /> },
+  { label: "Get a Quote", href: "/get-quote", icon: <LuClipboardEdit /> },
 ];
 
 const QuickLinks = () => {
