@@ -21,7 +21,7 @@ const Footer = () => {
               </Link>
 
               <div className="mb-4 mt-1 text-left">
-                <p className="text-sm leading-4 text-light-gray">
+                <p className="text-sm leading-4 text-zinc-500">
                   Smash Code is a Web Design & Development Company based in
                   Pakistan, founded in 2019. We are a team of skilled Web
                   Designers & Developers, Graphic Designers, and Content & Copy

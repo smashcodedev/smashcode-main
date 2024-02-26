@@ -43,7 +43,7 @@ const QuickLinks = () => {
         {quickLinks.map(({ label, href, icon }) => (
           <li
             key={label}
-            className="mb-3 mr-4 min-w-[40%] text-base capitalize text-light-gray transition-colors hover:text-primary-green"
+            className="mb-3 mr-4 min-w-[40%] text-base capitalize text-zinc-500 transition-colors hover:text-primary-green"
           >
             <Link
               href={href}
