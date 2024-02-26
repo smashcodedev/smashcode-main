@@ -83,6 +83,7 @@ const ProjectsPage: React.FC<{
                   className={`tab-btn ${
                     checkNested(v?.categorySlug) ? "active-tab-btn" : ""
                   }`}
+                  prefetch={false}
                 >
                   {v.tittle}
                 </Link>
@@ -104,6 +105,7 @@ const ProjectsPage: React.FC<{
                         ? "active-tab-btn"
                         : ""
                     }`}
+                    prefetch={false}
                   >
                     {subName}
                   </Link>
