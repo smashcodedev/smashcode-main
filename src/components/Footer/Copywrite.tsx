@@ -4,7 +4,7 @@ const Copywrite: React.FC = () => {
   return (
     <div className="m-0 flex items-center justify-center bg-primary-gray p-4 text-sm">
       <p>
-        <span className="text-white">
+        <span className="text-[#A3A3A3]">
           Copyright © {new Date().getFullYear()}, All Right Reserved{" "}
         </span>
         <span className="text-primary-green">

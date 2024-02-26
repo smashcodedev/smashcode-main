@@ -29,7 +29,7 @@ const ContactInfo = () => {
               <span className="text-[1rem] font-medium text-white sm:text-[1.2rem] sm:font-semibold">
                 {label}
               </span>
-              <span className="text-[0.9rem] text-white sm:text-[1.1rem]">
+              <span className="text-[0.9rem] text-[#A3A3A3] sm:text-[1.1rem]">
                 {info}
               </span>
             </div>
