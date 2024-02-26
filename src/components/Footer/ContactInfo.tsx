@@ -25,11 +25,11 @@ const ContactInfo = () => {
             <div className="flex min-h-[50px] w-[10%] justify-center text-center text-[1.4rem] text-primary-green sm:text-[2rem] md:justify-start">
               {icon}
             </div>
-            <div className="w-5/6 flex flex-col pl-2">
+            <div className="flex w-5/6 flex-col pl-2">
               <span className="text-[1rem] font-medium text-white sm:text-[1.2rem] sm:font-semibold">
                 {label}
               </span>
-              <span className="text-[0.9rem] text-light-gray sm:text-[1.1rem]">
+              <span className="text-[0.9rem] text-zinc-500 sm:text-[1.1rem]">
                 {info}
               </span>
             </div>
