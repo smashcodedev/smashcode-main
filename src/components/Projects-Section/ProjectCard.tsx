@@ -9,6 +9,7 @@ interface ProjectCardProps extends ProjectType {
   // bgColor: string;
 }
 
+const bgColor = colors[Math.floor(Math.random() * colors.length)];
 const ProjectCard: React.FC<ProjectType> = ({
   // bgColor,
   proj_title: title,
@@ -17,8 +18,6 @@ const ProjectCard: React.FC<ProjectType> = ({
   url: projectUrl,
   video_url: videoUrl,
 }) => {
-  const bgColor = colors[Math.floor(Math.random() * colors.length)];
-  
   return (
     <div
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
