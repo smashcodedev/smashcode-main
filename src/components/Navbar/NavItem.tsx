@@ -23,7 +23,11 @@ const NavItem: React.FC<NavItemProps> = ({ label, href }) => {
             : "",
         )}
       >
-        <Link href={href} target={label === "Blogs" ? "_blank" : ""}>
+        <Link
+          href={href}
+          target={label === "Blogs" ? "_blank" : ""}
+          prefetch={pathname === "/projects" ? false : true}
+        >
           {label}
         </Link>
       </li>

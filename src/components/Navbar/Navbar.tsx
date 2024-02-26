@@ -4,6 +4,7 @@ import { Logo, NavItems, NavMobile } from "@/components";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { LinksType } from "@/types";
+import { usePathname } from "next/navigation";
 
 const links: LinksType[] = [
   { href: "/", label: "Home" },
@@ -16,6 +17,7 @@ const links: LinksType[] = [
 
 const Navbar: React.FC = () => {
   const deskHeader = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     let lastScroll = 0;
@@ -51,7 +53,11 @@ const Navbar: React.FC = () => {
         </div>
 
         <div>
-          <Link href="/get-quote" aria-label="get quote page link">
+          <Link
+            href="/get-quote"
+            aria-label="get quote page link"
+            prefetch={pathname === "/projects" ? false : true}
+          >
             <button className="header-contact-btn header-contact-btn hidden border border-primary-green text-primary-green md:block">
               Get quote
             </button>
