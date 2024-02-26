@@ -4,8 +4,8 @@ import Sparkles from "@/config/sparkles";
 import { useEffect } from "react";
 
 const SparklesInit = () => {
-//   useEffect(() => {
-    // if (!Sparkles) return;
+  useEffect(() => {
+    if (!Sparkles) return;
     const sparkles = new Sparkles({
       imagesArray: [
         "/1.React.svg",
@@ -25,7 +25,7 @@ const SparklesInit = () => {
       compressionSpeed: 2.8,
     });
     sparkles.init();
-//   }, []);
+  }, []);
 
   return null;
 };
