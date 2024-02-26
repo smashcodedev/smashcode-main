@@ -1,4 +1,4 @@
-import { Button, SectionHeading } from "@/components";
+import { SectionHeading } from "@/components";
 import Link from "next/link";
 import React from "react";
 
@@ -282,7 +282,7 @@ const Privacy = () => {
                   Policy, do not hesitate to contact us.
                 </p>
                 <Link href="/contact">
-                  <Button variant="primary">Contact Us</Button>
+                  <button className="primary-btn btn">Contact Us</button>
                 </Link>
               </div>
             </div>

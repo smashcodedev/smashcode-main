@@ -4,7 +4,6 @@ import Logo from "./ui/Logo";
 import NavItems from "./Navbar/NavItems";
 import NavItem from "./Navbar/NavItem";
 import NavMobile from "./Navbar/NavMobile";
-import Button from "./ui/Button";
 import HeroSection from "./ui/HeroSection";
 import Projects from "./Projects-Section/Projects";
 import ProjectsHeader from "./Projects-Section/ProjectsHeader";
@@ -42,7 +41,6 @@ export {
   NavMobile,
   HeroSection,
   Logo,
-  Button,
   Projects,
   ProjectsHeader,
   ProjectsList,

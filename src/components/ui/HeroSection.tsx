@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components";
 import Sparkles from "@/config/sparkles";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -44,9 +43,9 @@ const HeroSection: React.FC = () => {
             </p>
 
             <div className="flex  items-center justify-center text-center md:justify-start">
-              <Button variant="primary" className="w-max">
+              <button className="primary-btn btn w-max">
                 <Link href="/get-quote">Let&apos;s talk</Link>
-              </Button>
+              </button>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Logo, NavItems, Button, NavMobile } from "@/components";
+import { Logo, NavItems, NavMobile } from "@/components";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { LinksType } from "@/types";
@@ -52,12 +52,9 @@ const Navbar: React.FC = () => {
 
         <div>
           <Link href="/get-quote">
-            <Button
-              variant="secondary"
-              className="header-contact-btn hidden md:block"
-            >
+            <button className="header-contact-btn header-contact-btn hidden border border-primary-green text-primary-green md:block">
               Get quote
-            </Button>
+            </button>
           </Link>
           <NavMobile links={links} />
         </div>

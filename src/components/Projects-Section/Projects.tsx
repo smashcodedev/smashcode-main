@@ -20,7 +20,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
       <div className="w-full pt-10 text-center">
         <Link href="/projects/web-development/Landing%20page">
-          <Button variant="primary">View More!</Button>
+          <button className="">View More!</button>
         </Link>
       </div>
     </section>

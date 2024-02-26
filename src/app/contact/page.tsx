@@ -3,7 +3,7 @@
 import emailjs from "emailjs-com";
 import { BiRename } from "react-icons/bi";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
-import { Button, ContactSVG } from "@/components";
+import { ContactSVG } from "@/components";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
@@ -104,13 +104,13 @@ const ContactPage: React.FC = () => {
                 )}
               </div>
               <div className="text-center">
-                <Button
-                  variant="submitButton"
+                <button
+                  className="btn btn-primary"
                   type="submit"
                   disabled={isLoading}
                 >
                   {isLoading ? "Sending..." : "Send a message"}
-                </Button>
+                </button>
               </div>
               <div className="mt-4 text-center">
                 <p>

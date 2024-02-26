@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { FormProvider, useForm } from "react-hook-form";
 
 import { BiRename } from "react-icons/bi";
-import { BudgetSlider, Button, FileInput } from "@/components";
+import { BudgetSlider, FileInput } from "@/components";
 import isEmail from "validator/lib/isEmail";
 import submitQuoteFirebase, { uploadFile } from "@/api/apiQuote";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
@@ -152,14 +152,13 @@ const QuoteForm: React.FC = () => {
           <BudgetSlider budget={budget} setBudget={setBudget} />
 
           <div className="text-center">
-            <Button
-              variant="submitButton"
+            <button
+              className="btn btn-primary disabled:opacity-50 disabled:hover:cursor-not-allowed"
               type="submit"
               disabled={isLoading}
-              className="disabled:opacity-50 disabled:hover:cursor-not-allowed"
             >
               {isLoading ? "Requesting..." : "Request Quote"}
-            </Button>
+            </button>
           </div>
           <div className="mt-4 text-center">
             <p>

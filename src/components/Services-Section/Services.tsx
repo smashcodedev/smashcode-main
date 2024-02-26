@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ServiceHeader, ServicesList } from "@/components";
+import { ServiceHeader, ServicesList } from "@/components";
 import { ServiceType } from "../../data/services";
 import Link from "next/link";
 
@@ -20,7 +20,7 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
 
       <div className="my-8 text-center">
         <Link href="/services">
-          <Button className="primary-btn">View More!</Button>
+          <button className="primary-btn btn">View More!</button>
         </Link>
       </div>
     </section>

@@ -9,7 +9,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import snackImg from "@/../public/images/Snack-Video-logo.png";
+import snackImg from "@/../public/images/Snack-Video-Logo.webp";
 import Image from "next/image";
 import Link from "next/link";
 

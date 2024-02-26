@@ -3,7 +3,7 @@ import Image from "next/image";
 import unique from "@/../public/images/unique.png";
 import responsive from "@/../public/images/responsive.png";
 import heroSvg from "@/../public/images/illustration/heroSvg.svg";
-import { Button, SectionHeading, TeamMembers } from "@/components";
+import { SectionHeading, TeamMembers } from "@/components";
 import heroSvg2 from "@/../public/images/illustration/heroSvg2.svg";
 
 const About: React.FC = () => {
@@ -21,9 +21,7 @@ const About: React.FC = () => {
               start to finish so that you remain focused on your core business.
             </p>
             <Link href="/contact">
-              <Button variant="primary" className="my-4">
-                Ask a question
-              </Button>
+              <button className="primary-btn btn my-4">Ask a question</button>
             </Link>
           </div>
           <div className="flex w-full items-center justify-center md:w-1/2">
