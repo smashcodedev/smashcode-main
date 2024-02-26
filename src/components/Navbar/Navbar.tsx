@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
           <Link
             href="/get-quote"
             aria-label="get quote page link"
-            prefetch={pathname === "/projects" ? false : true}
+            prefetch={pathname.startsWith("/projects") ? false : true}
           >
             <button className="header-contact-btn header-contact-btn hidden border border-primary-green text-primary-green md:block">
               Get quote
