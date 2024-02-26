@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ProjectsHeader, ProjectsList } from "@/components";
+import { ProjectsHeader, ProjectsList } from "@/components";
 import { ProjectType } from "@/data/projects";
 import Link from "next/link";
 
