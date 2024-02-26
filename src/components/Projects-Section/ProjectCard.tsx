@@ -3,19 +3,22 @@ import logoImg from "../../../public/logo.png";
 import placeHolderImg from "../../../public/images/expedo2.png";
 import Link from "next/link";
 import { ProjectType } from "@/data/projects";
+import { colors } from "@/utils/helpers";
 
 interface ProjectCardProps extends ProjectType {
-  bgColor: string;
+  // bgColor: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  bgColor,
+const ProjectCard: React.FC<ProjectType> = ({
+  // bgColor,
   proj_title: title,
   proj_desc: description,
   Image_URL: imageUrl,
   url: projectUrl,
   video_url: videoUrl,
 }) => {
+  const bgColor = colors[Math.floor(Math.random() * colors.length)];
+  
   return (
     <div
       className="box-item project-box-item fade-in-bottom flex-col rounded-3xl"
