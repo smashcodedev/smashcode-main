@@ -9,7 +9,6 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import snackImg from "@/../public/images/Snack-Video-Logo.webp";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -78,7 +77,14 @@ const socialLinks: SocialLinksTypes[] = [
   {
     href: "https://sck.io/u/@Smashcode-dev/pdQiuLvY",
     style: "bg-[#fcd6009f]",
-    icon: <Image src={snackImg} alt="" />,
+    icon: (
+      <Image
+        src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2FSnack-Video-Logo.webp?alt=media&token=694d0d56-0924-4409-b1dc-97fdc4d1eb88"
+        alt="snack video image"
+        width={50}
+        height={50}
+      />
+    ),
   },
 ];
 const SocialLinks = () => {

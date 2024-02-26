@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import unique from "@/../public/images/unique.png";
 import responsive from "@/../public/images/responsive.png";
 import heroSvg from "@/../public/images/illustration/heroSvg.svg";
 import { SectionHeading, TeamMembers } from "@/components";
@@ -27,8 +26,10 @@ const About: React.FC = () => {
           <div className="flex w-full items-center justify-center md:w-1/2">
             <Image
               className="about-us-hero-bg"
-              src={unique}
+              src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Funique.png?alt=media&token=0553e491-e532-4075-af76-8cfeaf887741"
               alt="About us Image"
+              width={500}
+              height={500}
             />
           </div>
         </div>

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/../public/logo.png";
 import { usePathname } from "next/navigation";
 
 const Logo = () => {
@@ -10,9 +9,11 @@ const Logo = () => {
     <Link href="/" prefetch={pathname.startsWith("/projects") ? false : true}>
       {/* <Link href="/home"> */}
       <Image
-        src={logo}
+        src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Flogo.png?alt=media&token=03ad23b2-117d-405e-b75d-cf6ff119274f"
         alt="smash code logo"
         quality={100}
+        width={65}
+        height={65}
         priority
         className="w-24 cursor-pointer object-contain"
       />

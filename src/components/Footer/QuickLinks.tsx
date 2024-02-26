@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import googleReviews from "@/../public/images/googleReviews.jpg";
 import {
   FaBook,
   FaHome,
@@ -66,7 +65,9 @@ const QuickLinks = () => {
       >
         <Image
           className="w-[150px] object-contain"
-          src={googleReviews}
+          src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2FgoogleReviews.jpg?alt=media&token=dece678b-8cd0-488d-839a-5f9160edfe86"
+          width={200}
+          height={200}
           alt="5 star reviews on Google"
         />
       </Link>

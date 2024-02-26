@@ -31,7 +31,9 @@ const Footer = () => {
                 <div className="my-1 inline-block rounded">
                   <Image
                     className="w-72 rounded"
-                    src={psebImg}
+                    src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Fpseb.jpg?alt=media&token=c4c2445c-8104-43f1-ac0a-fab7dc73635b"
+                    width={200}
+                    height={200}
                     alt="Registered at Pseb"
                   />
                 </div>
