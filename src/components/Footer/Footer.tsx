@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import logo from "@/../public/logo.png";
 import { ContactInfo, Copywrite, QuickLinks, SocialLinks } from "@/components";
 
 const Footer = () => {
@@ -11,14 +12,17 @@ const Footer = () => {
           <div className="flex flex-col justify-between gap-2 lg:flex-row">
             <div className="mb-50 mt-md-0 mt-2 lg:w-1/3 xl:w-1/3">
               <Link href="/">
+                {/* <Image
+                  src={logo}
+                  alt="Smash Code logo"
+                  /> */}
                 <Image
                   src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Flogo.png?alt=media&token=03ad23b2-117d-405e-b75d-cf6ff119274f"
                   alt="smash code logo"
                   quality={100}
-                  width={65}
-                  height={65}
-                  priority
-                  className="-ml-8 max-w-[120px]"
+                  width={200}
+                  height={200}
+                  className="max-w-[120px]"
                 />
               </Link>
 
