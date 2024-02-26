@@ -10,6 +10,7 @@ const Copywrite: React.FC = () => {
           href="https://www.smashcode.dev"
           target="_blank"
           rel="noreferrer"
+          aria-label="smash code website link"
         >
           Smash Code
         </Link>

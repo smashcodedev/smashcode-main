@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <div>
-          <Link href="/get-quote">
+          <Link href="/get-quote" aria-label="get quote page link">
             <button className="header-contact-btn header-contact-btn hidden border border-primary-green text-primary-green md:block">
               Get quote
             </button>

@@ -44,7 +44,9 @@ const HeroSection: React.FC = () => {
 
             <div className="flex  items-center justify-center text-center md:justify-start">
               <button className="primary-btn btn w-max">
-                <Link href="/get-quote">Let&apos;s talk</Link>
+                <Link href="/get-quote" aria-label="get quote page link">
+                  Let&apos;s talk
+                </Link>
               </button>
             </div>
           </div>
