@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import responsive from "@/../public/images/responsive.png";
 import heroSvg from "@/../public/images/illustration/heroSvg.svg";
 import { SectionHeading, TeamMembers } from "@/components";
 import heroSvg2 from "@/../public/images/illustration/heroSvg2.svg";
@@ -61,7 +60,13 @@ const About: React.FC = () => {
           </div>
           <div className="w-full md:w-1/2">
             <div className="img-container flex items-center justify-center">
-              <Image className="about-svg-img" src={responsive} alt="" />
+              <Image
+                className="about-svg-img"
+                src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Fresponsive.png?alt=media&token=c3cd5309-aaab-4887-86f6-4fd1e8b8ce45"
+                alt="response screens images"
+                width={500}
+                height={500}
+              />
             </div>
           </div>
           <div className="w-full md:w-1/2">
