@@ -1,5 +1,3 @@
-import ctImage from "../../public/images/projects/contentWriting.jpg";
-import graphProj from "../../public/images/projects/graphProj.png";
 import { StaticImageData } from "next/image";
 
 export type ProjectType = {
@@ -22,7 +20,7 @@ export type ProjectType = {
 
 const projectsData: ProjectType[] = [
   {
-    Image_URL: "/images/projects/videoPoster.webp",
+    Image_URL: "https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2FvideoPoster.webp?alt=media&token=4dfe44c9-1e8f-4e24-91ae-232bd5c704b2",
     proj_desc:
       "This Website application created in React.js for the company Rarare. It is mobile responsive and consists of more than 70 pages with cool animations.",
     proj_title: "Rarare",

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import logoImg from "../../../public/logo.png";
-import placeHolderImg from "../../../public/images/expedo2.png";
 import Link from "next/link";
 import { ProjectType } from "@/data/projects";
 
@@ -47,7 +46,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           imageUrl && (
             <Image
               alt={`${title} project image`}
-              src={imageUrl || placeHolderImg}
+              src={
+                imageUrl ||
+                "https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Fexpedo2.png?alt=media&token=847d3c3b-0376-4486-88f7-f40a6615cf60"
+              }
               width={1280}
               height={800}
               className="rounded-full transition-transform duration-200 group-hover:scale-105 lg:pt-0"
