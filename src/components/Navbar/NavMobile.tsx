@@ -84,7 +84,6 @@ const NavMob: React.FC<NavMobProps> = ({ links }) => {
                 quality={100}
                 width={65}
                 height={65}
-                priority
                 className="w-24 cursor-pointer object-contain"
               />
             </Link>
