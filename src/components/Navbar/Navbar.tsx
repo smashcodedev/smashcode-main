@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 z-[1000] w-full">
+    <header className="fixed top-0 z-[1000] w-full pointer-events-none">
       <nav
         className="mx-4 my-3 flex items-center justify-between
         rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] ease-linear md:px-10 2xl:mx-auto 2xl:max-w-7xl"
