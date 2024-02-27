@@ -410,6 +410,7 @@
   }
   .hide-scroll-header {
     top: -80px;
+    pointer-events: none;
   }
   .head-header {
     overflow: hidden;
@@ -817,6 +818,7 @@
   .hide-scroll-header {
     transform: translateY(-129px);
     transition: all 0.4s ease;
+    pointer-events: none;
   }
 
   .header-container {
