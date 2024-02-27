@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SparklesInit from "./SparklesInit";
 
 const HeroSection: React.FC = () => {
   return (
@@ -25,18 +26,12 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* <SparklesInit /> */}
+        <SparklesInit />
         <div className="relative text-center">
-          {/* <canvas
+          <canvas
             className="mx-auto my-auto h-[300px] w-[300px] text-center md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
             id="canvas"
-          ></canvas> */}
-          <video autoPlay muted playsInline loop>
-            <source
-              src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Fsparkles.mp4?alt=media&token=dd876113-74c8-48d6-b009-8869bc8b2770"
-              type="video/mp4"
-            />
-          </video>
+          ></canvas>
         </div>
       </div>
     </section>
