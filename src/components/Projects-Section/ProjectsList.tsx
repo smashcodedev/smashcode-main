@@ -24,7 +24,7 @@ const ProjectsList: React.FC<{
               return (
                 <div key={proj_title} className="relative mt-5 w-full md:mr-5">
                   <ProjectCard
-                    // bgColor={colors[Math.floor(Math.random() * colors.length)]}
+                    bgColor={colors[Math.floor(Math.random() * colors.length)]}
                     proj_title={proj_title}
                     proj_desc={proj_desc}
                     Image_URL={Image_URL}
@@ -50,7 +50,7 @@ const ProjectsList: React.FC<{
               return (
                 <div key={proj_title} className="relative mt-5 w-full">
                   <ProjectCard
-                    // bgColor={colors[Math.floor(Math.random() * colors.length)]}
+                    bgColor={colors[Math.floor(Math.random() * colors.length)]}
                     proj_title={proj_title}
                     proj_desc={proj_desc}
                     Image_URL={Image_URL}
