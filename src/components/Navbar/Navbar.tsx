@@ -18,6 +18,7 @@ const links: LinksType[] = [
 const Navbar: React.FC = () => {
   const deskHeader = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
+  const header = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     let lastScroll = 0;
@@ -25,12 +26,15 @@ const Navbar: React.FC = () => {
       const currentScroll = window.pageYOffset;
       if (currentScroll <= 0 && deskHeader.current) {
         deskHeader.current.classList.remove("hide-scroll-header");
+        header.current?.classList.remove("pointer-events-none")
         return;
       }
       if (currentScroll > lastScroll && deskHeader.current) {
         deskHeader.current.classList.add("hide-scroll-header");
+        header.current?.classList.add("pointer-events-none")
       } else if (currentScroll < lastScroll && deskHeader.current) {
         deskHeader.current.classList.remove("hide-scroll-header");
+        header.current?.classList.remove("pointer-events-none")
       }
       lastScroll = currentScroll;
     };
@@ -40,10 +44,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 z-[1000] w-full">
+    <header className="w-full fixed top-0 z-[1000]" ref={header}>
       <nav
-        className="mx-4 my-3 flex items-center justify-between
-        rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] ease-linear md:px-10 2xl:mx-auto 2xl:max-w-7xl"
+        className="mx-4 my-3 flex items-center
+        justify-between rounded-2xl border-2 border-primary-green bg-secondary-gray py-1 text-white shadow-xl shadow-secondary-gray transition-all duration-[400ms] ease-linear md:px-10 2xl:mx-auto 2xl:max-w-7xl  "
         ref={deskHeader}
       >
         <Logo />
