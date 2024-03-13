@@ -383,6 +383,7 @@ const Custom404: React.FC = () => {
           </g>
         </g>
       </svg>
+      
       <div className="notfound_btn_wrapper">
         <Link
           className="pure-material-button-outlined inline-block cursor-pointer select-none rounded border border-[#136e68] px-4 py-4 text-center text-base uppercase leading-6 text-primary-green transition duration-300 ease-in-out font-semibold hover:border-[#40e0d6]"
