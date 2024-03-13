@@ -6,13 +6,10 @@ import NavItem from "./Navbar/NavItem";
 import NavMobile from "./Navbar/NavMobile";
 import HeroSection from "./ui/HeroSection";
 import Projects from "./Projects-Section/Projects";
-import ProjectsHeader from "./Projects-Section/ProjectsHeader";
-import SectionHeading from "./ui/SectionHeading";
 import ProjectsList from "./Projects-Section/ProjectsList";
 import ProjectCard from "./Projects-Section/ProjectCard";
 import ProjectsPage from "./Projects-Section/ProjectsPage";
 import Services from "./Services-Section/Services";
-import ServiceHeader from "./Services-Section/ServiceHeader";
 import ServicesList from "./Services-Section/ServicesList";
 import ServiceCard from "./Services-Section/ServiceCard";
 import Footer from "./Footer/Footer";
@@ -42,13 +39,10 @@ export {
   HeroSection,
   Logo,
   Projects,
-  ProjectsHeader,
   ProjectsList,
   ProjectCard,
   ProjectsPage,
-  SectionHeading,
   Services,
-  ServiceHeader,
   ServicesList,
   ServiceCard,
   Footer,

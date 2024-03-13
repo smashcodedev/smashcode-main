@@ -1,5 +1,5 @@
 import React from "react";
-import { SectionHeading, UserCard } from "@/components";
+import { UserCard } from "@/components";
 import { getTeamMembers } from "@/api/apiTeamMembers";
 
 type TeamMemberType = {
@@ -17,7 +17,9 @@ const TeamMembers: React.FC = async () => {
 
   return (
     <div className="mt-12 px-4">
-      <SectionHeading subHeading="Meet our" heading="Team" />
+      <h2 className="pb-4 text-2xl">Meet our</h2>
+      <h2 className="section-heading pb-5 text-6xl">Team</h2>
+
       <div className="style-right-border team-member-main col flex flex-wrap items-center px-5">
         {(filteredMembers as Array<TeamMemberType>).map(
           ({ memberName, role, Image_URL }, key) => {

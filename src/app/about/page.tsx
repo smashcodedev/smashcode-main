@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import heroSvg from "@/../public/images/illustration/heroSvg.svg";
-import { SectionHeading, TeamMembers } from "@/components";
+import { TeamMembers } from "@/components";
 import heroSvg2 from "@/../public/images/illustration/heroSvg2.svg";
 
 const About: React.FC = () => {
@@ -10,7 +10,9 @@ const About: React.FC = () => {
       <section className="m-7 mt-32 xl:mt-52 2xl:ml-0">
         <div className="style-right-border my-5 flex flex-wrap">
           <div className="mr-5 w-full md:mr-0 md:w-1/2">
-            <SectionHeading subHeading="Who we" heading="Are?" />
+            <h2 className="pb-4 text-2xl">Who we</h2>
+            <h2 className="section-heading pb-5 text-6xl">Are?</h2>
+
             <p className="text-base md:text-xl">
               Smash Code is a team of skilled Developers, Graphic Designers, and
               Copy Writers committed to fulfilling the needs of our clients to
@@ -34,7 +36,9 @@ const About: React.FC = () => {
         </div>
 
         <div className="style-left-border mt-[88px] flex flex-wrap items-center px-6 pt-5">
-          <SectionHeading subHeading="Our" heading="Missions" />
+          <h2 className="pb-4 text-2xl">Our</h2>
+          <h2 className="section-heading pb-5 text-6xl">Missions</h2>
+
           <div className="flex flex-wrap">
             <p className="flex w-full items-center text-base md:w-1/2 md:text-xl">
               Smash Code aims to provide depth and breadth services to our
@@ -56,8 +60,10 @@ const About: React.FC = () => {
 
         <div className="style-right-border ml-2 mt-[85px] flex flex-wrap px-4">
           <div className="w-full">
-            <SectionHeading subHeading="Technologies we" heading="Use" />
+            <h2 className="pb-4 text-2xl">Technologies we</h2>
+            <h2 className="section-heading pb-5 text-6xl">Use</h2>
           </div>
+
           <div className="w-full md:w-1/2">
             <div className="img-container flex items-center justify-center">
               <Image
@@ -84,8 +90,10 @@ const About: React.FC = () => {
         <div className="style-left-border mt-20 flex flex-wrap px-4">
           <div className="ml-5">
             <div className="mb-5 w-full">
-              <SectionHeading subHeading="Our" heading="Story" />
+              <h2 className="pb-4 text-2xl">Our</h2>
+              <h2 className="section-heading pb-5 text-6xl">Story</h2>
             </div>
+
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-[53%]">
                 <p className="text-base md:text-xl">

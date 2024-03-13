@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { FeedbackTypes } from "@/types";
-import { Feedback, FirstHalf, SecondHalf, SectionHeading } from "@/components";
+import { Feedback, FirstHalf, SecondHalf } from "@/components";
 
 const Feedbacks: React.FC<{ feedbacks: FeedbackTypes }> = ({ feedbacks }) => {
   const [selectedReview, setSelectedReview] = useState<FeedbackTypes | null>(
@@ -29,7 +29,9 @@ const Feedbacks: React.FC<{ feedbacks: FeedbackTypes }> = ({ feedbacks }) => {
   }, [featuredReviews]);
   return (
     <div className="m-7">
-      <SectionHeading subHeading="Clients" heading="Feedback" />
+      <h2 className="pb-4 text-2xl">Clients</h2>
+      <h2 className="section-heading pb-5 text-6xl">Feedback</h2>
+
       <div className="feed-back-short-row style-right-border flex flex-wrap items-center justify-center">
         <FirstHalf
           firstHalf={firstHalf}

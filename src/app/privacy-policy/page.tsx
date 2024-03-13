@@ -1,4 +1,3 @@
-import { SectionHeading } from "@/components";
 import Link from "next/link";
 import React from "react";
 
@@ -9,7 +8,8 @@ const Privacy = () => {
         <div className="container-lg about-hero py-6">
           <div className="privacy-policy-row mb-12 items-center justify-center">
             <div className="style-right-border mx-2 w-full">
-              <SectionHeading subHeading="Privacy" heading="Policy" />
+              <h2 className="pb-4 text-2xl">Privacy</h2>
+              <h2 className="section-heading pb-5 text-6xl">Policy</h2>
 
               <p>
                 At Smash Code, accessible from{" "}

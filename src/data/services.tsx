@@ -1,7 +1,5 @@
 import { HiComputerDesktop } from "react-icons/hi2";
 import { BsCpuFill } from "react-icons/bs";
-import { MdDesignServices } from "react-icons/md";
-import { PiClipboardTextFill } from "react-icons/pi";
 import { MdOutlineDeveloperMode } from "react-icons/md";
 import { MdOutlineWidgets } from "react-icons/md";
 import { MdAccountBalanceWallet } from "react-icons/md";
@@ -9,9 +7,6 @@ import { BsFillGrid1X2Fill } from "react-icons/bs";
 import { MdOutlineWeb } from "react-icons/md";
 import { HiClipboardDocument } from "react-icons/hi2";
 import { TbWriting } from "react-icons/tb";
-import { MdDeck } from "react-icons/md";
-import { FaPhotoVideo } from "react-icons/fa";
-import React from "react";
 
 type ServiceNames =
   | "customWebDevelopment"

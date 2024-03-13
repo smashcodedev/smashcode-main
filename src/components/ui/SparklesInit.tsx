@@ -5,7 +5,6 @@ import { useEffect } from "react";
 
 const SparklesInit = () => {
   useEffect(() => {
-    if (!Sparkles) return;
     const sparkles = new Sparkles({
       imagesArray: [
         "/1.React.svg",

@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectsList, SectionHeading } from "@/components";
+import { ProjectsList } from "@/components";
 import { ProjectType } from "@/data/projects";
 import { getSortByTransactionDate } from "@/utils/helpers";
 import Link from "next/link";
@@ -72,7 +72,9 @@ const ProjectsPage: React.FC<{
   return (
     <section className="m-10 mx-auto w-full lg:max-w-7xl">
       <div className="m-7 mt-32 xl:mt-44 2xl:ml-0">
-        <SectionHeading heading="Projects" subHeading="Explore our" />
+        <h2 className="pb-4 text-2xl">Explore our</h2>
+        <h2 className="section-heading pb-5 text-6xl">Projects</h2>
+
         <div className="w-full">
           <div className="tabs-buttons-wrapper">
             {allCats.map((v, key) => {
