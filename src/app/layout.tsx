@@ -58,7 +58,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AOSInit />
-
       <body
         className={`${poppins.className} overflow-x-hidden bg-primary-gray text-white antialiased`}
       >
