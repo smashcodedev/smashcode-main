@@ -29,9 +29,19 @@ const HeroSection: React.FC = () => {
         <SparklesInit />
         <div className="relative text-center">
           <canvas
-            className="mx-auto my-auto h-[300px] w-[300px] text-center md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
+            className="mx-auto my-auto hidden h-[300px] w-[300px] text-center sm:w-[500px] md:block md:h-[400px] md:w-[400px] lg:h-[500px]"
             id="canvas"
           ></canvas>
+          <video
+            className="block md:hidden"
+            width="600"
+            height="500"
+            muted
+            autoPlay
+            loop
+          >
+            <source src="/logo.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
