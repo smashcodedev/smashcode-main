@@ -37,11 +37,13 @@
   background: #1aaca2;
 }
 
-@layer components {
-  .gradient-bg {
-    background: linear-gradient(180deg, var(--primary) 0%, #121212 100%);
-  }
+#sparkles-animation {
+  background-color: transparent; /* Set the background to transparent */
+    mix-blend-mode: screen; /* Blend mode to interact with the background */
+    filter: brightness(120%) contrast(130%) saturate(150%); /* Enhance the video */
+}
 
+@layer components {
   .project-box-item {
     background: -webkit-gradient(
       linear,
