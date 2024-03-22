@@ -10,8 +10,10 @@ const About: React.FC = () => {
       <section className="m-7 mt-32 xl:mt-52 2xl:ml-0">
         <div className="style-right-border my-5 flex flex-wrap">
           <div className="mr-5 w-full md:mr-0 md:w-1/2">
-            <h2 className="pb-4 text-2xl">Who we</h2>
-            <h2 className="section-heading pb-5 text-6xl">Are?</h2>
+            <div className="mb-4">
+              <h2 className="pb-4 text-2xl">Who we</h2>
+              <h2 className="section-heading pb-5 text-6xl">Are?</h2>
+            </div>
 
             <p className="text-base md:text-xl">
               Smash Code is a team of skilled Developers, Graphic Designers, and
@@ -36,8 +38,10 @@ const About: React.FC = () => {
         </div>
 
         <div className="style-left-border mt-[88px] flex flex-wrap items-center px-6 pt-5">
-          <h2 className="pb-4 text-2xl">Our</h2>
-          <h2 className="section-heading pb-5 text-6xl">Missions</h2>
+          <div>
+            <h2 className="pb-4 text-2xl">Our</h2>
+            <h2 className="section-heading pb-5 text-6xl">Missions</h2>
+          </div>
 
           <div className="flex flex-wrap">
             <p className="flex w-full items-center text-base md:w-1/2 md:text-xl">
