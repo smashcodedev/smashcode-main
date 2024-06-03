@@ -36,6 +36,7 @@ const ContactPage: React.FC = () => {
       reset();
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
+      console.log(error);
     }
   };
 
