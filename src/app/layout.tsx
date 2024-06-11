@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AOSInit />
-      <GoogleTagManager GTMId="GTM-KBHN9X93" />
+      <GoogleTagManager gtmId="GTM-KBHN9X93" />
       
       <body
         className={`${poppins.className} overflow-x-hidden bg-primary-gray text-white antialiased`}

@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     "src/config/sparkles.js",
     "build/types/**/*.ts"
-  ],
+, "src/app/contact/page.tsx"  ],
   "exclude": [
     "node_modules"
   ]
