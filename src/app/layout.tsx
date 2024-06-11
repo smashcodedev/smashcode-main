@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import { Footer, Navbar } from "@/components";
 
 import "./globals.css";
+import { GoogleTagManager } from "@next/third-parties";
 import { AOSInit } from "@/components/ui/AOSInit";
 import { FaWhatsapp } from "react-icons/fa6";
 import Link from "next/link";
@@ -57,6 +58,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleTagManager GTMId="GTM-KBHN9X93" />
       <AOSInit />
       
       <body
