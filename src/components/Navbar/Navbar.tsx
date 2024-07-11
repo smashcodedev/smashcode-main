@@ -11,7 +11,7 @@ const links: LinksType[] = [
   // { href: "/home", label: "Home" },
   { href: "/projects/web-development/Landing%20page", label: "Projects" },
   { href: "/services", label: "Services" },
-  { href: "https://smash-code.com/blogs", label: "Blogs" },
+  { href: "https://smash-code.com", label: "Blogs" },
   { href: "/contact", label: "Contact" },
 ];
 

@@ -27,7 +27,7 @@ const quickLinks: QuickLinksTypes[] = [
     href: "/projects/web-development/Landing%20page",
     icon: <FaProjectDiagram />,
   },
-  { label: "Blogs", href: "https://smash-code.com/blogs", icon: <FaBook /> },
+  { label: "Blogs", href: "https://smash-code.com", icon: <FaBook /> },
   { label: "Get a Quote", href: "/get-quote", icon: <LuClipboardEdit /> },
 ];
 
