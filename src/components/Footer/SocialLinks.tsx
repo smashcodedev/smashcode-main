@@ -64,16 +64,16 @@ const socialLinks: SocialLinksTypes[] = [
     style: "bg-[#fe2c55]",
     icon: <SiTiktok />,
   },
-  {
-    href: "https://www.pinterest.com/smashcodedev/",
-    style: "bg-[#e60023]",
-    icon: <FaPinterest />,
-  },
-  {
-    href: "https://www.quora.com/profile/SmashCodeDev",
-    style: "bg-[#b92b27] ",
-    icon: <FaQuora />,
-  },
+  // {
+  //   href: "https://www.pinterest.com/smashcodedev/",
+  //   style: "bg-[#e60023]",
+  //   icon: <FaPinterest />,
+  // },
+  // {
+  //   href: "https://www.quora.com/profile/SmashCodeDev",
+  //   style: "bg-[#b92b27] ",
+  // icon: <FaQuora />,
+  // },
   {
     href: "https://sck.io/u/@Smashcode-dev/pdQiuLvY",
     style: "bg-[#fcd6009f]",
