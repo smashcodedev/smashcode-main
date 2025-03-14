@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/../public/logo.png";
+import logo from "@/../public/images/logo.png";
+import psebImg from "@/../public/images/pseb.jpg";
 import { ContactInfo, Copywrite, QuickLinks, SocialLinks } from "@/components";
 
 const Footer = () => {
@@ -32,7 +33,7 @@ const Footer = () => {
                 <h3 className="my-2 text-2xl">Registered By PSEB </h3>
                 <div className="my-1 inline-block rounded">
                   <Image
-                    className="w-72 rounded"
+                    className="w-[180px] rounded"
                     src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2Fpseb.jpg?alt=media&token=c4c2445c-8104-43f1-ac0a-fab7dc73635b"
                     width={200}
                     height={200}
