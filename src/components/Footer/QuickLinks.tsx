@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import googleReviews from "@/../public/images/googleReviews.jpg";
 import {
   FaBook,
   FaHome,
@@ -14,21 +15,42 @@ type QuickLinksTypes = {
   label: string;
   href: string;
   icon: React.ReactNode;
+  newRoute?: boolean;
 };
 
 const quickLinks: QuickLinksTypes[] = [
   { label: "Home", href: "/", icon: <FaHome /> },
-  // { label: "Home", href: "/home", icon: <FaHome /> },
-  { label: "About", href: "/about", icon: <FaUser /> },
-  { label: "Contact", href: "/contact", icon: <FaPhone /> },
-  { label: "Services", href: "/services", icon: <FaServicestack /> },
+  {
+    label: "About",
+    href: "https://smashcode.dev/about",
+    icon: <FaUser />,
+    newRoute: true,
+  },
+  {
+    label: "Contact",
+    href: "https://smashcode.dev/contact",
+    icon: <FaPhone />,
+    newRoute: true,
+  },
+  {
+    label: "Services",
+    href: "https://smashcode.dev/services",
+    icon: <FaServicestack />,
+    newRoute: true,
+  },
   {
     label: "Projects",
-    href: "/projects/web-development/Landing%20page",
+    href: "https://smashcode.dev/projects/web-development/Landing%20page",
     icon: <FaProjectDiagram />,
+    newRoute: true,
   },
-  { label: "Blogs", href: "https://smash-code.com", icon: <FaBook /> },
-  { label: "Get a Quote", href: "/get-quote", icon: <LuClipboardEdit /> },
+  { label: "Blogs", href: "/", icon: <FaBook /> },
+  {
+    label: "Get a Quote",
+    href: "https://smashcode.dev/get-quote",
+    icon: <LuClipboardEdit />,
+    newRoute: true,
+  },
 ];
 
 const QuickLinks = () => {
@@ -39,14 +61,14 @@ const QuickLinks = () => {
       </h3>
 
       <ul className="m-0 mt-10 grid grid-cols-2 p-0">
-        {quickLinks.map(({ label, href, icon }) => (
+        {quickLinks.map(({ label, href, icon, newRoute }) => (
           <li
             key={label}
             className="mb-3 mr-4 min-w-[40%] text-base capitalize text-[#A3A3A3] transition-colors hover:text-primary-green"
           >
             <Link
               href={href}
-              target={label === "Blogs" ? "_blank" : ""}
+              target={newRoute ? "_blank" : ""}
               className="flex items-center gap-2"
             >
               {icon} {label}
@@ -64,7 +86,7 @@ const QuickLinks = () => {
         className="d-inline-block my-1 overflow-hidden rounded bg-white"
       >
         <Image
-          className="w-[150px] object-contain"
+          className="w-[120px] object-contain"
           src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2FgoogleReviews.jpg?alt=media&token=dece678b-8cd0-488d-839a-5f9160edfe86"
           width={200}
           height={200}
