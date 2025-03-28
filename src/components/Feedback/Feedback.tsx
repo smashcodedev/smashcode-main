@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
@@ -33,7 +35,7 @@ const Feedback: React.FC<{
               {review.client_Name}
             </p>
             <blockquote className="blockquote">
-              <p className="mb-0">"{review.client_feedback}"</p>
+              <p className="mb-0">&ldquo;{review.client_feedback}&rdquo;</p>
               <footer className="blockquote-footer mt-2">
                 <Link
                   href={review.url || "https://www.fiverr.com/ismail_muhammad"}
@@ -43,7 +45,7 @@ const Feedback: React.FC<{
                 >
                   Posted on &nbsp;{" "}
                   <span title="Source Title">
-                    {review.platform || "Fiverr"} &nbsp; ---{">"} &nbsp; view
+                    {review.platform || "Fiverr"} &nbsp; ---&gt; &nbsp; view
                   </span>
                 </Link>
               </footer>
