@@ -35,7 +35,7 @@ const socialLinks: SocialLinksTypes[] = [
     icon: <FaGithub />,
   },
   {
-    href: "http://www.linkedin.com/in/smashcode",
+    href: "https://www.linkedin.com/company/smashcodedev/posts",
     style: "bg-[#0e76a8]",
     icon: <FaLinkedin />,
   },
@@ -59,11 +59,11 @@ const socialLinks: SocialLinksTypes[] = [
     style: "text-black bg-white",
     icon: <SiMedium />,
   },
-  {
-    href: "https://www.tiktok.com/@smashcode-dev",
-    style: "bg-[#fe2c55]",
-    icon: <SiTiktok />,
-  },
+  // {
+  //   href: "https://www.tiktok.com/@smashcode-dev",
+  //   style: "bg-[#fe2c55]",
+  //   icon: <SiTiktok />,
+  // },
   // {
   //   href: "https://www.pinterest.com/smashcodedev/",
   //   style: "bg-[#e60023]",
@@ -74,18 +74,18 @@ const socialLinks: SocialLinksTypes[] = [
   //   style: "bg-[#b92b27] ",
   // icon: <FaQuora />,
   // },
-  {
-    href: "https://sck.io/u/@Smashcode-dev/pdQiuLvY",
-    style: "bg-[#fcd6009f]",
-    icon: (
-      <Image
-        src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2FSnack-Video-Logo.webp?alt=media&token=694d0d56-0924-4409-b1dc-97fdc4d1eb88"
-        alt="snack video image"
-        width={50}
-        height={50}
-      />
-    ),
-  },
+  // {
+  //   href: "https://sck.io/u/@Smashcode-dev/pdQiuLvY",
+  //   style: "bg-[#fcd6009f]",
+  //   icon: (
+  //     <Image
+  //       src="https://firebasestorage.googleapis.com/v0/b/smash-code.appspot.com/o/others%2FSnack-Video-Logo.webp?alt=media&token=694d0d56-0924-4409-b1dc-97fdc4d1eb88"
+  //       alt="snack video image"
+  //       width={50}
+  //       height={50}
+  //     />
+  //   ),
+  // },
 ];
 const SocialLinks = () => {
   return (

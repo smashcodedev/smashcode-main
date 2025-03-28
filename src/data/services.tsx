@@ -28,7 +28,7 @@ const servicesData: Services = {
         <ul className="list-disc px-4">
           <li>Pixel-perfect responsive designs</li>
           <li>AI-enhanced user experiences</li>
-          <li>Real-time databases (Firebase/Supabase/MongoDB)</li>
+          <li>Real-time databases (Firebase, Supabase, MongoDB)</li>
           <li>Scalable Node.js backends</li>
           <li>Cross-browser compatibility</li>
         </ul>
