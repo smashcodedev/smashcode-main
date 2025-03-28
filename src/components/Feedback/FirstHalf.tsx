@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import noDataFoundImg from "@/../public/images/avatar/no-image.jpg";
 import { FeedbackTypes } from "@/types";
 
@@ -10,21 +12,26 @@ const FirstHalf: React.FC<{
   return (
     <div className="w-full sm:w-1/2 md:w-1/4">
       <div className="flying-avatar-wrapper">
-        {firstHalf.map((review: FeedbackTypes) => (
-          <span
-            onClick={() => setSelectedReview(review)}
-            key={review.id}
-            className="avatar-circle flying"
-          >
-            <Image
-              src={review.Image_URL || noDataFoundImg}
-              alt={"image"}
-              width={100}
-              height={100}
-              className="w-full object-cover object-center text-center"
-            />
-          </span>
-        ))}
+        {firstHalf.map((review: FeedbackTypes) => {
+          const [imgSrc, setImgSrc] = useState(review.Image_URL || noDataFoundImg);
+          
+          return (
+            <span
+              onClick={() => setSelectedReview(review)}
+              key={review.id}
+              className="avatar-circle flying"
+            >
+              <Image
+                src={imgSrc}
+                alt={"Avatar"}
+                width={100}
+                height={100}
+                className="w-full object-cover object-center text-[12px] text-center"
+                onError={() => setImgSrc(noDataFoundImg)}
+              />
+            </span>
+          );
+        })}
       </div>
     </div>
   );
