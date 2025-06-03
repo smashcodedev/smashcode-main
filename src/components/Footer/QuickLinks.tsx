@@ -22,34 +22,35 @@ const quickLinks: QuickLinksTypes[] = [
   { label: "Home", href: "/", icon: <FaHome /> },
   {
     label: "About",
-    href: "https://smashcode.dev/about",
+    href: "/about",
     icon: <FaUser />,
-    newRoute: true,
+    newRoute: false,
   },
   {
     label: "Contact",
-    href: "https://smashcode.dev/contact",
+    href: "/contact",
     icon: <FaPhone />,
-    newRoute: true,
+    newRoute: false,
   },
   {
     label: "Services",
-    href: "https://smashcode.dev/services",
+    href: "/services",
     icon: <FaServicestack />,
-    newRoute: true,
+    newRoute: false,
   },
   {
     label: "Projects",
-    href: "https://smashcode.dev/projects/web-development/Landing%20page",
+    href: "/projects/web-development/Landing%20page",
     icon: <FaProjectDiagram />,
-    newRoute: true,
+    newRoute: false,
   },
-  { label: "Blogs", href: "/", icon: <FaBook /> },
+  { label: "Blogs", href: "/", icon: <FaBook />, newRoute: true
+},
   {
     label: "Get a Quote",
-    href: "https://smashcode.dev/get-quote",
+    href: "/get-quote",
     icon: <LuClipboardEdit />,
-    newRoute: true,
+    newRoute: false,
   },
 ];
 
